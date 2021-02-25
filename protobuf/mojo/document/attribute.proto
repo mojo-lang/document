@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package mojo.document;
+
+///
+/// Attributes: identifier, classes, key-value pairs
+///
+message Attribute {
+    string identifier = 1;
+    repeated string classes = 2;
+    map<string, string> properties = 3;
+}

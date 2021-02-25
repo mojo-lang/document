@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "mojo/document/meta_data.proto";
+import "mojo/document/block.proto";
+
+package mojo.document;
+
+message Document {
+    MetaData meta_data = 1;
+    repeated Block blocks = 2;
+}

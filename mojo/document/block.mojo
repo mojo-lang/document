@@ -1,49 +1,51 @@
 /// Block element
-type Block = Plain |
-             Paragraph |
-             LineBlock |
-             CodeBlock |
-             BlockQuote |
-             OrderedList |
-             BulletList |
-             DefinitionList |
-             Header |
-             Table |
-             Div |
-             Null
+type Block = Plain
+           | Paragraph
+           | LineBlock
+           | CodeBlock
+           | BlockQuote
+           | OrderedList
+           | BulletList
+           | DefinitionList
+           | Header
+           | Table
+           | Division
+           | Null
 
 /// Plain text, not a paragraph
-type Plain : [Inline] {}
+type Plain : [Inline]
 
 /// Paragraph
-type Paragraph : [Inline] {}
+type Paragraph : [Inline]
 
 /// Multiple non-breaking lines
-type LineBlock : [[Inline]] {}
+type LineBlock : [[Inline]]
 
 type CodeBlock {
     attribute: Attribute
     code: String
 }
 
-type BlockQuote : [Block] {}
+type BlockQuote = [Block]
 
 /// Style of list numbers.
+@transform_hyphen
 enum ListNumberStyle {
-    Default
-    Example
-    Decimal
-    LowerRoman
-    UpperRoman
-    LowerAlpha
-    UpperAlpha
+    unspecified
+    example
+    decimal
+    lower_roman //@alias('lower-roman')
+    upper_roman //@alias('upper-roman')
+    lower_alpha //@alias('lower-alpha')
+    upper_alpha //@alias('upper-alpha')
 }
 
+@transform_hyphen
 enum ListNumberDelimiter {
-    Default
-    Period
-    OneParent
-    TwoParents
+    unspecified
+    period
+    one_parent @alias('one-parent')
+    two_parents @alias('two-parent')
 }
 
 /// List attributes.
@@ -60,7 +62,7 @@ type OrderedList {
 }
 
 /// Bullet list (list of items, each a list of blocks)
-type BulletList : [[Block]]
+type BulletList = [[Block]]
 
 /// 
 type DefinitionItem {
@@ -70,7 +72,7 @@ type DefinitionItem {
 
 /// Definition list Each list item is a pair consisting of a term (a list of inlines)
 /// and one or more definitions (each a list of blocks)
-type DefinitionList : [DefinitionItem]
+type DefinitionList = [DefinitionItem]
 
 type Header {
     level : Int
@@ -83,10 +85,10 @@ type TableCell = [Block]
 
 /// Alignment of a table column.
 enum Alignment {
-    AlignDefault
-    AlignLeft
-    AlignRight
-    AlignCenter
+    unspecified
+    left
+    right
+    center
 }
 
 ///
@@ -103,7 +105,7 @@ type Table {
 }
 
 /// Generic block container with attributes
-type Div {
-    attribute Attribute
+type Division {
+    attribute: Attribute
     content: [Block]
 }
