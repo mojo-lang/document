@@ -1,25 +1,25 @@
 ///
-type Inline = Text
-            | Emphasized
-            | Strong
-            | Strikeout
-            | Superscript
-            | Subscript
-            | SmallCaps
-            | Quoted
-            | Cite
-            | Code
-            | Space
-            | LineBreak
-            | Link
-            | Image
-            | Note
-            | Span
+type Inline = Text        @1
+            | Emphasized  @2
+            | Strong      @3
+            | Strikeout   @4
+            | Superscript @5
+            | Subscript   @6
+            | SmallCaps   @7
+            | Quoted      @8
+            | Cite        @9
+            | Code        @10
+            | Space       @11
+            | LineBreak   @12
+            | Link        @13
+            | Image       @14
+            | Note        @15
+            | Span        @16
 
 //type {
-//    Text       : String
-//    Emphasized : [Inline]
-//    Strong     : [Inline]
+//    Text       : String   @1
+//    Emphasized : [Inline] @2
+//    Strong     : [Inline] @3
 //}
 
 /// normal text
@@ -29,19 +29,19 @@ type Text : String
 type Emphasized : [Inline]
 
 ///
-type Strong : [Inline]
+type Strong: [Inline]
 
 ///
-type Strikeout : [Inline]
+type Strikeout: [Inline]
 
 ///
-type Superscript : [Inline]
+type Superscript: [Inline]
 
 ///
-type Subscript : [Inline]
+type Subscript: [Inline]
 
 ///
-type SmallCaps : [Inline]
+type SmallCaps: [Inline]
 
 ///
 type Space
@@ -55,41 +55,41 @@ type Note: [Block]
 ///
 type Quoted {
     enum Type {
-        single
-        double
+        double @0
+        single @1
     }
 
-    type: Type
-    text: [Inline]
+    type: Type     @1
+    text: [Inline] @2
 }
 
 ///
 type Cite {
-    citations : [Citation]
-    inline    : [Inline]
+    citations: [Citation] @1
+    inlines:   [Inline]   @2
 }
 
 ///
 type Citation {
     @transform_hyphen
     enum Mode {
-        normal
-        author_in_text
-        suppress_author
+        normal          @0
+        author_in_text  @1
+        suppress_author @2
     }
 
-    id: String
-    prefix: [Inline]
-    suffix: [Inline]
-    mode: Mode
-    note_count: Int
-    hash: Int
+    id: String       @1
+    prefix: [Inline] @2
+    suffix: [Inline] @3
+    mode: Mode       @4
+    note_count: Int  @5
+    hash: Int        @6
 }
 
 /// Inline code (literal)
 type Code {
-    attribute : Attribute
-    content   : String
+    attribute : Attribute @1
+    content   : String    @2
 }
 
 ///
@@ -101,13 +101,18 @@ type Link {
 
 ///
 type Image {
-    attribute : Attribute
-    inlines   : [Inline]
-    target    : Target
+    attribute : Attribute @1
+    inlines   : [Inline]  @2
+    target    : Target    @3
 }
 
 /// Generic inline container with attributes
 type Span {
-    attribute : Attribute
-    inlines   : [Inline]
+    attribute : Attribute @1
+    inlines   : [Inline]  @2
+}
+
+type Target {
+    title: String @1
+    url: Url @2
 }

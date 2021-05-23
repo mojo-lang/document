@@ -1,111 +1,129 @@
 /// Block element
-type Block = Plain
-           | Paragraph
-           | LineBlock
-           | CodeBlock
-           | BlockQuote
-           | OrderedList
-           | BulletList
-           | DefinitionList
-           | Header
-           | Table
-           | Division
-           | Null
+type Block = Plain          @1
+           | Paragraph      @2
+           | LineBlock      @3
+           | CodeBlock      @4
+           | BlockQuote     @5
+           | OrderedList    @6
+           | BulletList     @7
+           | DefinitionList @8
+           | Header         @9
+           | Table          @10
+           | Division       @11
+           | Null           @12
 
 /// Plain text, not a paragraph
-type Plain : [Inline]
+type Plain {
+    inlines: [Inline] @2
+}
 
 /// Paragraph
-type Paragraph : [Inline]
+type Paragraph {
+    inlines: [Inline] @2
+}
 
 /// Multiple non-breaking lines
-type LineBlock : [[Inline]]
+type LineBlock {
+    type Line: [Inline]
+
+    lines : [Line] @2
+}
 
 type CodeBlock {
-    attribute: Attribute
-    code: String
+    attribute: Attribute @1
+    code: String @2
 }
 
-type BlockQuote = [Block]
-
-/// Style of list numbers.
-@transform_hyphen
-enum ListNumberStyle {
-    unspecified
-    example
-    decimal
-    lower_roman //@alias('lower-roman')
-    upper_roman //@alias('upper-roman')
-    lower_alpha //@alias('lower-alpha')
-    upper_alpha //@alias('upper-alpha')
-}
-
-@transform_hyphen
-enum ListNumberDelimiter {
-    unspecified
-    period
-    one_parent @alias('one-parent')
-    two_parents @alias('two-parent')
+type BlockQuote {
+    blocks: [Block] @2
 }
 
 /// List attributes.
 type ListAttribute {
-    begin_number: Int
-    number_style: ListNumberStyle
-    number_delimiter: ListNumberDelimiter
+    /// Style of list numbers.
+    @transform_hyphen
+    enum NumberStyle {
+        unspecified
+        example     @1
+        decimal     @2
+        lower_roman @3 //@alias('lower-roman')
+        upper_roman @4 //@alias('upper-roman')
+        lower_alpha @5 //@alias('lower-alpha')
+        upper_alpha @6 //@alias('upper-alpha')
+    }
+
+    @transform_hyphen
+    enum NumberDelimiter {
+        unspecified @1
+        period      @2
+        one_parent  @3 @alias('one-parent')
+        two_parents @4 @alias('two-parent')
+    }
+
+    begin_number: Int @1
+    number_style: NumberStyle @2
+    number_delimiter: NumberDelimiter @3
 }
 
 /// 
 type OrderedList {
-    attribute: ListAttribute
-    items: [[Block]]
+    attribute: ListAttribute @1
+    items: [[Block]] @2
 }
 
 /// Bullet list (list of items, each a list of blocks)
-type BulletList = [[Block]]
-
-/// 
-type DefinitionItem {
-    term: [Inline]
-    definitions: [[Block]]
+type BulletList {
+    blocks: [[Block]] @2
 }
 
 /// Definition list Each list item is a pair consisting of a term (a list of inlines)
 /// and one or more definitions (each a list of blocks)
-type DefinitionList = [DefinitionItem]
+type DefinitionList {
+    ///
+    type Item {
+        term: [Inline] @1
+        definitions: [[Block]] @2
+    }
 
-type Header {
-    level : Int
-    attribute: Attribute
-    text : [Inline]
+    items: [Item] @2
 }
 
-/// Table cells are list of Blocks
-type TableCell = [Block]
+type Header {
+    attribute: Attribute @1
 
-/// Alignment of a table column.
-enum Alignment {
-    unspecified
-    left
-    right
-    center
+    level : Int @2
+    text : [Inline] @3
 }
 
 ///
 type Table {
-    caption: [Inline] //< caption for table
+    /// Alignment of a table column.
+    enum Alignment {
+        unspecified @1
+        left   @2
+        right  @3
+        center @4
+    }
 
-    alignment: Alignment //< column alignments (required)
+    /// Table cells are list of Blocks
+    type Cell: [Block]
 
-    width: Double = 0 //< relative column widths
+    /// row, list of blocks
+    type Row: [Cell]
 
-    headers: [TableCell] //< column headers (each a list of blocks)
+    caption: [Inline] @1 //< caption for table
 
-    rows: [[TableCell]] //< rows, each a list of lists of blocks
+    alignment: Alignment @2 //< column alignments (required)
+
+    width: Double @3 = 0 //< relative column widths
+
+    headers: [Cell] @4 //< column headers (each a list of blocks)
+
+    rows: [Row] @5 //< rows, a list of row
 }
 
 /// Generic block container with attributes
 type Division {
-    attribute: Attribute
-    content: [Block]
+    attribute: Attribute @1
+    content: [Block] @2
 }

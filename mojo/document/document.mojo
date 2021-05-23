@@ -3,8 +3,8 @@
 ///
 type Document {
     ///
-    meta_data: MetaData
+    meta_data: MetaData @1
     
     ///
-    blocks: [Block]
+    blocks: [Block] @2
 }

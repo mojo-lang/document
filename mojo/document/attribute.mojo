@@ -3,11 +3,11 @@
 ///
 type Attribute {
     ///
-    identifier: String
+    identifier: String @1
     
     ///
-    classes: [String]
+    classes: [String] @2
     
     ///
-    properties: {String, Value}
+    properties: {String: Value} @3
 }

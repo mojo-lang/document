@@ -1,18 +1,18 @@
 ///
 /// Metadata for the document: title, authors, date.
 ///
-type MetaData = {String, MetaDataValue}
+type MetaData = {String: MetaDataValue}
 
 ///
 ///
 ///
-type MetaDataValue = {String, MetaDataValue} @1
+type MetaDataValue = {String: MetaDataValue} @1
                    | [MetaDataValue] @2
                    | Bool            @3
                    | String          @4
-                   | DateTime        @5
-                   | [Inline]        @6
-                   | [Block]         @7
+                   | DateTime        @10
+                   | [Inline]        @14
+                   | [Block]         @15
 
 ///
 /// Extract document title from `MetaData`
