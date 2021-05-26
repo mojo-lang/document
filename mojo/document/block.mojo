@@ -125,5 +125,8 @@ type Table {
 /// Generic block container with attributes
 type Division {
     attribute: Attribute @1
+    
     content: [Block] @2
 }
+
+type Blocks = [Block]

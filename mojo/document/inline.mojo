@@ -116,3 +116,5 @@ type Target {
     title: String @1
     url: Url @2
 }
+
+type Inlines : [Inline]
