@@ -1,0 +1,1 @@
+{"title":"mojo.document.Table","type":"object","properties":{"width":{"type":"number"},"header":{"$ref":"#/components/schemas/mojo.document.Table.Header"},"rows":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Table.Row"}},"caption":{"type":"array","items":{}},"alignment":{"type":"string","enum":["left","right","center"]}}}

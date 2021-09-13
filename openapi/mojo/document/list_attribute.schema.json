@@ -1,0 +1,1 @@
+{"title":"mojo.document.ListAttribute","type":"object","properties":{"numberDelimiter":{"type":"string","enum":["period","one_parent","two_parents"]},"beginNumber":{"type":"integer","format":"int"},"numberStyle":{"type":"string","enum":["example","decimal","lower_roman","upper_roman","lower_alpha","upper_alpha"]}}}

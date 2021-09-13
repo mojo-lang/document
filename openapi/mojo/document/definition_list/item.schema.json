@@ -1,0 +1,1 @@
+{"title":"mojo.document.DefinitionList.Item","type":"object","properties":{"term":{"type":"array","items":{}},"definitions":{"type":"array","items":{"type":"array","items":{}}}}}

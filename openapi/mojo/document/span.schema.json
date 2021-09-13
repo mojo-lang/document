@@ -1,0 +1,1 @@
+{"title":"mojo.document.Span","type":"object","properties":{"attribute":{"$ref":"#/components/schemas/mojo.document.Attribute"},"inlines":{"type":"array","items":{}}}}

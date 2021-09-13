@@ -1,0 +1,1 @@
+{"title":"mojo.document.Header","type":"object","properties":{"attribute":{"$ref":"#/components/schemas/mojo.document.Attribute"},"level":{"type":"integer","format":"int"},"text":{"type":"array","items":{}}}}

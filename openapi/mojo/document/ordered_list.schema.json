@@ -1,0 +1,1 @@
+{"title":"mojo.document.OrderedList","type":"object","properties":{"attribute":{"$ref":"#/components/schemas/mojo.document.ListAttribute"},"items":{"type":"array","items":{"type":"array","items":{}}}}}

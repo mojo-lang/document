@@ -1,0 +1,1 @@
+{"title":"mojo.document.Link","type":"object","properties":{"attribute":{"$ref":"#/components/schemas/mojo.document.Attribute"},"description":{"type":"array","items":{}},"target":{"$ref":"#/components/schemas/mojo.document.Target"}}}

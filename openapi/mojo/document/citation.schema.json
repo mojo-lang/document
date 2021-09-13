@@ -1,0 +1,1 @@
+{"title":"mojo.document.Citation","type":"object","properties":{"id":{"type":"string"},"prefix":{"type":"array","items":{}},"suffix":{"type":"array","items":{}},"mode":{"type":"string","enum":["normal","author_in_text","suppress_author"]},"noteCount":{"type":"integer","format":"int"},"hash":{"type":"integer","format":"int"}}}

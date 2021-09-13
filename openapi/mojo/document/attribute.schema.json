@@ -1,0 +1,1 @@
+{"title":"mojo.document.Attribute","type":"object","properties":{"identifier":{"type":"string"},"classes":{"type":"array","items":{"type":"string"}},"properties":{"type":"object","additionalProperties":{"type":"string"}}}}

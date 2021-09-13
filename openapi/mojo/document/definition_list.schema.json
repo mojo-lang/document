@@ -1,0 +1,1 @@
+{"title":"mojo.document.DefinitionList","type":"object","properties":{"items":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.DefinitionList.Item"}}}}

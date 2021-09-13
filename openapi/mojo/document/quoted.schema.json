@@ -1,0 +1,1 @@
+{"title":"mojo.document.Quoted","type":"object","properties":{"type":{"type":"string","enum":["double","single"]},"text":{"type":"array","items":{}}}}

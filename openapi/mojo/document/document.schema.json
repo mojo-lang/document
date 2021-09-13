@@ -1,0 +1,1 @@
+{"title":"mojo.document.Document","type":"object","properties":{"metaData":{"$ref":"#/components/schemas/mojo.document.MetaData"},"blocks":{"type":"array","items":{}}}}
