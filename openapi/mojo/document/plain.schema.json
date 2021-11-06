@@ -1,1 +1,1 @@
-{"title":"mojo.document.Plain","type":"object","properties":{"inlines":{"type":"array","items":{}}}}
+{"title":"mojo.document.Plain","description":"Plain text, not a paragraph","type":"object","properties":{"inlines":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Inline"}}}}

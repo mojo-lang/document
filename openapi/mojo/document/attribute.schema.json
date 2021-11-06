@@ -1,1 +1,1 @@
-{"title":"mojo.document.Attribute","type":"object","properties":{"identifier":{"type":"string"},"classes":{"type":"array","items":{"type":"string"}},"properties":{"type":"object","additionalProperties":{"type":"string"}}}}
+{"title":"mojo.document.Attribute","description":"Attributes: identifier, classes, key-value pairs\n","type":"object","properties":{"properties":{"description":"","type":"object","additionalProperties":{"type":"string"}},"identifier":{"description":"","type":"string"},"classes":{"description":"","type":"array","items":{"type":"string"}}}}

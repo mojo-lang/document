@@ -35,7 +35,11 @@ func (m *CodeBlock) GetCode() []byte {
 	}
 
 	buffer := bytes.Buffer{}
-	for _, line := range m.Lines {
+	for i, line := range m.Lines {
+		if i > 0 {
+			buffer.WriteByte('\n')
+		}
+
 		for _, inline := range line.Values {
 			if text := inline.GetText(); text != nil {
 				buffer.WriteString(text.Value)

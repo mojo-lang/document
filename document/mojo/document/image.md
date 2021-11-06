@@ -1,5 +1,5 @@
 | 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
 |---|---|---|---|---|---|
-| target | mojo.document.Target |  |  |  |
-| attribute | mojo.document.Attribute |  |  |  |
-| description |  |  |  |  |
+| `attribute` | `mojo.document.Attribute` |  | 否 |  |
+| `description` | `Array<0>` |  | 否 |  |
+| `target` | `mojo.document.Target` |  | 否 |  |

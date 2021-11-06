@@ -1,1 +1,1 @@
-{"title":"mojo.document.DefinitionList.Item","type":"object","properties":{"term":{"type":"array","items":{}},"definitions":{"type":"array","items":{"type":"array","items":{}}}}}
+{"title":"mojo.document.DefinitionList.Item","description":"","type":"object","properties":{"term":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Inline"}},"definitions":{"type":"array","items":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Block"}}}}}

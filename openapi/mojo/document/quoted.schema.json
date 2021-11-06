@@ -1,1 +1,1 @@
-{"title":"mojo.document.Quoted","type":"object","properties":{"type":{"type":"string","enum":["double","single"]},"text":{"type":"array","items":{}}}}
+{"title":"mojo.document.Quoted","description":"","type":"object","properties":{"type":{"title":"mojo.document.Quoted.Type","type":"string","enum":["double","single"]},"text":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Inline"}}}}

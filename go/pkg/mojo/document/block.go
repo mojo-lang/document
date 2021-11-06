@@ -12,8 +12,8 @@ func NewHeaderBlock(header *Header) *Block {
 	return &Block{Block: &Block_Header{Header: header}}
 }
 
-func NewBlockQuoteBlock(blockQuote *BlockQuote) *Block {
-	return &Block{Block: &Block_BlockQuote{BlockQuote: blockQuote}}
+func NewQuoteBlockBlock(quote *QuoteBlock) *Block {
+	return &Block{Block: &Block_QuoteBlock{QuoteBlock: quote}}
 }
 
 func NewCodeBlockBlock(block *CodeBlock) *Block {

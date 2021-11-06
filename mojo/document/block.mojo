@@ -1,3 +1,17 @@
+// Copyright 2021 Mojo-lang.org
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /// Block element
 @discriminator('@type')
 @label_format('{}')
@@ -5,7 +19,7 @@ type Block = Plain          @1
            | Paragraph      @2
            | LineBlock      @3
            | CodeBlock      @4
-           | BlockQuote     @5
+           | QuoteBlock     @5
            | OrderedList    @6
            | BulletList     @7
            | DefinitionList @8
@@ -39,30 +53,30 @@ type CodeBlock {
     lines: [Line] @3
 }
 
-type BlockQuote {
+type QuoteBlock {
     blocks: [Block] @2
 }
 
 /// List attributes.
 type ListAttribute {
     /// Style of list numbers.
-    @transform_hyphen
+    @case_style("kebab")
     enum NumberStyle {
         unspecified @0
         example     @1
         decimal     @2
-        lower_roman @3 //@alias('lower-roman')
-        upper_roman @4 //@alias('upper-roman')
-        lower_alpha @5 //@alias('lower-alpha')
-        upper_alpha @6 //@alias('upper-alpha')
+        lower_roman @3
+        upper_roman @4
+        lower_alpha @5
+        upper_alpha @6
     }
 
-    @transform_hyphen
+    @case_style("kebab")
     enum NumberDelimiter {
         unspecified @1
         period      @2
-        one_parent  @3 @alias('one-parent')
-        two_parents @4 @alias('two-parent')
+        one_parent  @3
+        two_parents @4
     }
 
     begin_number: Int @1

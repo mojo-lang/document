@@ -31,9 +31,9 @@ func (m *Document) AppendHeaderFrom(level int64, header string) {
 	})
 }
 
-func (m *Document) AppendBlockQuote(blockQuote *BlockQuote) {
+func (m *Document) AppendBlockQuote(blockQuote *QuoteBlock) {
 	if m != nil {
-		m.Blocks = append(m.Blocks, NewBlockQuoteBlock(blockQuote))
+		m.Blocks = append(m.Blocks, NewQuoteBlockBlock(blockQuote))
 	}
 }
 

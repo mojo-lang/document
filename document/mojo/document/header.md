@@ -1,5 +1,5 @@
 | 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
 |---|---|---|---|---|---|
-| text |  |  |  |  |
-| attribute | mojo.document.Attribute |  |  |  |
-| level |  |  |  |  |
+| `attribute` | `mojo.document.Attribute` |  | 否 |  |
+| `level` | `integer` | `int` | 否 |  |
+| `text` | `Array<0>` |  | 否 |  |

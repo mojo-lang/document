@@ -120,8 +120,8 @@ func (a *AstParser) parseHeading(ctx *AstContext, node ast.Node, entering bool) 
 func (a *AstParser) parseBlockquote(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
 	_ = node.(*ast.Blockquote)
 	if entering {
-		blockQuote := &document.BlockQuote{}
-		block := document.NewBlockQuoteBlock(blockQuote)
+		blockQuote := &document.QuoteBlock{}
+		block := document.NewQuoteBlockBlock(blockQuote)
 		switch v := ctx.Stack.Current().(type) {
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)

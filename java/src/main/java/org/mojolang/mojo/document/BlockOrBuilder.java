@@ -68,19 +68,19 @@ public interface BlockOrBuilder extends
   org.mojolang.mojo.document.CodeBlockOrBuilder getCodeBlockOrBuilder();
 
   /**
-   * <code>.mojo.document.BlockQuote block_quote = 5;</code>
-   * @return Whether the blockQuote field is set.
+   * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
+   * @return Whether the quoteBlock field is set.
    */
-  boolean hasBlockQuote();
+  boolean hasQuoteBlock();
   /**
-   * <code>.mojo.document.BlockQuote block_quote = 5;</code>
-   * @return The blockQuote.
+   * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
+   * @return The quoteBlock.
    */
-  org.mojolang.mojo.document.BlockQuote getBlockQuote();
+  org.mojolang.mojo.document.QuoteBlock getQuoteBlock();
   /**
-   * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+   * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
    */
-  org.mojolang.mojo.document.BlockQuoteOrBuilder getBlockQuoteOrBuilder();
+  org.mojolang.mojo.document.QuoteBlockOrBuilder getQuoteBlockOrBuilder();
 
   /**
    * <code>.mojo.document.OrderedList ordered_list = 6;</code>

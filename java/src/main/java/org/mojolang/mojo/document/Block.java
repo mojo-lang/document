@@ -105,14 +105,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            org.mojolang.mojo.document.BlockQuote.Builder subBuilder = null;
+            org.mojolang.mojo.document.QuoteBlock.Builder subBuilder = null;
             if (blockCase_ == 5) {
-              subBuilder = ((org.mojolang.mojo.document.BlockQuote) block_).toBuilder();
+              subBuilder = ((org.mojolang.mojo.document.QuoteBlock) block_).toBuilder();
             }
             block_ =
-                input.readMessage(org.mojolang.mojo.document.BlockQuote.parser(), extensionRegistry);
+                input.readMessage(org.mojolang.mojo.document.QuoteBlock.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.BlockQuote) block_);
+              subBuilder.mergeFrom((org.mojolang.mojo.document.QuoteBlock) block_);
               block_ = subBuilder.buildPartial();
             }
             blockCase_ = 5;
@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
     PARAGRAPH(2),
     LINE_BLOCK(3),
     CODE_BLOCK(4),
-    BLOCK_QUOTE(5),
+    QUOTE_BLOCK(5),
     ORDERED_LIST(6),
     BULLET_LIST(7),
     DEFINITION_LIST(8),
@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
         case 2: return PARAGRAPH;
         case 3: return LINE_BLOCK;
         case 4: return CODE_BLOCK;
-        case 5: return BLOCK_QUOTE;
+        case 5: return QUOTE_BLOCK;
         case 6: return ORDERED_LIST;
         case 7: return BULLET_LIST;
         case 8: return DEFINITION_LIST;
@@ -417,35 +417,35 @@ private static final long serialVersionUID = 0L;
     return org.mojolang.mojo.document.CodeBlock.getDefaultInstance();
   }
 
-  public static final int BLOCK_QUOTE_FIELD_NUMBER = 5;
+  public static final int QUOTE_BLOCK_FIELD_NUMBER = 5;
   /**
-   * <code>.mojo.document.BlockQuote block_quote = 5;</code>
-   * @return Whether the blockQuote field is set.
+   * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
+   * @return Whether the quoteBlock field is set.
    */
   @java.lang.Override
-  public boolean hasBlockQuote() {
+  public boolean hasQuoteBlock() {
     return blockCase_ == 5;
   }
   /**
-   * <code>.mojo.document.BlockQuote block_quote = 5;</code>
-   * @return The blockQuote.
+   * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
+   * @return The quoteBlock.
    */
   @java.lang.Override
-  public org.mojolang.mojo.document.BlockQuote getBlockQuote() {
+  public org.mojolang.mojo.document.QuoteBlock getQuoteBlock() {
     if (blockCase_ == 5) {
-       return (org.mojolang.mojo.document.BlockQuote) block_;
+       return (org.mojolang.mojo.document.QuoteBlock) block_;
     }
-    return org.mojolang.mojo.document.BlockQuote.getDefaultInstance();
+    return org.mojolang.mojo.document.QuoteBlock.getDefaultInstance();
   }
   /**
-   * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+   * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.document.BlockQuoteOrBuilder getBlockQuoteOrBuilder() {
+  public org.mojolang.mojo.document.QuoteBlockOrBuilder getQuoteBlockOrBuilder() {
     if (blockCase_ == 5) {
-       return (org.mojolang.mojo.document.BlockQuote) block_;
+       return (org.mojolang.mojo.document.QuoteBlock) block_;
     }
-    return org.mojolang.mojo.document.BlockQuote.getDefaultInstance();
+    return org.mojolang.mojo.document.QuoteBlock.getDefaultInstance();
   }
 
   public static final int ORDERED_LIST_FIELD_NUMBER = 6;
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(4, (org.mojolang.mojo.document.CodeBlock) block_);
     }
     if (blockCase_ == 5) {
-      output.writeMessage(5, (org.mojolang.mojo.document.BlockQuote) block_);
+      output.writeMessage(5, (org.mojolang.mojo.document.QuoteBlock) block_);
     }
     if (blockCase_ == 6) {
       output.writeMessage(6, (org.mojolang.mojo.document.OrderedList) block_);
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     }
     if (blockCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (org.mojolang.mojo.document.BlockQuote) block_);
+        .computeMessageSize(5, (org.mojolang.mojo.document.QuoteBlock) block_);
     }
     if (blockCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
@@ -768,8 +768,8 @@ private static final long serialVersionUID = 0L;
             .equals(other.getCodeBlock())) return false;
         break;
       case 5:
-        if (!getBlockQuote()
-            .equals(other.getBlockQuote())) return false;
+        if (!getQuoteBlock()
+            .equals(other.getQuoteBlock())) return false;
         break;
       case 6:
         if (!getOrderedList()
@@ -827,8 +827,8 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getCodeBlock().hashCode();
         break;
       case 5:
-        hash = (37 * hash) + BLOCK_QUOTE_FIELD_NUMBER;
-        hash = (53 * hash) + getBlockQuote().hashCode();
+        hash = (37 * hash) + QUOTE_BLOCK_FIELD_NUMBER;
+        hash = (53 * hash) + getQuoteBlock().hashCode();
         break;
       case 6:
         hash = (37 * hash) + ORDERED_LIST_FIELD_NUMBER;
@@ -1047,10 +1047,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (blockCase_ == 5) {
-        if (blockQuoteBuilder_ == null) {
+        if (quoteBlockBuilder_ == null) {
           result.block_ = block_;
         } else {
-          result.block_ = blockQuoteBuilder_.build();
+          result.block_ = quoteBlockBuilder_.build();
         }
       }
       if (blockCase_ == 6) {
@@ -1161,8 +1161,8 @@ private static final long serialVersionUID = 0L;
           mergeCodeBlock(other.getCodeBlock());
           break;
         }
-        case BLOCK_QUOTE: {
-          mergeBlockQuote(other.getBlockQuote());
+        case QUOTE_BLOCK: {
+          mergeQuoteBlock(other.getQuoteBlock());
           break;
         }
         case ORDERED_LIST: {
@@ -1802,71 +1802,71 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.document.BlockQuote, org.mojolang.mojo.document.BlockQuote.Builder, org.mojolang.mojo.document.BlockQuoteOrBuilder> blockQuoteBuilder_;
+        org.mojolang.mojo.document.QuoteBlock, org.mojolang.mojo.document.QuoteBlock.Builder, org.mojolang.mojo.document.QuoteBlockOrBuilder> quoteBlockBuilder_;
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
-     * @return Whether the blockQuote field is set.
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
+     * @return Whether the quoteBlock field is set.
      */
     @java.lang.Override
-    public boolean hasBlockQuote() {
+    public boolean hasQuoteBlock() {
       return blockCase_ == 5;
     }
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
-     * @return The blockQuote.
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
+     * @return The quoteBlock.
      */
     @java.lang.Override
-    public org.mojolang.mojo.document.BlockQuote getBlockQuote() {
-      if (blockQuoteBuilder_ == null) {
+    public org.mojolang.mojo.document.QuoteBlock getQuoteBlock() {
+      if (quoteBlockBuilder_ == null) {
         if (blockCase_ == 5) {
-          return (org.mojolang.mojo.document.BlockQuote) block_;
+          return (org.mojolang.mojo.document.QuoteBlock) block_;
         }
-        return org.mojolang.mojo.document.BlockQuote.getDefaultInstance();
+        return org.mojolang.mojo.document.QuoteBlock.getDefaultInstance();
       } else {
         if (blockCase_ == 5) {
-          return blockQuoteBuilder_.getMessage();
+          return quoteBlockBuilder_.getMessage();
         }
-        return org.mojolang.mojo.document.BlockQuote.getDefaultInstance();
+        return org.mojolang.mojo.document.QuoteBlock.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
      */
-    public Builder setBlockQuote(org.mojolang.mojo.document.BlockQuote value) {
-      if (blockQuoteBuilder_ == null) {
+    public Builder setQuoteBlock(org.mojolang.mojo.document.QuoteBlock value) {
+      if (quoteBlockBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         block_ = value;
         onChanged();
       } else {
-        blockQuoteBuilder_.setMessage(value);
+        quoteBlockBuilder_.setMessage(value);
       }
       blockCase_ = 5;
       return this;
     }
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
      */
-    public Builder setBlockQuote(
-        org.mojolang.mojo.document.BlockQuote.Builder builderForValue) {
-      if (blockQuoteBuilder_ == null) {
+    public Builder setQuoteBlock(
+        org.mojolang.mojo.document.QuoteBlock.Builder builderForValue) {
+      if (quoteBlockBuilder_ == null) {
         block_ = builderForValue.build();
         onChanged();
       } else {
-        blockQuoteBuilder_.setMessage(builderForValue.build());
+        quoteBlockBuilder_.setMessage(builderForValue.build());
       }
       blockCase_ = 5;
       return this;
     }
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
      */
-    public Builder mergeBlockQuote(org.mojolang.mojo.document.BlockQuote value) {
-      if (blockQuoteBuilder_ == null) {
+    public Builder mergeQuoteBlock(org.mojolang.mojo.document.QuoteBlock value) {
+      if (quoteBlockBuilder_ == null) {
         if (blockCase_ == 5 &&
-            block_ != org.mojolang.mojo.document.BlockQuote.getDefaultInstance()) {
-          block_ = org.mojolang.mojo.document.BlockQuote.newBuilder((org.mojolang.mojo.document.BlockQuote) block_)
+            block_ != org.mojolang.mojo.document.QuoteBlock.getDefaultInstance()) {
+          block_ = org.mojolang.mojo.document.QuoteBlock.newBuilder((org.mojolang.mojo.document.QuoteBlock) block_)
               .mergeFrom(value).buildPartial();
         } else {
           block_ = value;
@@ -1874,18 +1874,18 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (blockCase_ == 5) {
-          blockQuoteBuilder_.mergeFrom(value);
+          quoteBlockBuilder_.mergeFrom(value);
         }
-        blockQuoteBuilder_.setMessage(value);
+        quoteBlockBuilder_.setMessage(value);
       }
       blockCase_ = 5;
       return this;
     }
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
      */
-    public Builder clearBlockQuote() {
-      if (blockQuoteBuilder_ == null) {
+    public Builder clearQuoteBlock() {
+      if (quoteBlockBuilder_ == null) {
         if (blockCase_ == 5) {
           blockCase_ = 0;
           block_ = null;
@@ -1896,50 +1896,50 @@ private static final long serialVersionUID = 0L;
           blockCase_ = 0;
           block_ = null;
         }
-        blockQuoteBuilder_.clear();
+        quoteBlockBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
      */
-    public org.mojolang.mojo.document.BlockQuote.Builder getBlockQuoteBuilder() {
-      return getBlockQuoteFieldBuilder().getBuilder();
+    public org.mojolang.mojo.document.QuoteBlock.Builder getQuoteBlockBuilder() {
+      return getQuoteBlockFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.document.BlockQuoteOrBuilder getBlockQuoteOrBuilder() {
-      if ((blockCase_ == 5) && (blockQuoteBuilder_ != null)) {
-        return blockQuoteBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.document.QuoteBlockOrBuilder getQuoteBlockOrBuilder() {
+      if ((blockCase_ == 5) && (quoteBlockBuilder_ != null)) {
+        return quoteBlockBuilder_.getMessageOrBuilder();
       } else {
         if (blockCase_ == 5) {
-          return (org.mojolang.mojo.document.BlockQuote) block_;
+          return (org.mojolang.mojo.document.QuoteBlock) block_;
         }
-        return org.mojolang.mojo.document.BlockQuote.getDefaultInstance();
+        return org.mojolang.mojo.document.QuoteBlock.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.document.BlockQuote block_quote = 5;</code>
+     * <code>.mojo.document.QuoteBlock quote_block = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.document.BlockQuote, org.mojolang.mojo.document.BlockQuote.Builder, org.mojolang.mojo.document.BlockQuoteOrBuilder> 
-        getBlockQuoteFieldBuilder() {
-      if (blockQuoteBuilder_ == null) {
+        org.mojolang.mojo.document.QuoteBlock, org.mojolang.mojo.document.QuoteBlock.Builder, org.mojolang.mojo.document.QuoteBlockOrBuilder> 
+        getQuoteBlockFieldBuilder() {
+      if (quoteBlockBuilder_ == null) {
         if (!(blockCase_ == 5)) {
-          block_ = org.mojolang.mojo.document.BlockQuote.getDefaultInstance();
+          block_ = org.mojolang.mojo.document.QuoteBlock.getDefaultInstance();
         }
-        blockQuoteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojolang.mojo.document.BlockQuote, org.mojolang.mojo.document.BlockQuote.Builder, org.mojolang.mojo.document.BlockQuoteOrBuilder>(
-                (org.mojolang.mojo.document.BlockQuote) block_,
+        quoteBlockBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojolang.mojo.document.QuoteBlock, org.mojolang.mojo.document.QuoteBlock.Builder, org.mojolang.mojo.document.QuoteBlockOrBuilder>(
+                (org.mojolang.mojo.document.QuoteBlock) block_,
                 getParentForChildren(),
                 isClean());
         block_ = null;
       }
       blockCase_ = 5;
       onChanged();;
-      return blockQuoteBuilder_;
+      return quoteBlockBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

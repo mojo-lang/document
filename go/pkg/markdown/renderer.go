@@ -14,7 +14,7 @@ type Renderer struct {
 
 func (r *Renderer) RenderDocument(doc *document.Document, writer io.Writer) error {
 	out := &bytes.Buffer{}
-	r.blocks(doc.Blocks, out)
+	r.blocks(doc.Blocks, out, "\n")
 	_, err := writer.Write(out.Bytes())
 	return err
 }
@@ -27,13 +27,12 @@ func (r *Renderer) RenderBlock(block *document.Block, writer io.Writer) error {
 	return err
 }
 
-func (r *Renderer) blocks(blocks []*document.Block, out Writer) {
+func (r *Renderer) blocks(blocks []*document.Block, out Writer, lineBreak string) {
 	for i, block := range blocks {
-		r.block(block, out)
-
-		if i < len(blocks) - 1 {
-			out.WriteByte('\n')
+		if i > 0 {
+			out.WriteString(lineBreak)
 		}
+		r.block(block, out)
 	}
 }
 
@@ -49,12 +48,18 @@ func (r *Renderer) block(block *document.Block, out Writer) {
 		r.orderedList(block.GetOrderedList(), out)
 	case *document.Block_BulletList:
 		r.bulletList(block.GetBulletList(), out)
+	case *document.Block_DefinitionList:
+		r.definitionList(block.GetDefinitionList(), out)
 	case *document.Block_Table:
 		r.table(block.GetTable(), out)
 	case *document.Block_CodeBlock:
 		r.codeBlock(block.GetCodeBlock(), out)
-	case *document.Block_BlockQuote:
-		r.blockQuote(block.GetBlockQuote(), out)
+	case *document.Block_QuoteBlock:
+		r.quoteBlock(block.GetQuoteBlock(), out)
+	case *document.Block_LineBlock:
+		r.lineBlock(block.GetLineBlock(), out)
+	case *document.Block_Division:
+		r.division(block.GetDivision(), out)
 	}
 }
 
@@ -82,13 +87,24 @@ func (r *Renderer) paragraph(paragraph *document.Paragraph, out Writer) {
 }
 
 func (r *Renderer) orderedList(list *document.OrderedList, out Writer) {
+	for i, item := range list.Items {
+		if i > 0 {
+			out.WriteString("\n")
+		}
+
+		out.WriteString("1.")
+		r.blocks(item.Values, NewIndentWriter(out, 1), "\n")
+	}
 }
 
 func (r *Renderer) bulletList(list *document.BulletList, out Writer) {
 	for _, item := range list.Items {
 		out.WriteString("-")
-		r.blocks(item.Values, NewIndentWriter(out, 1))
+		r.blocks(item.Values, NewIndentWriter(out, 1), "\n")
 	}
+}
+
+func (r *Renderer) definitionList(list *document.DefinitionList, out Writer) {
 }
 
 func (r *Renderer) table(table *document.Table, out Writer) {
@@ -96,7 +112,7 @@ func (r *Renderer) table(table *document.Table, out Writer) {
 		out.WriteByte('|')
 		out.WriteByte(' ')
 
-		r.blocks(cell.Values, out)
+		r.blocks(cell.Values, out, "<br>")
 
 		//for i := r.stringWidth(cell); i < r.columnWidths[column]; i++ {
 		//	out.WriteByte(' ')
@@ -120,7 +136,7 @@ func (r *Renderer) table(table *document.Table, out Writer) {
 		for _, cell := range row.Values {
 			out.WriteByte('|')
 			out.WriteByte(' ')
-			r.blocks(cell.Values, out)
+			r.blocks(cell.Values, out, "<br>")
 			out.WriteByte(' ')
 		}
 		out.WriteString("|\n")
@@ -142,7 +158,7 @@ func (r *Renderer) codeBlock(block *document.CodeBlock, out Writer) {
 	out.WriteString("\n```\n")
 }
 
-func (r *Renderer) blockQuote(blockQuote *document.BlockQuote, out Writer) {
+func (r *Renderer) quoteBlock(blockQuote *document.QuoteBlock, out Writer) {
 	//lines := bytes.Split(text, []byte("\n"))
 	//for i, line := range lines {
 	//	if i == len(lines)-1 {
@@ -155,6 +171,23 @@ func (r *Renderer) blockQuote(blockQuote *document.BlockQuote, out Writer) {
 	//	}
 	//	out.WriteString("\n")
 	//}
+}
+
+func (r *Renderer) lineBlock(lineBlock *document.LineBlock, out Writer) {
+	for i, line := range lineBlock.Lines {
+		if i > 0 {
+			out.WriteString("\n")
+		}
+		r.inlines(line.Values, out)
+	}
+}
+
+func (r *Renderer) division(division *document.Division, out Writer) {
+	if division.Attribute != nil {
+		if division.Attribute.Identifier == "toc" && len(division.Content) > 0 {
+			r.block(division.Content[0], out)
+		}
+	}
 }
 
 func (r *Renderer) inlines(inlines []*document.Inline, out Writer) {
@@ -185,7 +218,7 @@ func (r *Renderer) link(link *document.Link, out Writer) {
 		out.WriteString("[")
 		r.inlines(link.Description, out)
 		out.WriteString("](")
-		out.WriteString(link.Target.Url.Encode())
+		out.WriteString(link.Target.Url.Format())
 
 		if len(link.Target.Title) != 0 {
 			out.WriteString(` "`)
@@ -200,7 +233,7 @@ func (r *Renderer) image(image *document.Image, out Writer) {
 	out.WriteString("![")
 	r.inlines(image.Description, out)
 	out.WriteString("](")
-	out.WriteString(image.Target.Url.Encode())
+	out.WriteString(image.Target.Url.Format())
 
 	if len(image.Target.Title) != 0 {
 		out.WriteString(` "`)

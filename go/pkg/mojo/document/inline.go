@@ -1,5 +1,9 @@
 package document
 
+const (
+	StrongTypeName = "mojo.document.Strong"
+)
+
 func NewTextInlineFrom(value string) *Inline {
 	return &Inline{Inline: &Inline_Text{Text: &Text{Value: value}}}
 }
@@ -26,4 +30,15 @@ func NewEmphasizedInline(emphasized *Emphasized) *Inline {
 
 func NewStrongInline(strong *Strong) *Inline {
 	return &Inline{Inline: &Inline_Strong{Strong: strong}}
+}
+
+func (m *Inline) NewInline() *Inline {
+	return &Inline{}
+}
+
+func (m *Inline) SetText(text string) *Inline {
+	if m != nil {
+		m.Inline = &Inline_Text{NewText(text)}
+	}
+	return m
 }

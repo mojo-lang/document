@@ -1,1 +1,1 @@
-{"title":"mojo.document.Cite","type":"object","properties":{"citations":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Citation"}},"inlines":{"type":"array","items":{}}}}
+{"title":"mojo.document.Cite","description":"","type":"object","properties":{"citations":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Citation"}},"inlines":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Inline"}}}}

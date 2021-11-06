@@ -4,7 +4,7 @@
 package org.mojolang.mojo.document;
 
 public interface BlockQuoteOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:mojo.document.BlockQuote)
+    // @@protoc_insertion_point(interface_extends:mojo.document.QuoteBlock)
     com.google.protobuf.MessageOrBuilder {
 
   /**

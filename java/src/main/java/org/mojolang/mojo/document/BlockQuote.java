@@ -4,18 +4,18 @@
 package org.mojolang.mojo.document;
 
 /**
- * Protobuf type {@code mojo.document.BlockQuote}
+ * Protobuf type {@code mojo.document.QuoteBlock}
  */
-public final class BlockQuote extends
+public final class QuoteBlock extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:mojo.document.BlockQuote)
+    // @@protoc_insertion_point(message_implements:mojo.document.QuoteBlock)
     BlockQuoteOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use BlockQuote.newBuilder() to construct.
-  private BlockQuote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use QuoteBlock.newBuilder() to construct.
+  private QuoteBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private BlockQuote() {
+  private QuoteBlock() {
     blocks_ = java.util.Collections.emptyList();
   }
 
@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new BlockQuote();
+    return new QuoteBlock();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private BlockQuote(
+  private QuoteBlock(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -91,7 +91,7 @@ private static final long serialVersionUID = 0L;
       internalGetFieldAccessorTable() {
     return org.mojolang.mojo.document.DocumentProto.internal_static_mojo_document_BlockQuote_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.mojolang.mojo.document.BlockQuote.class, org.mojolang.mojo.document.BlockQuote.Builder.class);
+            org.mojolang.mojo.document.QuoteBlock.class, org.mojolang.mojo.document.QuoteBlock.Builder.class);
   }
 
   public static final int BLOCKS_FIELD_NUMBER = 2;
@@ -174,10 +174,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.mojolang.mojo.document.BlockQuote)) {
+    if (!(obj instanceof org.mojolang.mojo.document.QuoteBlock)) {
       return super.equals(obj);
     }
-    org.mojolang.mojo.document.BlockQuote other = (org.mojolang.mojo.document.BlockQuote) obj;
+    org.mojolang.mojo.document.QuoteBlock other = (org.mojolang.mojo.document.QuoteBlock) obj;
 
     if (!getBlocksList()
         .equals(other.getBlocksList())) return false;
@@ -201,69 +201,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(byte[] data)
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(java.io.InputStream input)
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseDelimitedFrom(java.io.InputStream input)
+  public static org.mojolang.mojo.document.QuoteBlock parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseDelimitedFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.mojolang.mojo.document.BlockQuote parseFrom(
+  public static org.mojolang.mojo.document.QuoteBlock parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.mojolang.mojo.document.BlockQuote prototype) {
+  public static Builder newBuilder(org.mojolang.mojo.document.QuoteBlock prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -292,11 +292,11 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code mojo.document.BlockQuote}
+   * Protobuf type {@code mojo.document.QuoteBlock}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:mojo.document.BlockQuote)
+      // @@protoc_insertion_point(builder_implements:mojo.document.QuoteBlock)
       org.mojolang.mojo.document.BlockQuoteOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -308,10 +308,10 @@ private static final long serialVersionUID = 0L;
         internalGetFieldAccessorTable() {
       return org.mojolang.mojo.document.DocumentProto.internal_static_mojo_document_BlockQuote_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.mojolang.mojo.document.BlockQuote.class, org.mojolang.mojo.document.BlockQuote.Builder.class);
+              org.mojolang.mojo.document.QuoteBlock.class, org.mojolang.mojo.document.QuoteBlock.Builder.class);
     }
 
-    // Construct using org.mojolang.mojo.document.BlockQuote.newBuilder()
+    // Construct using org.mojolang.mojo.document.QuoteBlock.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -346,13 +346,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.mojolang.mojo.document.BlockQuote getDefaultInstanceForType() {
-      return org.mojolang.mojo.document.BlockQuote.getDefaultInstance();
+    public org.mojolang.mojo.document.QuoteBlock getDefaultInstanceForType() {
+      return org.mojolang.mojo.document.QuoteBlock.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.mojolang.mojo.document.BlockQuote build() {
-      org.mojolang.mojo.document.BlockQuote result = buildPartial();
+    public org.mojolang.mojo.document.QuoteBlock build() {
+      org.mojolang.mojo.document.QuoteBlock result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -360,8 +360,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.mojolang.mojo.document.BlockQuote buildPartial() {
-      org.mojolang.mojo.document.BlockQuote result = new org.mojolang.mojo.document.BlockQuote(this);
+    public org.mojolang.mojo.document.QuoteBlock buildPartial() {
+      org.mojolang.mojo.document.QuoteBlock result = new org.mojolang.mojo.document.QuoteBlock(this);
       int from_bitField0_ = bitField0_;
       if (blocksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -410,16 +410,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.mojolang.mojo.document.BlockQuote) {
-        return mergeFrom((org.mojolang.mojo.document.BlockQuote)other);
+      if (other instanceof org.mojolang.mojo.document.QuoteBlock) {
+        return mergeFrom((org.mojolang.mojo.document.QuoteBlock)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.mojolang.mojo.document.BlockQuote other) {
-      if (other == org.mojolang.mojo.document.BlockQuote.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.mojolang.mojo.document.QuoteBlock other) {
+      if (other == org.mojolang.mojo.document.QuoteBlock.getDefaultInstance()) return this;
       if (blocksBuilder_ == null) {
         if (!other.blocks_.isEmpty()) {
           if (blocks_.isEmpty()) {
@@ -461,11 +461,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.document.BlockQuote parsedMessage = null;
+      org.mojolang.mojo.document.QuoteBlock parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.document.BlockQuote) e.getUnfinishedMessage();
+        parsedMessage = (org.mojolang.mojo.document.QuoteBlock) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -728,41 +728,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:mojo.document.BlockQuote)
+    // @@protoc_insertion_point(builder_scope:mojo.document.QuoteBlock)
   }
 
-  // @@protoc_insertion_point(class_scope:mojo.document.BlockQuote)
-  private static final org.mojolang.mojo.document.BlockQuote DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:mojo.document.QuoteBlock)
+  private static final org.mojolang.mojo.document.QuoteBlock DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.mojolang.mojo.document.BlockQuote();
+    DEFAULT_INSTANCE = new org.mojolang.mojo.document.QuoteBlock();
   }
 
-  public static org.mojolang.mojo.document.BlockQuote getDefaultInstance() {
+  public static org.mojolang.mojo.document.QuoteBlock getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BlockQuote>
-      PARSER = new com.google.protobuf.AbstractParser<BlockQuote>() {
+  private static final com.google.protobuf.Parser<QuoteBlock>
+      PARSER = new com.google.protobuf.AbstractParser<QuoteBlock>() {
     @java.lang.Override
-    public BlockQuote parsePartialFrom(
+    public QuoteBlock parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new BlockQuote(input, extensionRegistry);
+      return new QuoteBlock(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<BlockQuote> parser() {
+  public static com.google.protobuf.Parser<QuoteBlock> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<BlockQuote> getParserForType() {
+  public com.google.protobuf.Parser<QuoteBlock> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.mojolang.mojo.document.BlockQuote getDefaultInstanceForType() {
+  public org.mojolang.mojo.document.QuoteBlock getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

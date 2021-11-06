@@ -1,1 +1,1 @@
-{"title":"mojo.document.OrderedList","type":"object","properties":{"attribute":{"$ref":"#/components/schemas/mojo.document.ListAttribute"},"items":{"type":"array","items":{"type":"array","items":{}}}}}
+{"title":"mojo.document.OrderedList","description":"","type":"object","properties":{"attribute":{"$ref":"#/components/schemas/mojo.document.ListAttribute"},"items":{"type":"array","items":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Block"}}}}}

@@ -1,0 +1,1 @@
+{"title":"mojo.document.QuoteBlock","description":"","type":"object","properties":{"blocks":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Block"}}}}

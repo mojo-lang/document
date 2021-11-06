@@ -1,1 +1,1 @@
-{"title":"mojo.document.Target","type":"object","properties":{"title":{"type":"string"},"url":{"type":"string","format":"url"}}}
+{"title":"mojo.document.Target","description":"","type":"object","properties":{"url":{"type":"string","format":"url"},"title":{"type":"string"}}}

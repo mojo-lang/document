@@ -1,0 +1,1 @@
+{"type":"array","items":{"oneOf":[{"$ref":"#/components/schemas/mojo.document.MetaValueObject"},{"$ref":"#/components/schemas/mojo.document.MetaValues"},{"type":"boolean"},{"type":"string"},{"type":"string","format":"DateTime"},{"$ref":"#/components/schemas/mojo.document.Inlines"},{"$ref":"#/components/schemas/mojo.document.Blocks"}]}}

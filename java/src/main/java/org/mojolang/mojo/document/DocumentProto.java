@@ -50,10 +50,10 @@ public final class DocumentProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_mojo_document_CodeBlock_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mojo_document_BlockQuote_descriptor;
+    internal_static_mojo_document_QuoteBlock_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mojo_document_BlockQuote_fieldAccessorTable;
+      internal_static_mojo_document_QuoteBlock_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mojo_document_ListAttribute_descriptor;
   static final 
@@ -273,8 +273,8 @@ public final class DocumentProto {
       "\0132\030.mojo.document.ParagraphH\000\022.\n\nline_bl" +
       "ock\030\003 \001(\0132\030.mojo.document.LineBlockH\000\022.\n" +
       "\ncode_block\030\004 \001(\0132\030.mojo.document.CodeBl" +
-      "ockH\000\0220\n\013block_quote\030\005 \001(\0132\031.mojo.docume" +
-      "nt.BlockQuoteH\000\0222\n\014ordered_list\030\006 \001(\0132\032." +
+      "ockH\000\0220\n\013quote_block\030\005 \001(\0132\031.mojo.docume" +
+      "nt.QuoteBlockH\000\0222\n\014ordered_list\030\006 \001(\0132\032." +
       "mojo.document.OrderedListH\000\0220\n\013bullet_li" +
       "st\030\007 \001(\0132\031.mojo.document.BulletListH\000\0228\n" +
       "\017definition_list\030\010 \001(\0132\035.mojo.document.D" +
@@ -289,7 +289,7 @@ public final class DocumentProto {
       "\030\002 \003(\0132\023.mojo.document.Line\"n\n\tCodeBlock" +
       "\022+\n\tattribute\030\001 \001(\0132\030.mojo.document.Attr" +
       "ibute\022\020\n\010language\030\002 \001(\t\022\"\n\005lines\030\003 \003(\0132\023" +
-      ".mojo.document.Line\"2\n\nBlockQuote\022$\n\006blo" +
+      ".mojo.document.Line\"2\n\nQuoteBlock\022$\n\006blo" +
       "cks\030\002 \003(\0132\024.mojo.document.Block\"\235\004\n\rList" +
       "Attribute\022\024\n\014begin_number\030\001 \001(\003\022>\n\014numbe" +
       "r_style\030\002 \001(\0162(.mojo.document.ListAttrib" +
@@ -425,7 +425,7 @@ public final class DocumentProto {
     internal_static_mojo_document_Block_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_document_Block_descriptor,
-        new java.lang.String[] { "Plain", "Paragraph", "LineBlock", "CodeBlock", "BlockQuote", "OrderedList", "BulletList", "DefinitionList", "Header", "Table", "Division", "Block", });
+        new java.lang.String[] { "Plain", "Paragraph", "LineBlock", "CodeBlock", "QuoteBlock", "OrderedList", "BulletList", "DefinitionList", "Header", "Table", "Division", "Block", });
     internal_static_mojo_document_Line_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_mojo_document_Line_fieldAccessorTable = new
@@ -456,11 +456,11 @@ public final class DocumentProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_document_CodeBlock_descriptor,
         new java.lang.String[] { "Attribute", "Language", "Lines", });
-    internal_static_mojo_document_BlockQuote_descriptor =
+    internal_static_mojo_document_QuoteBlock_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_mojo_document_BlockQuote_fieldAccessorTable = new
+    internal_static_mojo_document_QuoteBlock_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mojo_document_BlockQuote_descriptor,
+        internal_static_mojo_document_QuoteBlock_descriptor,
         new java.lang.String[] { "Blocks", });
     internal_static_mojo_document_ListAttribute_descriptor =
       getDescriptor().getMessageTypes().get(8);

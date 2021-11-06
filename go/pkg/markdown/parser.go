@@ -16,6 +16,18 @@ type Parser struct {
 	Node     ast.Node
 }
 
+func ParseMarkdown(src []byte) (*document.Document, error) {
+	return NewParser().ParseBytes(src)
+}
+
+func ParseBlocks(src []byte) ([]*document.Block, error) {
+	doc, err := NewParser().ParseBytes(src)
+	if err != nil {
+		return nil, err
+	}
+	return doc.Blocks, nil
+}
+
 func NewParser() *Parser {
 	return &Parser{
 		MdEngine: goldmark.New(
