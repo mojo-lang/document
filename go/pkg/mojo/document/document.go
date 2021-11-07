@@ -12,9 +12,9 @@ func (m *Document) AppendBlocks(blocks ...*Block) {
 	}
 }
 
-func (m *Document) AppendPain(plain *Plain) {
+func (m *Document) AppendPain(inlines... *Inline) {
 	if m != nil {
-		m.Blocks = append(m.Blocks, NewPainBlock(plain))
+		m.Blocks = append(m.Blocks, NewPainBlock(inlines...))
 	}
 }
 
@@ -24,16 +24,23 @@ func (m *Document) AppendHeader(header *Header) {
 	}
 }
 
-func (m *Document) AppendHeaderFrom(level int64, header string) {
+func (m *Document) AppendHeaderFrom(level int64, inlines ...*Inline) {
 	m.AppendHeader(&Header{
 		Level: level,
-		Text:  []*Inline{NewTextInlineFrom(header)},
+		Text:  inlines,
 	})
 }
 
-func (m *Document) AppendBlockQuote(blockQuote *QuoteBlock) {
+func (m *Document) AppendHeaderFromText(level int64, header string) {
+	m.AppendHeader(&Header{
+		Level: level,
+		Text:  []*Inline{NewTextInline(header)},
+	})
+}
+
+func (m *Document) AppendBlockQuote(blocks... *Block) {
 	if m != nil {
-		m.Blocks = append(m.Blocks, NewQuoteBlockBlock(blockQuote))
+		m.Blocks = append(m.Blocks, NewQuoteBlockBlock(blocks...))
 	}
 }
 
@@ -41,6 +48,10 @@ func (m *Document) AppendCodeBlock(codeBlock *CodeBlock) {
 	if m != nil {
 		m.Blocks = append(m.Blocks, NewCodeBlockBlock(codeBlock))
 	}
+}
+
+func (m *Document) AppendCodeBlockFrom(lang string, lines ...string) {
+	m.AppendCodeBlock(NewCodeBlock(lang, lines...))
 }
 
 func (m *Document) AppendOrderedList(list *OrderedList) {
@@ -55,15 +66,15 @@ func (m *Document) AppendBulletList(list *BulletList) {
 	}
 }
 
-func (m *Document) AppendParagraph(paragraph *Paragraph) {
+func (m *Document) AppendParagraph(inlines... *Inline) {
 	if m != nil {
-		m.Blocks = append(m.Blocks, NewParagraphBlock(paragraph))
+		m.Blocks = append(m.Blocks, NewParagraphBlock(inlines...))
 	}
 }
 
-func (m *Document) AppendLineBlock(lineBlock *LineBlock) {
+func (m *Document) AppendLineBlock(lines... *Line) {
 	if m != nil {
-		m.Blocks = append(m.Blocks, NewLineBlockBlock(lineBlock))
+		m.Blocks = append(m.Blocks, NewLineBlockBlock(lines...))
 	}
 }
 

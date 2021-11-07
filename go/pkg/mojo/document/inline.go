@@ -1,35 +1,56 @@
 package document
 
+import "github.com/mojo-lang/core/go/pkg/mojo/core"
+
 const (
 	StrongTypeName = "mojo.document.Strong"
 )
 
-func NewTextInlineFrom(value string) *Inline {
-	return &Inline{Inline: &Inline_Text{Text: &Text{Value: value}}}
-}
-
-func NewTextInline(text *Text) *Inline {
-	return &Inline{Inline: &Inline_Text{Text: text}}
+func NewTextInline(text string) *Inline {
+	return &Inline{Inline: &Inline_Text{Text: &Text{Value: text}}}
 }
 
 func NewCodeInline(code *Code) *Inline {
 	return &Inline{Inline: &Inline_Code{Code: code}}
 }
 
+func NewCodeInlineFrom(code string) *Inline {
+	return NewCodeInline(&Code{
+		Attribute: NewAttribute(),
+		Content:   code,
+	})
+}
+
 func NewLinkInline(link *Link) *Inline {
 	return &Inline{Inline: &Inline_Link{Link: link}}
+}
+
+func NewLinkInlineFrom(target *core.Url, description ...*Inline) *Inline {
+	return NewLinkInline(&Link{
+		Attribute: NewAttribute(),
+		Description: description,
+		Target:      &Target{Url: target},
+	})
 }
 
 func NewImageInline(image *Image) *Inline {
 	return &Inline{Inline: &Inline_Image{Image: image}}
 }
 
-func NewEmphasizedInline(emphasized *Emphasized) *Inline {
-	return &Inline{Inline: &Inline_Emphasized{Emphasized: emphasized}}
+func NewImageInlineFrom(target *core.Url, description ...*Inline) *Inline {
+	return NewImageInline(&Image{
+		Attribute: NewAttribute(),
+		Description: description,
+		Target:      &Target{Url: target},
+	})
 }
 
-func NewStrongInline(strong *Strong) *Inline {
-	return &Inline{Inline: &Inline_Strong{Strong: strong}}
+func NewEmphasizedInline(values ...*Inline) *Inline {
+	return &Inline{Inline: &Inline_Emphasized{Emphasized: &Emphasized{Values: values}}}
+}
+
+func NewStrongInline(values ...*Inline) *Inline {
+	return &Inline{Inline: &Inline_Strong{Strong: &Strong{Values: values}}}
 }
 
 func (m *Inline) NewInline() *Inline {

@@ -1,19 +1,15 @@
 package document
 
-func NewPainBlockFrom(inlines ...*Inline) *Block {
+func NewPainBlock(inlines ...*Inline) *Block {
 	return &Block{Block: &Block_Plain{Plain: &Plain{Inlines: inlines}}}
-}
-
-func NewPainBlock(plain *Plain) *Block {
-	return &Block{Block: &Block_Plain{Plain: plain}}
 }
 
 func NewHeaderBlock(header *Header) *Block {
 	return &Block{Block: &Block_Header{Header: header}}
 }
 
-func NewQuoteBlockBlock(quote *QuoteBlock) *Block {
-	return &Block{Block: &Block_QuoteBlock{QuoteBlock: quote}}
+func NewQuoteBlockBlock(quotes ...*Block) *Block {
+	return &Block{Block: &Block_QuoteBlock{QuoteBlock: NewQuoteBlock(quotes...)}}
 }
 
 func NewCodeBlockBlock(block *CodeBlock) *Block {
@@ -28,12 +24,12 @@ func NewBulletListBlock(block *BulletList) *Block {
 	return &Block{Block: &Block_BulletList{BulletList: block}}
 }
 
-func NewParagraphBlock(paragraph *Paragraph) *Block {
-	return &Block{Block: &Block_Paragraph{Paragraph: paragraph}}
+func NewParagraphBlock(inlines ...*Inline) *Block {
+	return &Block{Block: &Block_Paragraph{Paragraph: &Paragraph{Inlines: inlines}}}
 }
 
-func NewLineBlockBlock(block *LineBlock) *Block {
-	return &Block{Block: &Block_LineBlock{LineBlock: block}}
+func NewLineBlockBlock(lines ...*Line) *Block {
+	return &Block{Block: &Block_LineBlock{LineBlock: &LineBlock{Lines: lines}}}
 }
 
 func NewDivisionBlock(division *Division) *Block {
@@ -45,5 +41,5 @@ func NewTableBlock(table *Table) *Block {
 }
 
 func NewTextPlainBlock(text string) *Block {
-	return NewPainBlockFrom(NewTextInlineFrom(text))
+	return NewPainBlock(NewTextInline(text))
 }

@@ -494,7 +494,7 @@ func (a *AstParser) parseText(ctx *AstContext, node ast.Node, entering bool) (as
 	if entering {
 		isLineBreak := func() bool { return n.SoftLineBreak() || n.HardLineBreak() }
 		content := string(n.Text(ctx.Source))
-		inline := document.NewTextInlineFrom(content)
+		inline := document.NewTextInline(content)
 		if v := ctx.Stack.Current(); v != nil {
 			switch value := v.(type) {
 			case *document.Header:
@@ -537,7 +537,7 @@ func (a *AstParser) parseString(ctx *AstContext, node ast.Node, entering bool) (
 	if entering {
 		_ = n
 		content := string(n.Text(ctx.Source))
-		inline := document.NewTextInlineFrom(content)
+		inline := document.NewTextInline(content)
 		if v := ctx.Stack.Current(); v != nil {
 			switch value := v.(type) {
 			case *document.Header:
@@ -575,7 +575,7 @@ func getLines(ctx *AstContext, lines *text.Segments) []*document.Line {
 		segment := lines.At(i)
 		content := string(segment.Value(ctx.Source))
 		line := &document.Line{
-			Values: []*document.Inline{document.NewTextInlineFrom(content)},
+			Values: []*document.Inline{document.NewTextInline(content)},
 		}
 		ls = append(ls, line)
 	}
