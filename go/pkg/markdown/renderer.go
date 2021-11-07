@@ -9,6 +9,35 @@ import (
 	"strings"
 )
 
+func FormatDocument(doc *document.Document) (string, error) {
+	out := &bytes.Buffer{}
+	r := &Renderer{}
+	r.blocks(doc.Blocks, out, "\n")
+	return out.String(), nil
+}
+
+func FormatBlock(block *document.Block) (string, error) {
+	return FormatBlocks(block)
+}
+
+func FormatBlocks(blocks... *document.Block) (string, error) {
+	out := &bytes.Buffer{}
+	r := &Renderer{}
+	r.blocks(blocks, out, "\n")
+	return out.String(), nil
+}
+
+func FormatInlines(inlines... *document.Inline) (string, error) {
+	out := &bytes.Buffer{}
+	r := &Renderer{}
+	r.inlines(inlines, out)
+	return out.String(), nil
+}
+
+func FormatInline(inline *document.Inline) (string, error) {
+	return FormatInlines(inline)
+}
+
 type Renderer struct {
 }
 

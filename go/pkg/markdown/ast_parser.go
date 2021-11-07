@@ -39,7 +39,7 @@ func (a *AstParser) parse(ctx *AstContext, n ast.Node, entering bool) (ast.WalkS
 	case ast.KindHeading:
 		return a.parseHeading(ctx, n, entering)
 	case ast.KindBlockquote:
-		return a.parseBlockquote(ctx, n, entering)
+		return a.parseQuoteBlock(ctx, n, entering)
 	case ast.KindCodeBlock:
 		return a.parseCodeBlock(ctx, n, entering)
 	case ast.KindFencedCodeBlock:
@@ -117,11 +117,10 @@ func (a *AstParser) parseHeading(ctx *AstContext, node ast.Node, entering bool) 
 	return ast.WalkContinue, nil
 }
 
-func (a *AstParser) parseBlockquote(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
+func (a *AstParser) parseQuoteBlock(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
 	_ = node.(*ast.Blockquote)
 	if entering {
-		blockQuote := &document.QuoteBlock{}
-		block := document.NewQuoteBlockBlock(blockQuote)
+		block := document.NewQuoteBlockBlock()
 		switch v := ctx.Stack.Current().(type) {
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)
@@ -131,7 +130,7 @@ func (a *AstParser) parseBlockquote(ctx *AstContext, node ast.Node, entering boo
 			v.Values = append(v.Values, block)
 		}
 
-		ctx.Stack.Push(blockQuote)
+		ctx.Stack.Push(block.GetQuoteBlock())
 	} else {
 		ctx.Stack.Popup()
 	}
@@ -261,8 +260,7 @@ func (a *AstParser) parseListItem(ctx *AstContext, node ast.Node, entering bool)
 func (a *AstParser) parseParagraph(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
 	_ = node.(*ast.Paragraph)
 	if entering {
-		paragraph := &document.Paragraph{}
-		block := document.NewParagraphBlock(paragraph)
+		block := document.NewParagraphBlock()
 		switch v := ctx.Stack.Current().(type) {
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)
@@ -272,7 +270,7 @@ func (a *AstParser) parseParagraph(ctx *AstContext, node ast.Node, entering bool
 			v.Values = append(v.Values, block)
 		}
 
-		ctx.Stack.Push(paragraph)
+		ctx.Stack.Push(block.GetParagraph())
 	} else {
 		ctx.Stack.Popup()
 	}
@@ -282,8 +280,7 @@ func (a *AstParser) parseParagraph(ctx *AstContext, node ast.Node, entering bool
 func (a *AstParser) parseTextBlock(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
 	_ = node.(*ast.TextBlock)
 	if entering {
-		lineBlock := &document.LineBlock{}
-		block := document.NewLineBlockBlock(lineBlock)
+		block := document.NewLineBlockBlock()
 		switch v := ctx.Stack.Current().(type) {
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)
@@ -293,7 +290,7 @@ func (a *AstParser) parseTextBlock(ctx *AstContext, node ast.Node, entering bool
 			v.Values = append(v.Values, block)
 		}
 
-		ctx.Stack.Push(lineBlock)
+		ctx.Stack.Push(block.GetLineBlock())
 	} else {
 		ctx.Stack.Popup()
 	}
@@ -405,7 +402,7 @@ func (a *AstParser) addInline(ctx *AstContext, inline *document.Inline) {
 	case *document.Paragraph:
 		value.Inlines = append(value.Inlines, inline)
 	case *document.Table_Cell:
-		value.Values = append(value.Values, document.NewPainBlockFrom(inline))
+		value.Values = append(value.Values, document.NewPainBlock(inline))
 	case *document.LineBlock:
 		if len(value.Lines) == 0 {
 			value.Lines = append(value.Lines, &document.Line{Values: []*document.Inline{inline}})
@@ -446,11 +443,11 @@ func (a *AstParser) parseEmphasis(ctx *AstContext, node ast.Node, entering bool)
 	if entering {
 		if n.Level <= 1 {
 			emphasized := &document.Emphasized{}
-			a.addInline(ctx, document.NewEmphasizedInline(emphasized))
+			a.addInline(ctx, document.NewEmphasizedInline())
 			ctx.Stack.Push(emphasized)
 		} else {
 			strong := &document.Strong{}
-			a.addInline(ctx, document.NewStrongInline(strong))
+			a.addInline(ctx, document.NewStrongInline())
 			ctx.Stack.Push(strong)
 		}
 	} else {
@@ -500,7 +497,7 @@ func (a *AstParser) parseText(ctx *AstContext, node ast.Node, entering bool) (as
 			case *document.Header:
 				value.Text = append(value.Text, inline)
 			case *document.Table_Cell:
-				value.Values = append(value.Values, document.NewPainBlockFrom(inline))
+				value.Values = append(value.Values, document.NewPainBlock(inline))
 			case *document.Paragraph:
 				value.Inlines = append(value.Inlines, inline)
 			case *document.LineBlock:
@@ -543,7 +540,7 @@ func (a *AstParser) parseString(ctx *AstContext, node ast.Node, entering bool) (
 			case *document.Header:
 				value.Text = append(value.Text, inline)
 			case *document.Table_Cell:
-				value.Values = append(value.Values, document.NewPainBlockFrom(inline))
+				value.Values = append(value.Values, document.NewPainBlock(inline))
 			case *document.Paragraph:
 				value.Inlines = append(value.Inlines, inline)
 			case *document.LineBlock:

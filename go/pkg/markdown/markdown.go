@@ -55,7 +55,7 @@ func (m *Markdown) RenderBlocks(writer io.Writer, blocks ...*document.Block) err
 }
 
 func (m *Markdown) RenderInlines(writer io.Writer, inlines ...*document.Inline) error {
-	return m.RenderBlocks(writer, document.NewPainBlockFrom(inlines...))
+	return m.RenderBlocks(writer, document.NewPainBlock(inlines...))
 }
 
 func (m *Markdown) RenderToString(doc *document.Document) (string, error) {
