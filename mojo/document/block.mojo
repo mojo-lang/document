@@ -73,10 +73,10 @@ type ListAttribute {
 
     @case_style("kebab")
     enum NumberDelimiter {
-        unspecified @1
-        period      @2
-        one_parent  @3
-        two_parents @4
+        unspecified @0
+        period      @1
+        one_parent  @2
+        two_parents @3
     }
 
     begin_number: Int @1
@@ -118,10 +118,10 @@ type Header {
 type Table {
     /// Alignment of a table column.
     enum Alignment {
-        unspecified @1
-        left   @2
-        right  @3
-        center @4
+        unspecified @0
+        left   @1
+        right  @2
+        center @3
     }
 
     /// Table cells are list of Blocks

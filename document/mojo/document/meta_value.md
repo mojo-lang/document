@@ -1,9 +1,9 @@
 | 类型 | 说明 |
 |---|---|
-|  |  |
-| `Array<0>` |  |
+| `Map<string, unspecified>` |  |
+| `Array<unspecified>` |  |
 | `boolean` |  |
 | `string` |  |
 | `string` |  |
-| `Array<0>` |  |
-| `Array<0>` |  |
+| `Array<unspecified>` |  |
+| `Array<unspecified>` |  |

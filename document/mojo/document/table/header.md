@@ -1,3 +1,3 @@
 | 字段 | 类型 | 说明 |
 |---|---|---|
-|  | `Array<Array<0>>` |
+|  | `Array<Array<unspecified>>` |
