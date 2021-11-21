@@ -180,6 +180,8 @@ github.com/mojo-lang/core/go v0.0.0-20211106085539-881e6872fa73 h1:BYyzaNtHrJMh7
 github.com/mojo-lang/core/go v0.0.0-20211106085539-881e6872fa73/go.mod h1:trkdXpXgsA0Mgt83SCwKJiIPnpy7eerysjaJ4gYyvWM=
 github.com/mojo-lang/core/go v0.0.0-20211117005645-5e3a0ee125e8 h1:xnJgywDgIIU0oSkoDOhj/LqJiAbhuUpdWVL6sIBBnIU=
 github.com/mojo-lang/core/go v0.0.0-20211117005645-5e3a0ee125e8/go.mod h1:SbUGVbcq9wVDkQrM2HKwI2mrp3xOsfs2tODfoIVukpE=
+github.com/mojo-lang/core/go v0.0.0-20211121055316-dc6cb21cb918 h1:66kArgQdu6RbAHzyHtDl9Ip1Z30uQ5+tp6tvQlvdAto=
+github.com/mojo-lang/core/go v0.0.0-20211121055316-dc6cb21cb918/go.mod h1:SbUGVbcq9wVDkQrM2HKwI2mrp3xOsfs2tODfoIVukpE=
 github.com/pascaldekloe/name v0.0.0-20180628100202-0fd16699aae1/go.mod h1:eD5JxqMiuNYyFNmyY9rkJ/slN8y59oEu4Ei7F8OoKWQ=
 github.com/phpdave11/gofpdf v1.4.2 h1:KPKiIbfwbvC/wOncwhrpRdXVj2CZTCFlw4wnoyjtHfQ=
 github.com/phpdave11/gofpdf v1.4.2/go.mod h1:zpO6xFn9yxo3YLyMvW8HcKWVdbNqgIfOOp2dXMnm1mY=
