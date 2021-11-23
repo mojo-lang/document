@@ -18,7 +18,7 @@ func (m *Attribute) GetStringProperty(key string) (string, error) {
 			return v.GetString(), nil
 		}
 	}
-	return "", &core.NotFoundError{}
+	return "", core.NewNotFoundError("get property %s", key)
 }
 
 func (m *Attribute) GetIntProperty(key string) (int64, error) {
@@ -27,7 +27,7 @@ func (m *Attribute) GetIntProperty(key string) (int64, error) {
 			return v.GetInt64(), nil
 		}
 	}
-	return 0, &core.NotFoundError{}
+	return 0, core.NewNotFoundError("get property %s", key)
 }
 
 func (m *Attribute) GetBoolProperty(key string) (bool, error) {
@@ -36,7 +36,7 @@ func (m *Attribute) GetBoolProperty(key string) (bool, error) {
 			return v.GetBool(), nil
 		}
 	}
-	return false, &core.NotFoundError{}
+	return false, core.NewNotFoundError("get property %s", key)
 }
 
 func (m *Attribute) SetStringProperty(key string, value string) *Attribute {

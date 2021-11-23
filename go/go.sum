@@ -147,6 +147,7 @@ github.com/googleapis/gax-go/v2 v2.0.4/go.mod h1:0Wqv26UfaUD9n4G6kQubkQ+KchISgw+
 github.com/googleapis/gax-go/v2 v2.0.5/go.mod h1:DWXyrwAJ9X0FpwwEdw+IPEYBICEFu5mhpdKc/us6bOk=
 github.com/hashicorp/golang-lru v0.5.0/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
 github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
+github.com/iancoleman/strcase v0.2.0 h1:05I4QRnGpI0m37iZQRuskXh+w77mr6Z41lwQzuHLwW0=
 github.com/iancoleman/strcase v0.2.0/go.mod h1:iwCmte+B7n89clKwxIoIXy/HfoL7AsD47ZCWhYzw7ho=
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
@@ -182,6 +183,8 @@ github.com/mojo-lang/core/go v0.0.0-20211117005645-5e3a0ee125e8 h1:xnJgywDgIIU0o
 github.com/mojo-lang/core/go v0.0.0-20211117005645-5e3a0ee125e8/go.mod h1:SbUGVbcq9wVDkQrM2HKwI2mrp3xOsfs2tODfoIVukpE=
 github.com/mojo-lang/core/go v0.0.0-20211121055316-dc6cb21cb918 h1:66kArgQdu6RbAHzyHtDl9Ip1Z30uQ5+tp6tvQlvdAto=
 github.com/mojo-lang/core/go v0.0.0-20211121055316-dc6cb21cb918/go.mod h1:SbUGVbcq9wVDkQrM2HKwI2mrp3xOsfs2tODfoIVukpE=
+github.com/mojo-lang/core/go v0.0.0-20211123010202-03f9f6e22fd2 h1:XoRJjPEP6UetGefGKDdicYxxdX2MBSCNanCLZ6q6lM8=
+github.com/mojo-lang/core/go v0.0.0-20211123010202-03f9f6e22fd2/go.mod h1:wxoQGiRDiWUOr780A65MRvGpgRvOMswKGMzHFtgVGI8=
 github.com/pascaldekloe/name v0.0.0-20180628100202-0fd16699aae1/go.mod h1:eD5JxqMiuNYyFNmyY9rkJ/slN8y59oEu4Ei7F8OoKWQ=
 github.com/phpdave11/gofpdf v1.4.2 h1:KPKiIbfwbvC/wOncwhrpRdXVj2CZTCFlw4wnoyjtHfQ=
 github.com/phpdave11/gofpdf v1.4.2/go.mod h1:zpO6xFn9yxo3YLyMvW8HcKWVdbNqgIfOOp2dXMnm1mY=
