@@ -185,6 +185,8 @@ github.com/mojo-lang/core/go v0.0.0-20211121055316-dc6cb21cb918 h1:66kArgQdu6RbA
 github.com/mojo-lang/core/go v0.0.0-20211121055316-dc6cb21cb918/go.mod h1:SbUGVbcq9wVDkQrM2HKwI2mrp3xOsfs2tODfoIVukpE=
 github.com/mojo-lang/core/go v0.0.0-20211123010202-03f9f6e22fd2 h1:XoRJjPEP6UetGefGKDdicYxxdX2MBSCNanCLZ6q6lM8=
 github.com/mojo-lang/core/go v0.0.0-20211123010202-03f9f6e22fd2/go.mod h1:wxoQGiRDiWUOr780A65MRvGpgRvOMswKGMzHFtgVGI8=
+github.com/mojo-lang/core/go v0.0.0-20211126004149-a6ec5e569d52 h1:tFYsNpjKi9iyC0mYM0MGh6luMTu7CSQ4LEXsfZW3KBo=
+github.com/mojo-lang/core/go v0.0.0-20211126004149-a6ec5e569d52/go.mod h1:wxoQGiRDiWUOr780A65MRvGpgRvOMswKGMzHFtgVGI8=
 github.com/pascaldekloe/name v0.0.0-20180628100202-0fd16699aae1/go.mod h1:eD5JxqMiuNYyFNmyY9rkJ/slN8y59oEu4Ei7F8OoKWQ=
 github.com/phpdave11/gofpdf v1.4.2 h1:KPKiIbfwbvC/wOncwhrpRdXVj2CZTCFlw4wnoyjtHfQ=
 github.com/phpdave11/gofpdf v1.4.2/go.mod h1:zpO6xFn9yxo3YLyMvW8HcKWVdbNqgIfOOp2dXMnm1mY=
