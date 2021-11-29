@@ -34,20 +34,20 @@ func (codec *SmallCapsCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator)
 	any := iter.ReadAny()
 	smallCaps := (*SmallCaps)(ptr)
 	if any.ValueType() == jsoniter.ArrayValue {
-		any.ToVal(&smallCaps.Values)
+		any.ToVal(&smallCaps.Vals)
 	}
 }
 
 func (codec *SmallCapsCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	smallCaps := (*SmallCaps)(ptr)
-	return smallCaps == nil || len(smallCaps.Values) == 0
+	return smallCaps == nil || len(smallCaps.Vals) == 0
 }
 
 func (codec *SmallCapsCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	smallCaps := (*SmallCaps)(ptr)
 
 	stream.WriteArrayStart()
-	for i, v := range smallCaps.Values {
+	for i, v := range smallCaps.Vals {
 		if i > 0 {
 			stream.WriteMore()
 		}

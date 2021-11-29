@@ -8,26 +8,26 @@ public interface StrongOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .mojo.document.Inline values = 1;</code>
+   * <code>repeated .mojo.document.Inline vals = 1;</code>
    */
   java.util.List<org.mojolang.mojo.document.Inline> 
-      getValuesList();
+      getValsList();
   /**
-   * <code>repeated .mojo.document.Inline values = 1;</code>
+   * <code>repeated .mojo.document.Inline vals = 1;</code>
    */
-  org.mojolang.mojo.document.Inline getValues(int index);
+  org.mojolang.mojo.document.Inline getVals(int index);
   /**
-   * <code>repeated .mojo.document.Inline values = 1;</code>
+   * <code>repeated .mojo.document.Inline vals = 1;</code>
    */
-  int getValuesCount();
+  int getValsCount();
   /**
-   * <code>repeated .mojo.document.Inline values = 1;</code>
+   * <code>repeated .mojo.document.Inline vals = 1;</code>
    */
   java.util.List<? extends org.mojolang.mojo.document.InlineOrBuilder> 
-      getValuesOrBuilderList();
+      getValsOrBuilderList();
   /**
-   * <code>repeated .mojo.document.Inline values = 1;</code>
+   * <code>repeated .mojo.document.Inline vals = 1;</code>
    */
-  org.mojolang.mojo.document.InlineOrBuilder getValuesOrBuilder(
+  org.mojolang.mojo.document.InlineOrBuilder getValsOrBuilder(
       int index);
 }

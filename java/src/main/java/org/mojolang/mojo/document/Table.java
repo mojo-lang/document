@@ -263,27 +263,27 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
     java.util.List<org.mojolang.mojo.document.Block> 
-        getValuesList();
+        getValsList();
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
-    org.mojolang.mojo.document.Block getValues(int index);
+    org.mojolang.mojo.document.Block getVals(int index);
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
-    int getValuesCount();
+    int getValsCount();
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
     java.util.List<? extends org.mojolang.mojo.document.BlockOrBuilder> 
-        getValuesOrBuilderList();
+        getValsOrBuilderList();
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
-    org.mojolang.mojo.document.BlockOrBuilder getValuesOrBuilder(
+    org.mojolang.mojo.document.BlockOrBuilder getValsOrBuilder(
         int index);
   }
   /**
@@ -299,7 +299,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Cell() {
-      values_ = java.util.Collections.emptyList();
+      vals_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -335,10 +335,10 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                values_ = new java.util.ArrayList<org.mojolang.mojo.document.Block>();
+                vals_ = new java.util.ArrayList<org.mojolang.mojo.document.Block>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              values_.add(
+              vals_.add(
                   input.readMessage(org.mojolang.mojo.document.Block.parser(), extensionRegistry));
               break;
             }
@@ -358,7 +358,7 @@ private static final long serialVersionUID = 0L;
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
+          vals_ = java.util.Collections.unmodifiableList(vals_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -377,44 +377,44 @@ private static final long serialVersionUID = 0L;
               org.mojolang.mojo.document.Table.Cell.class, org.mojolang.mojo.document.Table.Cell.Builder.class);
     }
 
-    public static final int VALUES_FIELD_NUMBER = 1;
-    private java.util.List<org.mojolang.mojo.document.Block> values_;
+    public static final int VALS_FIELD_NUMBER = 1;
+    private java.util.List<org.mojolang.mojo.document.Block> vals_;
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<org.mojolang.mojo.document.Block> getValuesList() {
-      return values_;
+    public java.util.List<org.mojolang.mojo.document.Block> getValsList() {
+      return vals_;
     }
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.mojolang.mojo.document.BlockOrBuilder> 
-        getValuesOrBuilderList() {
-      return values_;
+        getValsOrBuilderList() {
+      return vals_;
     }
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
     @java.lang.Override
-    public int getValuesCount() {
-      return values_.size();
+    public int getValsCount() {
+      return vals_.size();
     }
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.document.Block getValues(int index) {
-      return values_.get(index);
+    public org.mojolang.mojo.document.Block getVals(int index) {
+      return vals_.get(index);
     }
     /**
-     * <code>repeated .mojo.document.Block values = 1;</code>
+     * <code>repeated .mojo.document.Block vals = 1;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.document.BlockOrBuilder getValuesOrBuilder(
+    public org.mojolang.mojo.document.BlockOrBuilder getValsOrBuilder(
         int index) {
-      return values_.get(index);
+      return vals_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -431,8 +431,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < values_.size(); i++) {
-        output.writeMessage(1, values_.get(i));
+      for (int i = 0; i < vals_.size(); i++) {
+        output.writeMessage(1, vals_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -443,9 +443,9 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < values_.size(); i++) {
+      for (int i = 0; i < vals_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, values_.get(i));
+          .computeMessageSize(1, vals_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -462,8 +462,8 @@ private static final long serialVersionUID = 0L;
       }
       org.mojolang.mojo.document.Table.Cell other = (org.mojolang.mojo.document.Table.Cell) obj;
 
-      if (!getValuesList()
-          .equals(other.getValuesList())) return false;
+      if (!getValsList()
+          .equals(other.getValsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -475,9 +475,9 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getValuesCount() > 0) {
-        hash = (37 * hash) + VALUES_FIELD_NUMBER;
-        hash = (53 * hash) + getValuesList().hashCode();
+      if (getValsCount() > 0) {
+        hash = (37 * hash) + VALS_FIELD_NUMBER;
+        hash = (53 * hash) + getValsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -607,17 +607,17 @@ private static final long serialVersionUID = 0L;
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getValuesFieldBuilder();
+          getValsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (valuesBuilder_ == null) {
-          values_ = java.util.Collections.emptyList();
+        if (valsBuilder_ == null) {
+          vals_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          valuesBuilder_.clear();
+          valsBuilder_.clear();
         }
         return this;
       }
@@ -646,14 +646,14 @@ private static final long serialVersionUID = 0L;
       public org.mojolang.mojo.document.Table.Cell buildPartial() {
         org.mojolang.mojo.document.Table.Cell result = new org.mojolang.mojo.document.Table.Cell(this);
         int from_bitField0_ = bitField0_;
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            values_ = java.util.Collections.unmodifiableList(values_);
+            vals_ = java.util.Collections.unmodifiableList(vals_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.values_ = values_;
+          result.vals_ = vals_;
         } else {
-          result.values_ = valuesBuilder_.build();
+          result.vals_ = valsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -703,29 +703,29 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(org.mojolang.mojo.document.Table.Cell other) {
         if (other == org.mojolang.mojo.document.Table.Cell.getDefaultInstance()) return this;
-        if (valuesBuilder_ == null) {
-          if (!other.values_.isEmpty()) {
-            if (values_.isEmpty()) {
-              values_ = other.values_;
+        if (valsBuilder_ == null) {
+          if (!other.vals_.isEmpty()) {
+            if (vals_.isEmpty()) {
+              vals_ = other.vals_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureValuesIsMutable();
-              values_.addAll(other.values_);
+              ensureValsIsMutable();
+              vals_.addAll(other.vals_);
             }
             onChanged();
           }
         } else {
-          if (!other.values_.isEmpty()) {
-            if (valuesBuilder_.isEmpty()) {
-              valuesBuilder_.dispose();
-              valuesBuilder_ = null;
-              values_ = other.values_;
+          if (!other.vals_.isEmpty()) {
+            if (valsBuilder_.isEmpty()) {
+              valsBuilder_.dispose();
+              valsBuilder_ = null;
+              vals_ = other.vals_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              valuesBuilder_ = 
+              valsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getValuesFieldBuilder() : null;
+                   getValsFieldBuilder() : null;
             } else {
-              valuesBuilder_.addAllMessages(other.values_);
+              valsBuilder_.addAllMessages(other.vals_);
             }
           }
         }
@@ -759,244 +759,244 @@ private static final long serialVersionUID = 0L;
       }
       private int bitField0_;
 
-      private java.util.List<org.mojolang.mojo.document.Block> values_ =
+      private java.util.List<org.mojolang.mojo.document.Block> vals_ =
         java.util.Collections.emptyList();
-      private void ensureValuesIsMutable() {
+      private void ensureValsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          values_ = new java.util.ArrayList<org.mojolang.mojo.document.Block>(values_);
+          vals_ = new java.util.ArrayList<org.mojolang.mojo.document.Block>(vals_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.mojolang.mojo.document.Block, org.mojolang.mojo.document.Block.Builder, org.mojolang.mojo.document.BlockOrBuilder> valuesBuilder_;
+          org.mojolang.mojo.document.Block, org.mojolang.mojo.document.Block.Builder, org.mojolang.mojo.document.BlockOrBuilder> valsBuilder_;
 
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public java.util.List<org.mojolang.mojo.document.Block> getValuesList() {
-        if (valuesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(values_);
+      public java.util.List<org.mojolang.mojo.document.Block> getValsList() {
+        if (valsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(vals_);
         } else {
-          return valuesBuilder_.getMessageList();
+          return valsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public int getValuesCount() {
-        if (valuesBuilder_ == null) {
-          return values_.size();
+      public int getValsCount() {
+        if (valsBuilder_ == null) {
+          return vals_.size();
         } else {
-          return valuesBuilder_.getCount();
+          return valsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Block getValues(int index) {
-        if (valuesBuilder_ == null) {
-          return values_.get(index);
+      public org.mojolang.mojo.document.Block getVals(int index) {
+        if (valsBuilder_ == null) {
+          return vals_.get(index);
         } else {
-          return valuesBuilder_.getMessage(index);
+          return valsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder setValues(
+      public Builder setVals(
           int index, org.mojolang.mojo.document.Block value) {
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.set(index, value);
+          ensureValsIsMutable();
+          vals_.set(index, value);
           onChanged();
         } else {
-          valuesBuilder_.setMessage(index, value);
+          valsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder setValues(
+      public Builder setVals(
           int index, org.mojolang.mojo.document.Block.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.set(index, builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.set(index, builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.setMessage(index, builderForValue.build());
+          valsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder addValues(org.mojolang.mojo.document.Block value) {
-        if (valuesBuilder_ == null) {
+      public Builder addVals(org.mojolang.mojo.document.Block value) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.add(value);
+          ensureValsIsMutable();
+          vals_.add(value);
           onChanged();
         } else {
-          valuesBuilder_.addMessage(value);
+          valsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           int index, org.mojolang.mojo.document.Block value) {
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.add(index, value);
+          ensureValsIsMutable();
+          vals_.add(index, value);
           onChanged();
         } else {
-          valuesBuilder_.addMessage(index, value);
+          valsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           org.mojolang.mojo.document.Block.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.add(builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.add(builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.addMessage(builderForValue.build());
+          valsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           int index, org.mojolang.mojo.document.Block.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.add(index, builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.add(index, builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.addMessage(index, builderForValue.build());
+          valsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder addAllValues(
+      public Builder addAllVals(
           java.lang.Iterable<? extends org.mojolang.mojo.document.Block> values) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, values_);
+              values, vals_);
           onChanged();
         } else {
-          valuesBuilder_.addAllMessages(values);
+          valsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder clearValues() {
-        if (valuesBuilder_ == null) {
-          values_ = java.util.Collections.emptyList();
+      public Builder clearVals() {
+        if (valsBuilder_ == null) {
+          vals_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          valuesBuilder_.clear();
+          valsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public Builder removeValues(int index) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.remove(index);
+      public Builder removeVals(int index) {
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.remove(index);
           onChanged();
         } else {
-          valuesBuilder_.remove(index);
+          valsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Block.Builder getValuesBuilder(
+      public org.mojolang.mojo.document.Block.Builder getValsBuilder(
           int index) {
-        return getValuesFieldBuilder().getBuilder(index);
+        return getValsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public org.mojolang.mojo.document.BlockOrBuilder getValuesOrBuilder(
+      public org.mojolang.mojo.document.BlockOrBuilder getValsOrBuilder(
           int index) {
-        if (valuesBuilder_ == null) {
-          return values_.get(index);  } else {
-          return valuesBuilder_.getMessageOrBuilder(index);
+        if (valsBuilder_ == null) {
+          return vals_.get(index);  } else {
+          return valsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
       public java.util.List<? extends org.mojolang.mojo.document.BlockOrBuilder> 
-           getValuesOrBuilderList() {
-        if (valuesBuilder_ != null) {
-          return valuesBuilder_.getMessageOrBuilderList();
+           getValsOrBuilderList() {
+        if (valsBuilder_ != null) {
+          return valsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(values_);
+          return java.util.Collections.unmodifiableList(vals_);
         }
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Block.Builder addValuesBuilder() {
-        return getValuesFieldBuilder().addBuilder(
+      public org.mojolang.mojo.document.Block.Builder addValsBuilder() {
+        return getValsFieldBuilder().addBuilder(
             org.mojolang.mojo.document.Block.getDefaultInstance());
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Block.Builder addValuesBuilder(
+      public org.mojolang.mojo.document.Block.Builder addValsBuilder(
           int index) {
-        return getValuesFieldBuilder().addBuilder(
+        return getValsFieldBuilder().addBuilder(
             index, org.mojolang.mojo.document.Block.getDefaultInstance());
       }
       /**
-       * <code>repeated .mojo.document.Block values = 1;</code>
+       * <code>repeated .mojo.document.Block vals = 1;</code>
        */
       public java.util.List<org.mojolang.mojo.document.Block.Builder> 
-           getValuesBuilderList() {
-        return getValuesFieldBuilder().getBuilderList();
+           getValsBuilderList() {
+        return getValsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           org.mojolang.mojo.document.Block, org.mojolang.mojo.document.Block.Builder, org.mojolang.mojo.document.BlockOrBuilder> 
-          getValuesFieldBuilder() {
-        if (valuesBuilder_ == null) {
-          valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getValsFieldBuilder() {
+        if (valsBuilder_ == null) {
+          valsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.mojolang.mojo.document.Block, org.mojolang.mojo.document.Block.Builder, org.mojolang.mojo.document.BlockOrBuilder>(
-                  values_,
+                  vals_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          values_ = null;
+          vals_ = null;
         }
-        return valuesBuilder_;
+        return valsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1056,27 +1056,27 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     java.util.List<org.mojolang.mojo.document.Table.Cell> 
-        getValuesList();
+        getValsList();
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
-    org.mojolang.mojo.document.Table.Cell getValues(int index);
+    org.mojolang.mojo.document.Table.Cell getVals(int index);
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
-    int getValuesCount();
+    int getValsCount();
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     java.util.List<? extends org.mojolang.mojo.document.Table.CellOrBuilder> 
-        getValuesOrBuilderList();
+        getValsOrBuilderList();
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
-    org.mojolang.mojo.document.Table.CellOrBuilder getValuesOrBuilder(
+    org.mojolang.mojo.document.Table.CellOrBuilder getValsOrBuilder(
         int index);
   }
   /**
@@ -1092,7 +1092,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Row() {
-      values_ = java.util.Collections.emptyList();
+      vals_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1128,10 +1128,10 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                values_ = new java.util.ArrayList<org.mojolang.mojo.document.Table.Cell>();
+                vals_ = new java.util.ArrayList<org.mojolang.mojo.document.Table.Cell>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              values_.add(
+              vals_.add(
                   input.readMessage(org.mojolang.mojo.document.Table.Cell.parser(), extensionRegistry));
               break;
             }
@@ -1151,7 +1151,7 @@ private static final long serialVersionUID = 0L;
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
+          vals_ = java.util.Collections.unmodifiableList(vals_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1170,44 +1170,44 @@ private static final long serialVersionUID = 0L;
               org.mojolang.mojo.document.Table.Row.class, org.mojolang.mojo.document.Table.Row.Builder.class);
     }
 
-    public static final int VALUES_FIELD_NUMBER = 1;
-    private java.util.List<org.mojolang.mojo.document.Table.Cell> values_;
+    public static final int VALS_FIELD_NUMBER = 1;
+    private java.util.List<org.mojolang.mojo.document.Table.Cell> vals_;
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<org.mojolang.mojo.document.Table.Cell> getValuesList() {
-      return values_;
+    public java.util.List<org.mojolang.mojo.document.Table.Cell> getValsList() {
+      return vals_;
     }
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.mojolang.mojo.document.Table.CellOrBuilder> 
-        getValuesOrBuilderList() {
-      return values_;
+        getValsOrBuilderList() {
+      return vals_;
     }
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
-    public int getValuesCount() {
-      return values_.size();
+    public int getValsCount() {
+      return vals_.size();
     }
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.document.Table.Cell getValues(int index) {
-      return values_.get(index);
+    public org.mojolang.mojo.document.Table.Cell getVals(int index) {
+      return vals_.get(index);
     }
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.document.Table.CellOrBuilder getValuesOrBuilder(
+    public org.mojolang.mojo.document.Table.CellOrBuilder getValsOrBuilder(
         int index) {
-      return values_.get(index);
+      return vals_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1224,8 +1224,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < values_.size(); i++) {
-        output.writeMessage(1, values_.get(i));
+      for (int i = 0; i < vals_.size(); i++) {
+        output.writeMessage(1, vals_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1236,9 +1236,9 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < values_.size(); i++) {
+      for (int i = 0; i < vals_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, values_.get(i));
+          .computeMessageSize(1, vals_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1255,8 +1255,8 @@ private static final long serialVersionUID = 0L;
       }
       org.mojolang.mojo.document.Table.Row other = (org.mojolang.mojo.document.Table.Row) obj;
 
-      if (!getValuesList()
-          .equals(other.getValuesList())) return false;
+      if (!getValsList()
+          .equals(other.getValsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1268,9 +1268,9 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getValuesCount() > 0) {
-        hash = (37 * hash) + VALUES_FIELD_NUMBER;
-        hash = (53 * hash) + getValuesList().hashCode();
+      if (getValsCount() > 0) {
+        hash = (37 * hash) + VALS_FIELD_NUMBER;
+        hash = (53 * hash) + getValsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1400,17 +1400,17 @@ private static final long serialVersionUID = 0L;
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getValuesFieldBuilder();
+          getValsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (valuesBuilder_ == null) {
-          values_ = java.util.Collections.emptyList();
+        if (valsBuilder_ == null) {
+          vals_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          valuesBuilder_.clear();
+          valsBuilder_.clear();
         }
         return this;
       }
@@ -1439,14 +1439,14 @@ private static final long serialVersionUID = 0L;
       public org.mojolang.mojo.document.Table.Row buildPartial() {
         org.mojolang.mojo.document.Table.Row result = new org.mojolang.mojo.document.Table.Row(this);
         int from_bitField0_ = bitField0_;
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            values_ = java.util.Collections.unmodifiableList(values_);
+            vals_ = java.util.Collections.unmodifiableList(vals_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.values_ = values_;
+          result.vals_ = vals_;
         } else {
-          result.values_ = valuesBuilder_.build();
+          result.vals_ = valsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1496,29 +1496,29 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(org.mojolang.mojo.document.Table.Row other) {
         if (other == org.mojolang.mojo.document.Table.Row.getDefaultInstance()) return this;
-        if (valuesBuilder_ == null) {
-          if (!other.values_.isEmpty()) {
-            if (values_.isEmpty()) {
-              values_ = other.values_;
+        if (valsBuilder_ == null) {
+          if (!other.vals_.isEmpty()) {
+            if (vals_.isEmpty()) {
+              vals_ = other.vals_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureValuesIsMutable();
-              values_.addAll(other.values_);
+              ensureValsIsMutable();
+              vals_.addAll(other.vals_);
             }
             onChanged();
           }
         } else {
-          if (!other.values_.isEmpty()) {
-            if (valuesBuilder_.isEmpty()) {
-              valuesBuilder_.dispose();
-              valuesBuilder_ = null;
-              values_ = other.values_;
+          if (!other.vals_.isEmpty()) {
+            if (valsBuilder_.isEmpty()) {
+              valsBuilder_.dispose();
+              valsBuilder_ = null;
+              vals_ = other.vals_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              valuesBuilder_ = 
+              valsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getValuesFieldBuilder() : null;
+                   getValsFieldBuilder() : null;
             } else {
-              valuesBuilder_.addAllMessages(other.values_);
+              valsBuilder_.addAllMessages(other.vals_);
             }
           }
         }
@@ -1552,244 +1552,244 @@ private static final long serialVersionUID = 0L;
       }
       private int bitField0_;
 
-      private java.util.List<org.mojolang.mojo.document.Table.Cell> values_ =
+      private java.util.List<org.mojolang.mojo.document.Table.Cell> vals_ =
         java.util.Collections.emptyList();
-      private void ensureValuesIsMutable() {
+      private void ensureValsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          values_ = new java.util.ArrayList<org.mojolang.mojo.document.Table.Cell>(values_);
+          vals_ = new java.util.ArrayList<org.mojolang.mojo.document.Table.Cell>(vals_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.mojolang.mojo.document.Table.Cell, org.mojolang.mojo.document.Table.Cell.Builder, org.mojolang.mojo.document.Table.CellOrBuilder> valuesBuilder_;
+          org.mojolang.mojo.document.Table.Cell, org.mojolang.mojo.document.Table.Cell.Builder, org.mojolang.mojo.document.Table.CellOrBuilder> valsBuilder_;
 
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public java.util.List<org.mojolang.mojo.document.Table.Cell> getValuesList() {
-        if (valuesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(values_);
+      public java.util.List<org.mojolang.mojo.document.Table.Cell> getValsList() {
+        if (valsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(vals_);
         } else {
-          return valuesBuilder_.getMessageList();
+          return valsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public int getValuesCount() {
-        if (valuesBuilder_ == null) {
-          return values_.size();
+      public int getValsCount() {
+        if (valsBuilder_ == null) {
+          return vals_.size();
         } else {
-          return valuesBuilder_.getCount();
+          return valsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.Cell getValues(int index) {
-        if (valuesBuilder_ == null) {
-          return values_.get(index);
+      public org.mojolang.mojo.document.Table.Cell getVals(int index) {
+        if (valsBuilder_ == null) {
+          return vals_.get(index);
         } else {
-          return valuesBuilder_.getMessage(index);
+          return valsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder setValues(
+      public Builder setVals(
           int index, org.mojolang.mojo.document.Table.Cell value) {
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.set(index, value);
+          ensureValsIsMutable();
+          vals_.set(index, value);
           onChanged();
         } else {
-          valuesBuilder_.setMessage(index, value);
+          valsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder setValues(
+      public Builder setVals(
           int index, org.mojolang.mojo.document.Table.Cell.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.set(index, builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.set(index, builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.setMessage(index, builderForValue.build());
+          valsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addValues(org.mojolang.mojo.document.Table.Cell value) {
-        if (valuesBuilder_ == null) {
+      public Builder addVals(org.mojolang.mojo.document.Table.Cell value) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.add(value);
+          ensureValsIsMutable();
+          vals_.add(value);
           onChanged();
         } else {
-          valuesBuilder_.addMessage(value);
+          valsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           int index, org.mojolang.mojo.document.Table.Cell value) {
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.add(index, value);
+          ensureValsIsMutable();
+          vals_.add(index, value);
           onChanged();
         } else {
-          valuesBuilder_.addMessage(index, value);
+          valsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           org.mojolang.mojo.document.Table.Cell.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.add(builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.add(builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.addMessage(builderForValue.build());
+          valsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           int index, org.mojolang.mojo.document.Table.Cell.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.add(index, builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.add(index, builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.addMessage(index, builderForValue.build());
+          valsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addAllValues(
+      public Builder addAllVals(
           java.lang.Iterable<? extends org.mojolang.mojo.document.Table.Cell> values) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, values_);
+              values, vals_);
           onChanged();
         } else {
-          valuesBuilder_.addAllMessages(values);
+          valsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder clearValues() {
-        if (valuesBuilder_ == null) {
-          values_ = java.util.Collections.emptyList();
+      public Builder clearVals() {
+        if (valsBuilder_ == null) {
+          vals_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          valuesBuilder_.clear();
+          valsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder removeValues(int index) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.remove(index);
+      public Builder removeVals(int index) {
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.remove(index);
           onChanged();
         } else {
-          valuesBuilder_.remove(index);
+          valsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.Cell.Builder getValuesBuilder(
+      public org.mojolang.mojo.document.Table.Cell.Builder getValsBuilder(
           int index) {
-        return getValuesFieldBuilder().getBuilder(index);
+        return getValsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.CellOrBuilder getValuesOrBuilder(
+      public org.mojolang.mojo.document.Table.CellOrBuilder getValsOrBuilder(
           int index) {
-        if (valuesBuilder_ == null) {
-          return values_.get(index);  } else {
-          return valuesBuilder_.getMessageOrBuilder(index);
+        if (valsBuilder_ == null) {
+          return vals_.get(index);  } else {
+          return valsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
       public java.util.List<? extends org.mojolang.mojo.document.Table.CellOrBuilder> 
-           getValuesOrBuilderList() {
-        if (valuesBuilder_ != null) {
-          return valuesBuilder_.getMessageOrBuilderList();
+           getValsOrBuilderList() {
+        if (valsBuilder_ != null) {
+          return valsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(values_);
+          return java.util.Collections.unmodifiableList(vals_);
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.Cell.Builder addValuesBuilder() {
-        return getValuesFieldBuilder().addBuilder(
+      public org.mojolang.mojo.document.Table.Cell.Builder addValsBuilder() {
+        return getValsFieldBuilder().addBuilder(
             org.mojolang.mojo.document.Table.Cell.getDefaultInstance());
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.Cell.Builder addValuesBuilder(
+      public org.mojolang.mojo.document.Table.Cell.Builder addValsBuilder(
           int index) {
-        return getValuesFieldBuilder().addBuilder(
+        return getValsFieldBuilder().addBuilder(
             index, org.mojolang.mojo.document.Table.Cell.getDefaultInstance());
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
       public java.util.List<org.mojolang.mojo.document.Table.Cell.Builder> 
-           getValuesBuilderList() {
-        return getValuesFieldBuilder().getBuilderList();
+           getValsBuilderList() {
+        return getValsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           org.mojolang.mojo.document.Table.Cell, org.mojolang.mojo.document.Table.Cell.Builder, org.mojolang.mojo.document.Table.CellOrBuilder> 
-          getValuesFieldBuilder() {
-        if (valuesBuilder_ == null) {
-          valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getValsFieldBuilder() {
+        if (valsBuilder_ == null) {
+          valsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.mojolang.mojo.document.Table.Cell, org.mojolang.mojo.document.Table.Cell.Builder, org.mojolang.mojo.document.Table.CellOrBuilder>(
-                  values_,
+                  vals_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          values_ = null;
+          vals_ = null;
         }
-        return valuesBuilder_;
+        return valsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1849,27 +1849,27 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     java.util.List<org.mojolang.mojo.document.Table.Cell> 
-        getValuesList();
+        getValsList();
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
-    org.mojolang.mojo.document.Table.Cell getValues(int index);
+    org.mojolang.mojo.document.Table.Cell getVals(int index);
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
-    int getValuesCount();
+    int getValsCount();
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     java.util.List<? extends org.mojolang.mojo.document.Table.CellOrBuilder> 
-        getValuesOrBuilderList();
+        getValsOrBuilderList();
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
-    org.mojolang.mojo.document.Table.CellOrBuilder getValuesOrBuilder(
+    org.mojolang.mojo.document.Table.CellOrBuilder getValsOrBuilder(
         int index);
   }
   /**
@@ -1885,7 +1885,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Header() {
-      values_ = java.util.Collections.emptyList();
+      vals_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1921,10 +1921,10 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                values_ = new java.util.ArrayList<org.mojolang.mojo.document.Table.Cell>();
+                vals_ = new java.util.ArrayList<org.mojolang.mojo.document.Table.Cell>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              values_.add(
+              vals_.add(
                   input.readMessage(org.mojolang.mojo.document.Table.Cell.parser(), extensionRegistry));
               break;
             }
@@ -1944,7 +1944,7 @@ private static final long serialVersionUID = 0L;
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
+          vals_ = java.util.Collections.unmodifiableList(vals_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1963,44 +1963,44 @@ private static final long serialVersionUID = 0L;
               org.mojolang.mojo.document.Table.Header.class, org.mojolang.mojo.document.Table.Header.Builder.class);
     }
 
-    public static final int VALUES_FIELD_NUMBER = 1;
-    private java.util.List<org.mojolang.mojo.document.Table.Cell> values_;
+    public static final int VALS_FIELD_NUMBER = 1;
+    private java.util.List<org.mojolang.mojo.document.Table.Cell> vals_;
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<org.mojolang.mojo.document.Table.Cell> getValuesList() {
-      return values_;
+    public java.util.List<org.mojolang.mojo.document.Table.Cell> getValsList() {
+      return vals_;
     }
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends org.mojolang.mojo.document.Table.CellOrBuilder> 
-        getValuesOrBuilderList() {
-      return values_;
+        getValsOrBuilderList() {
+      return vals_;
     }
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
-    public int getValuesCount() {
-      return values_.size();
+    public int getValsCount() {
+      return vals_.size();
     }
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.document.Table.Cell getValues(int index) {
-      return values_.get(index);
+    public org.mojolang.mojo.document.Table.Cell getVals(int index) {
+      return vals_.get(index);
     }
     /**
-     * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+     * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.document.Table.CellOrBuilder getValuesOrBuilder(
+    public org.mojolang.mojo.document.Table.CellOrBuilder getValsOrBuilder(
         int index) {
-      return values_.get(index);
+      return vals_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2017,8 +2017,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < values_.size(); i++) {
-        output.writeMessage(1, values_.get(i));
+      for (int i = 0; i < vals_.size(); i++) {
+        output.writeMessage(1, vals_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2029,9 +2029,9 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < values_.size(); i++) {
+      for (int i = 0; i < vals_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, values_.get(i));
+          .computeMessageSize(1, vals_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2048,8 +2048,8 @@ private static final long serialVersionUID = 0L;
       }
       org.mojolang.mojo.document.Table.Header other = (org.mojolang.mojo.document.Table.Header) obj;
 
-      if (!getValuesList()
-          .equals(other.getValuesList())) return false;
+      if (!getValsList()
+          .equals(other.getValsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2061,9 +2061,9 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getValuesCount() > 0) {
-        hash = (37 * hash) + VALUES_FIELD_NUMBER;
-        hash = (53 * hash) + getValuesList().hashCode();
+      if (getValsCount() > 0) {
+        hash = (37 * hash) + VALS_FIELD_NUMBER;
+        hash = (53 * hash) + getValsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2193,17 +2193,17 @@ private static final long serialVersionUID = 0L;
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getValuesFieldBuilder();
+          getValsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (valuesBuilder_ == null) {
-          values_ = java.util.Collections.emptyList();
+        if (valsBuilder_ == null) {
+          vals_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          valuesBuilder_.clear();
+          valsBuilder_.clear();
         }
         return this;
       }
@@ -2232,14 +2232,14 @@ private static final long serialVersionUID = 0L;
       public org.mojolang.mojo.document.Table.Header buildPartial() {
         org.mojolang.mojo.document.Table.Header result = new org.mojolang.mojo.document.Table.Header(this);
         int from_bitField0_ = bitField0_;
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            values_ = java.util.Collections.unmodifiableList(values_);
+            vals_ = java.util.Collections.unmodifiableList(vals_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.values_ = values_;
+          result.vals_ = vals_;
         } else {
-          result.values_ = valuesBuilder_.build();
+          result.vals_ = valsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2289,29 +2289,29 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(org.mojolang.mojo.document.Table.Header other) {
         if (other == org.mojolang.mojo.document.Table.Header.getDefaultInstance()) return this;
-        if (valuesBuilder_ == null) {
-          if (!other.values_.isEmpty()) {
-            if (values_.isEmpty()) {
-              values_ = other.values_;
+        if (valsBuilder_ == null) {
+          if (!other.vals_.isEmpty()) {
+            if (vals_.isEmpty()) {
+              vals_ = other.vals_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureValuesIsMutable();
-              values_.addAll(other.values_);
+              ensureValsIsMutable();
+              vals_.addAll(other.vals_);
             }
             onChanged();
           }
         } else {
-          if (!other.values_.isEmpty()) {
-            if (valuesBuilder_.isEmpty()) {
-              valuesBuilder_.dispose();
-              valuesBuilder_ = null;
-              values_ = other.values_;
+          if (!other.vals_.isEmpty()) {
+            if (valsBuilder_.isEmpty()) {
+              valsBuilder_.dispose();
+              valsBuilder_ = null;
+              vals_ = other.vals_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              valuesBuilder_ = 
+              valsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getValuesFieldBuilder() : null;
+                   getValsFieldBuilder() : null;
             } else {
-              valuesBuilder_.addAllMessages(other.values_);
+              valsBuilder_.addAllMessages(other.vals_);
             }
           }
         }
@@ -2345,244 +2345,244 @@ private static final long serialVersionUID = 0L;
       }
       private int bitField0_;
 
-      private java.util.List<org.mojolang.mojo.document.Table.Cell> values_ =
+      private java.util.List<org.mojolang.mojo.document.Table.Cell> vals_ =
         java.util.Collections.emptyList();
-      private void ensureValuesIsMutable() {
+      private void ensureValsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          values_ = new java.util.ArrayList<org.mojolang.mojo.document.Table.Cell>(values_);
+          vals_ = new java.util.ArrayList<org.mojolang.mojo.document.Table.Cell>(vals_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.mojolang.mojo.document.Table.Cell, org.mojolang.mojo.document.Table.Cell.Builder, org.mojolang.mojo.document.Table.CellOrBuilder> valuesBuilder_;
+          org.mojolang.mojo.document.Table.Cell, org.mojolang.mojo.document.Table.Cell.Builder, org.mojolang.mojo.document.Table.CellOrBuilder> valsBuilder_;
 
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public java.util.List<org.mojolang.mojo.document.Table.Cell> getValuesList() {
-        if (valuesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(values_);
+      public java.util.List<org.mojolang.mojo.document.Table.Cell> getValsList() {
+        if (valsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(vals_);
         } else {
-          return valuesBuilder_.getMessageList();
+          return valsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public int getValuesCount() {
-        if (valuesBuilder_ == null) {
-          return values_.size();
+      public int getValsCount() {
+        if (valsBuilder_ == null) {
+          return vals_.size();
         } else {
-          return valuesBuilder_.getCount();
+          return valsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.Cell getValues(int index) {
-        if (valuesBuilder_ == null) {
-          return values_.get(index);
+      public org.mojolang.mojo.document.Table.Cell getVals(int index) {
+        if (valsBuilder_ == null) {
+          return vals_.get(index);
         } else {
-          return valuesBuilder_.getMessage(index);
+          return valsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder setValues(
+      public Builder setVals(
           int index, org.mojolang.mojo.document.Table.Cell value) {
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.set(index, value);
+          ensureValsIsMutable();
+          vals_.set(index, value);
           onChanged();
         } else {
-          valuesBuilder_.setMessage(index, value);
+          valsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder setValues(
+      public Builder setVals(
           int index, org.mojolang.mojo.document.Table.Cell.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.set(index, builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.set(index, builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.setMessage(index, builderForValue.build());
+          valsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addValues(org.mojolang.mojo.document.Table.Cell value) {
-        if (valuesBuilder_ == null) {
+      public Builder addVals(org.mojolang.mojo.document.Table.Cell value) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.add(value);
+          ensureValsIsMutable();
+          vals_.add(value);
           onChanged();
         } else {
-          valuesBuilder_.addMessage(value);
+          valsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           int index, org.mojolang.mojo.document.Table.Cell value) {
-        if (valuesBuilder_ == null) {
+        if (valsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.add(index, value);
+          ensureValsIsMutable();
+          vals_.add(index, value);
           onChanged();
         } else {
-          valuesBuilder_.addMessage(index, value);
+          valsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           org.mojolang.mojo.document.Table.Cell.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.add(builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.add(builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.addMessage(builderForValue.build());
+          valsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVals(
           int index, org.mojolang.mojo.document.Table.Cell.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.add(index, builderForValue.build());
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.add(index, builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.addMessage(index, builderForValue.build());
+          valsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder addAllValues(
+      public Builder addAllVals(
           java.lang.Iterable<? extends org.mojolang.mojo.document.Table.Cell> values) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, values_);
+              values, vals_);
           onChanged();
         } else {
-          valuesBuilder_.addAllMessages(values);
+          valsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder clearValues() {
-        if (valuesBuilder_ == null) {
-          values_ = java.util.Collections.emptyList();
+      public Builder clearVals() {
+        if (valsBuilder_ == null) {
+          vals_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          valuesBuilder_.clear();
+          valsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public Builder removeValues(int index) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.remove(index);
+      public Builder removeVals(int index) {
+        if (valsBuilder_ == null) {
+          ensureValsIsMutable();
+          vals_.remove(index);
           onChanged();
         } else {
-          valuesBuilder_.remove(index);
+          valsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.Cell.Builder getValuesBuilder(
+      public org.mojolang.mojo.document.Table.Cell.Builder getValsBuilder(
           int index) {
-        return getValuesFieldBuilder().getBuilder(index);
+        return getValsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.CellOrBuilder getValuesOrBuilder(
+      public org.mojolang.mojo.document.Table.CellOrBuilder getValsOrBuilder(
           int index) {
-        if (valuesBuilder_ == null) {
-          return values_.get(index);  } else {
-          return valuesBuilder_.getMessageOrBuilder(index);
+        if (valsBuilder_ == null) {
+          return vals_.get(index);  } else {
+          return valsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
       public java.util.List<? extends org.mojolang.mojo.document.Table.CellOrBuilder> 
-           getValuesOrBuilderList() {
-        if (valuesBuilder_ != null) {
-          return valuesBuilder_.getMessageOrBuilderList();
+           getValsOrBuilderList() {
+        if (valsBuilder_ != null) {
+          return valsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(values_);
+          return java.util.Collections.unmodifiableList(vals_);
         }
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.Cell.Builder addValuesBuilder() {
-        return getValuesFieldBuilder().addBuilder(
+      public org.mojolang.mojo.document.Table.Cell.Builder addValsBuilder() {
+        return getValsFieldBuilder().addBuilder(
             org.mojolang.mojo.document.Table.Cell.getDefaultInstance());
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
-      public org.mojolang.mojo.document.Table.Cell.Builder addValuesBuilder(
+      public org.mojolang.mojo.document.Table.Cell.Builder addValsBuilder(
           int index) {
-        return getValuesFieldBuilder().addBuilder(
+        return getValsFieldBuilder().addBuilder(
             index, org.mojolang.mojo.document.Table.Cell.getDefaultInstance());
       }
       /**
-       * <code>repeated .mojo.document.Table.Cell values = 1;</code>
+       * <code>repeated .mojo.document.Table.Cell vals = 1;</code>
        */
       public java.util.List<org.mojolang.mojo.document.Table.Cell.Builder> 
-           getValuesBuilderList() {
-        return getValuesFieldBuilder().getBuilderList();
+           getValsBuilderList() {
+        return getValsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           org.mojolang.mojo.document.Table.Cell, org.mojolang.mojo.document.Table.Cell.Builder, org.mojolang.mojo.document.Table.CellOrBuilder> 
-          getValuesFieldBuilder() {
-        if (valuesBuilder_ == null) {
-          valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getValsFieldBuilder() {
+        if (valsBuilder_ == null) {
+          valsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.mojolang.mojo.document.Table.Cell, org.mojolang.mojo.document.Table.Cell.Builder, org.mojolang.mojo.document.Table.CellOrBuilder>(
-                  values_,
+                  vals_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          values_ = null;
+          vals_ = null;
         }
-        return valuesBuilder_;
+        return valsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(

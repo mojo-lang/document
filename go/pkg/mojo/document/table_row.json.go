@@ -34,20 +34,20 @@ func (codec *TableRowCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) 
 	any := iter.ReadAny()
 	row := (*Table_Row)(ptr)
 	if any.ValueType() == jsoniter.ArrayValue {
-		any.ToVal(&row.Values)
+		any.ToVal(&row.Vals)
 	}
 }
 
 func (codec *TableRowCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	row := (*Table_Row)(ptr)
-	return row == nil || len(row.Values) == 0
+	return row == nil || len(row.Vals) == 0
 }
 
 func (codec *TableRowCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	row := (*Table_Row)(ptr)
 
 	stream.WriteArrayStart()
-	for i, v := range row.Values {
+	for i, v := range row.Vals {
 		if i > 0 {
 			stream.WriteMore()
 		}

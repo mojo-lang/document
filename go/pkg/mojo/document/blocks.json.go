@@ -34,20 +34,20 @@ func (codec *BlocksCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
 	any := iter.ReadAny()
 	blocks := (*Blocks)(ptr)
 	if any.ValueType() == jsoniter.ArrayValue {
-		any.ToVal(&blocks.Values)
+		any.ToVal(&blocks.Vals)
 	}
 }
 
 func (codec *BlocksCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	blocks := (*Blocks)(ptr)
-	return blocks == nil || len(blocks.Values) == 0
+	return blocks == nil || len(blocks.Vals) == 0
 }
 
 func (codec *BlocksCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	blocks := (*Blocks)(ptr)
 
 	stream.WriteArrayStart()
-	for i, v := range blocks.Values {
+	for i, v := range blocks.Vals {
 		if i > 0 {
 			stream.WriteMore()
 		}

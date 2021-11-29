@@ -34,20 +34,20 @@ func (codec *TableHeaderCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterato
 	any := iter.ReadAny()
 	header := (*Table_Header)(ptr)
 	if any.ValueType() == jsoniter.ArrayValue {
-		any.ToVal(&header.Values)
+		any.ToVal(&header.Vals)
 	}
 }
 
 func (codec *TableHeaderCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	header := (*Table_Header)(ptr)
-	return header == nil || len(header.Values) == 0
+	return header == nil || len(header.Vals) == 0
 }
 
 func (codec *TableHeaderCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	header := (*Table_Header)(ptr)
 
 	stream.WriteArrayStart()
-	for i, v := range header.Values {
+	for i, v := range header.Vals {
 		if i > 0 {
 			stream.WriteMore()
 		}

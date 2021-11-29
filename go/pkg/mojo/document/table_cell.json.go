@@ -34,20 +34,20 @@ func (codec *TableCellCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator)
 	any := iter.ReadAny()
 	cell := (*Table_Cell)(ptr)
 	if any.ValueType() == jsoniter.ArrayValue {
-		any.ToVal(&cell.Values)
+		any.ToVal(&cell.Vals)
 	}
 }
 
 func (codec *TableCellCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	cell := (*Table_Cell)(ptr)
-	return cell == nil || len(cell.Values) == 0
+	return cell == nil || len(cell.Vals) == 0
 }
 
 func (codec *TableCellCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	cell := (*Table_Cell)(ptr)
 
 	stream.WriteArrayStart()
-	for i, v := range cell.Values {
+	for i, v := range cell.Vals {
 		if i > 0 {
 			stream.WriteMore()
 		}

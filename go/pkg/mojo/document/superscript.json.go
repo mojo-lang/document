@@ -34,20 +34,20 @@ func (codec *SuperscriptCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterato
 	any := iter.ReadAny()
 	superscript := (*Superscript)(ptr)
 	if any.ValueType() == jsoniter.ArrayValue {
-		any.ToVal(&superscript.Values)
+		any.ToVal(&superscript.Vals)
 	}
 }
 
 func (codec *SuperscriptCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	superscript := (*Superscript)(ptr)
-	return superscript == nil || len(superscript.Values) == 0
+	return superscript == nil || len(superscript.Vals) == 0
 }
 
 func (codec *SuperscriptCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	superscript := (*Superscript)(ptr)
 
 	stream.WriteArrayStart()
-	for i, v := range superscript.Values {
+	for i, v := range superscript.Vals {
 		if i > 0 {
 			stream.WriteMore()
 		}

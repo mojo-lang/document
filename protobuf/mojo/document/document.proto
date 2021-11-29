@@ -35,7 +35,7 @@ message Block {
 }
 
 message Line {
-    repeated Inline values = 1;
+    repeated Inline vals = 1;
 }
 
 message Plain {
@@ -125,15 +125,15 @@ message Table {
     }
     
     message Cell {
-        repeated Block values = 1;
+        repeated Block vals = 1;
     }
     
     message Row {
-        repeated Cell values = 1;
+        repeated Cell vals = 1;
     }
     
     message Header {
-        repeated Cell values = 1;
+        repeated Cell vals = 1;
     }
     repeated Inline caption = 1;
     Alignment alignment = 2;
@@ -173,31 +173,31 @@ message Inline {
 }
 
 message Text {
-    string value = 1;
+    string val = 1;
 }
 
 message Emphasized {
-    repeated Inline values = 1;
+    repeated Inline vals = 1;
 }
 
 message Strong {
-    repeated Inline values = 1;
+    repeated Inline vals = 1;
 }
 
 message Strikeout {
-    repeated Inline values = 1;
+    repeated Inline vals = 1;
 }
 
 message Superscript {
-    repeated Inline values = 1;
+    repeated Inline vals = 1;
 }
 
 message Subscript {
-    repeated Inline values = 1;
+    repeated Inline vals = 1;
 }
 
 message SmallCaps {
-    repeated Inline values = 1;
+    repeated Inline vals = 1;
 }
 
 message Space {
@@ -207,7 +207,7 @@ message LineBreak {
 }
 
 message Note {
-    repeated Block values = 1;
+    repeated Block vals = 1;
 }
 
 message Quoted {
@@ -268,15 +268,15 @@ message Target {
 }
 
 message Inlines {
-    repeated Inline values = 1;
+    repeated Inline vals = 1;
 }
 
 message MetaData {
-    map<string, MetaValue> values = 1;
+    map<string, MetaValue> vals = 1;
 }
 
 message MetaValueObject {
-    map<string, MetaValue> values = 1;
+    map<string, MetaValue> vals = 1;
 }
 
 message MetaValues {
