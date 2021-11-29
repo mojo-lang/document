@@ -304,107 +304,107 @@ public final class DocumentProto {
       "ter\022 \n\034NUMBER_DELIMITER_UNSPECIFIED\020\000\022\033\n" +
       "\027NUMBER_DELIMITER_PERIOD\020\001\022\037\n\033NUMBER_DEL" +
       "IMITER_ONE_PARENT\020\002\022 \n\034NUMBER_DELIMITER_" +
-      "TWO_PARENTS\020\003\"\240\001\n\013OrderedList\022/\n\tattribu" +
+      "TWO_PARENTS\020\003\"\236\001\n\013OrderedList\022/\n\tattribu" +
       "te\030\001 \001(\0132\034.mojo.document.ListAttribute\0220" +
       "\n\005items\030\002 \003(\0132!.mojo.document.OrderedLis" +
-      "t.Blocks\032.\n\006Blocks\022$\n\006values\030\001 \003(\0132\024.moj" +
-      "o.document.Block\"m\n\nBulletList\022/\n\005items\030" +
-      "\002 \003(\0132 .mojo.document.BulletList.Blocks\032" +
-      ".\n\006Blocks\022$\n\006values\030\001 \003(\0132\024.mojo.documen" +
-      "t.Block\"\234\001\n\016DefinitionList\0221\n\005items\030\002 \003(" +
-      "\0132\".mojo.document.DefinitionList.Item\032W\n" +
-      "\004Item\022#\n\004term\030\001 \003(\0132\025.mojo.document.Inli" +
-      "ne\022*\n\013definitions\030\002 \003(\0132\025.mojo.document." +
-      "Blocks\"i\n\006Header\022+\n\tattribute\030\001 \001(\0132\030.mo" +
-      "jo.document.Attribute\022\r\n\005level\030\002 \001(\003\022#\n\004" +
-      "text\030\003 \003(\0132\025.mojo.document.Inline\"\274\003\n\005Ta" +
-      "ble\022&\n\007caption\030\001 \003(\0132\025.mojo.document.Inl" +
-      "ine\0221\n\talignment\030\002 \001(\0162\036.mojo.document.T" +
-      "able.Alignment\022\r\n\005width\030\003 \001(\001\022+\n\006header\030" +
-      "\004 \001(\0132\033.mojo.document.Table.Header\022&\n\004ro" +
-      "ws\030\005 \003(\0132\030.mojo.document.Table.Row\032*\n\004Ce" +
-      "ll\022\"\n\004vals\030\001 \003(\0132\024.mojo.document.Block\032." +
-      "\n\003Row\022\'\n\004vals\030\001 \003(\0132\031.mojo.document.Tabl" +
-      "e.Cell\0321\n\006Header\022\'\n\004vals\030\001 \003(\0132\031.mojo.do" +
-      "cument.Table.Cell\"e\n\tAlignment\022\031\n\025ALIGNM" +
-      "ENT_UNSPECIFIED\020\000\022\022\n\016ALIGNMENT_LEFT\020\001\022\023\n" +
-      "\017ALIGNMENT_RIGHT\020\002\022\024\n\020ALIGNMENT_CENTER\020\003" +
-      "\"^\n\010Division\022+\n\tattribute\030\001 \001(\0132\030.mojo.d" +
-      "ocument.Attribute\022%\n\007content\030\002 \003(\0132\024.moj" +
-      "o.document.Block\".\n\006Blocks\022$\n\006values\030\001 \003" +
-      "(\0132\024.mojo.document.Block\"\262\005\n\006Inline\022#\n\004t" +
-      "ext\030\001 \001(\0132\023.mojo.document.TextH\000\022/\n\nemph" +
-      "asized\030\002 \001(\0132\031.mojo.document.EmphasizedH" +
-      "\000\022\'\n\006strong\030\003 \001(\0132\025.mojo.document.Strong" +
-      "H\000\022-\n\tstrikeout\030\004 \001(\0132\030.mojo.document.St" +
-      "rikeoutH\000\0221\n\013superscript\030\005 \001(\0132\032.mojo.do" +
-      "cument.SuperscriptH\000\022-\n\tsubscript\030\006 \001(\0132" +
-      "\030.mojo.document.SubscriptH\000\022.\n\nsmall_cap" +
-      "s\030\007 \001(\0132\030.mojo.document.SmallCapsH\000\022\'\n\006q" +
-      "uoted\030\010 \001(\0132\025.mojo.document.QuotedH\000\022#\n\004" +
-      "cite\030\t \001(\0132\023.mojo.document.CiteH\000\022#\n\004cod" +
-      "e\030\n \001(\0132\023.mojo.document.CodeH\000\022%\n\005space\030" +
-      "\013 \001(\0132\024.mojo.document.SpaceH\000\022.\n\nline_br" +
-      "eak\030\014 \001(\0132\030.mojo.document.LineBreakH\000\022#\n" +
-      "\004link\030\r \001(\0132\023.mojo.document.LinkH\000\022%\n\005im" +
-      "age\030\016 \001(\0132\024.mojo.document.ImageH\000\022#\n\004not" +
-      "e\030\017 \001(\0132\023.mojo.document.NoteH\000\022#\n\004span\030\020" +
-      " \001(\0132\023.mojo.document.SpanH\000B\010\n\006inline\"\023\n" +
-      "\004Text\022\013\n\003val\030\001 \001(\t\"1\n\nEmphasized\022#\n\004vals" +
-      "\030\001 \003(\0132\025.mojo.document.Inline\"-\n\006Strong\022" +
-      "#\n\004vals\030\001 \003(\0132\025.mojo.document.Inline\"0\n\t" +
-      "Strikeout\022#\n\004vals\030\001 \003(\0132\025.mojo.document." +
-      "Inline\"2\n\013Superscript\022#\n\004vals\030\001 \003(\0132\025.mo" +
-      "jo.document.Inline\"0\n\tSubscript\022#\n\004vals\030" +
-      "\001 \003(\0132\025.mojo.document.Inline\"0\n\tSmallCap" +
-      "s\022#\n\004vals\030\001 \003(\0132\025.mojo.document.Inline\"\007" +
-      "\n\005Space\"\013\n\tLineBreak\"*\n\004Note\022\"\n\004vals\030\001 \003" +
-      "(\0132\024.mojo.document.Block\"\201\001\n\006Quoted\022(\n\004t" +
-      "ype\030\001 \001(\0162\032.mojo.document.Quoted.Type\022#\n" +
-      "\004text\030\002 \003(\0132\025.mojo.document.Inline\"(\n\004Ty" +
-      "pe\022\017\n\013TYPE_DOUBLE\020\000\022\017\n\013TYPE_SINGLE\020\001\"Z\n\004" +
-      "Cite\022*\n\tcitations\030\001 \003(\0132\027.mojo.document." +
-      "Citation\022&\n\007inlines\030\002 \003(\0132\025.mojo.documen" +
-      "t.Inline\"\376\001\n\010Citation\022\n\n\002id\030\001 \001(\t\022%\n\006pre" +
-      "fix\030\002 \003(\0132\025.mojo.document.Inline\022%\n\006suff" +
-      "ix\030\003 \003(\0132\025.mojo.document.Inline\022*\n\004mode\030" +
-      "\004 \001(\0162\034.mojo.document.Citation.Mode\022\022\n\nn" +
-      "ote_count\030\005 \001(\003\022\014\n\004hash\030\006 \001(\003\"J\n\004Mode\022\017\n" +
-      "\013MODE_NORMAL\020\000\022\027\n\023MODE_AUTHOR_IN_TEXT\020\001\022" +
-      "\030\n\024MODE_SUPPRESS_AUTHOR\020\002\"D\n\004Code\022+\n\tatt" +
-      "ribute\030\001 \001(\0132\030.mojo.document.Attribute\022\017" +
-      "\n\007content\030\002 \001(\t\"\206\001\n\004Link\022+\n\tattribute\030\001 " +
-      "\001(\0132\030.mojo.document.Attribute\022*\n\013descrip" +
-      "tion\030\002 \003(\0132\025.mojo.document.Inline\022%\n\006tar" +
-      "get\030\003 \001(\0132\025.mojo.document.Target\"\207\001\n\005Ima" +
-      "ge\022+\n\tattribute\030\001 \001(\0132\030.mojo.document.At" +
-      "tribute\022*\n\013description\030\002 \003(\0132\025.mojo.docu" +
-      "ment.Inline\022%\n\006target\030\003 \001(\0132\025.mojo.docum" +
-      "ent.Target\"[\n\004Span\022+\n\tattribute\030\001 \001(\0132\030." +
-      "mojo.document.Attribute\022&\n\007inlines\030\002 \003(\013" +
-      "2\025.mojo.document.Inline\"4\n\006Target\022\r\n\005tit" +
-      "le\030\001 \001(\t\022\033\n\003url\030\002 \001(\0132\016.mojo.core.Url\".\n" +
-      "\007Inlines\022#\n\004vals\030\001 \003(\0132\025.mojo.document.I" +
-      "nline\"\202\001\n\010MetaData\022/\n\004vals\030\001 \003(\0132!.mojo." +
-      "document.MetaData.ValsEntry\032E\n\tValsEntry" +
-      "\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132\030.mojo.docu" +
-      "ment.MetaValue:\0028\001\"\220\001\n\017MetaValueObject\0226" +
-      "\n\004vals\030\001 \003(\0132(.mojo.document.MetaValueOb" +
-      "ject.ValsEntry\032E\n\tValsEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\'\n\005value\030\002 \001(\0132\030.mojo.document.MetaValu" +
-      "e:\0028\001\"6\n\nMetaValues\022(\n\006values\030\001 \003(\0132\030.mo" +
-      "jo.document.MetaValue\"\304\002\n\tMetaValue\022?\n\025m" +
-      "eta_value_object_val\030\001 \001(\0132\036.mojo.docume" +
-      "nt.MetaValueObjectH\000\0224\n\017meta_values_val\030" +
-      "\002 \001(\0132\031.mojo.document.MetaValuesH\000\022\022\n\010bo" +
-      "ol_val\030\003 \001(\010H\000\022\024\n\nstring_val\030\004 \001(\tH\000\022,\n\r" +
-      "date_time_val\030\n \001(\0132\023.mojo.core.DateTime" +
-      "H\000\022-\n\013inlines_val\030\016 \001(\0132\026.mojo.document." +
-      "InlinesH\000\022+\n\nblocks_val\030\017 \001(\0132\025.mojo.doc" +
-      "ument.BlocksH\000B\014\n\nmeta_valueBj\n\032org.mojo" +
-      "lang.mojo.documentB\rDocumentProtoP\001Z;git" +
-      "hub.com/mojo-lang/document/go/pkg/mojo/d" +
-      "ocument;documentb\006proto3"
+      "t.Blocks\032,\n\006Blocks\022\"\n\004vals\030\001 \003(\0132\024.mojo." +
+      "document.Block\"k\n\nBulletList\022/\n\005items\030\002 " +
+      "\003(\0132 .mojo.document.BulletList.Blocks\032,\n" +
+      "\006Blocks\022\"\n\004vals\030\001 \003(\0132\024.mojo.document.Bl" +
+      "ock\"\234\001\n\016DefinitionList\0221\n\005items\030\002 \003(\0132\"." +
+      "mojo.document.DefinitionList.Item\032W\n\004Ite" +
+      "m\022#\n\004term\030\001 \003(\0132\025.mojo.document.Inline\022*" +
+      "\n\013definitions\030\002 \003(\0132\025.mojo.document.Bloc" +
+      "ks\"i\n\006Header\022+\n\tattribute\030\001 \001(\0132\030.mojo.d" +
+      "ocument.Attribute\022\r\n\005level\030\002 \001(\003\022#\n\004text" +
+      "\030\003 \003(\0132\025.mojo.document.Inline\"\274\003\n\005Table\022" +
+      "&\n\007caption\030\001 \003(\0132\025.mojo.document.Inline\022" +
+      "1\n\talignment\030\002 \001(\0162\036.mojo.document.Table" +
+      ".Alignment\022\r\n\005width\030\003 \001(\001\022+\n\006header\030\004 \001(" +
+      "\0132\033.mojo.document.Table.Header\022&\n\004rows\030\005" +
+      " \003(\0132\030.mojo.document.Table.Row\032*\n\004Cell\022\"" +
+      "\n\004vals\030\001 \003(\0132\024.mojo.document.Block\032.\n\003Ro" +
+      "w\022\'\n\004vals\030\001 \003(\0132\031.mojo.document.Table.Ce" +
+      "ll\0321\n\006Header\022\'\n\004vals\030\001 \003(\0132\031.mojo.docume" +
+      "nt.Table.Cell\"e\n\tAlignment\022\031\n\025ALIGNMENT_" +
+      "UNSPECIFIED\020\000\022\022\n\016ALIGNMENT_LEFT\020\001\022\023\n\017ALI" +
+      "GNMENT_RIGHT\020\002\022\024\n\020ALIGNMENT_CENTER\020\003\"^\n\010" +
+      "Division\022+\n\tattribute\030\001 \001(\0132\030.mojo.docum" +
+      "ent.Attribute\022%\n\007content\030\002 \003(\0132\024.mojo.do" +
+      "cument.Block\",\n\006Blocks\022\"\n\004vals\030\001 \003(\0132\024.m" +
+      "ojo.document.Block\"\262\005\n\006Inline\022#\n\004text\030\001 " +
+      "\001(\0132\023.mojo.document.TextH\000\022/\n\nemphasized" +
+      "\030\002 \001(\0132\031.mojo.document.EmphasizedH\000\022\'\n\006s" +
+      "trong\030\003 \001(\0132\025.mojo.document.StrongH\000\022-\n\t" +
+      "strikeout\030\004 \001(\0132\030.mojo.document.Strikeou" +
+      "tH\000\0221\n\013superscript\030\005 \001(\0132\032.mojo.document" +
+      ".SuperscriptH\000\022-\n\tsubscript\030\006 \001(\0132\030.mojo" +
+      ".document.SubscriptH\000\022.\n\nsmall_caps\030\007 \001(" +
+      "\0132\030.mojo.document.SmallCapsH\000\022\'\n\006quoted\030" +
+      "\010 \001(\0132\025.mojo.document.QuotedH\000\022#\n\004cite\030\t" +
+      " \001(\0132\023.mojo.document.CiteH\000\022#\n\004code\030\n \001(" +
+      "\0132\023.mojo.document.CodeH\000\022%\n\005space\030\013 \001(\0132" +
+      "\024.mojo.document.SpaceH\000\022.\n\nline_break\030\014 " +
+      "\001(\0132\030.mojo.document.LineBreakH\000\022#\n\004link\030" +
+      "\r \001(\0132\023.mojo.document.LinkH\000\022%\n\005image\030\016 " +
+      "\001(\0132\024.mojo.document.ImageH\000\022#\n\004note\030\017 \001(" +
+      "\0132\023.mojo.document.NoteH\000\022#\n\004span\030\020 \001(\0132\023" +
+      ".mojo.document.SpanH\000B\010\n\006inline\"\023\n\004Text\022" +
+      "\013\n\003val\030\001 \001(\t\"1\n\nEmphasized\022#\n\004vals\030\001 \003(\013" +
+      "2\025.mojo.document.Inline\"-\n\006Strong\022#\n\004val" +
+      "s\030\001 \003(\0132\025.mojo.document.Inline\"0\n\tStrike" +
+      "out\022#\n\004vals\030\001 \003(\0132\025.mojo.document.Inline" +
+      "\"2\n\013Superscript\022#\n\004vals\030\001 \003(\0132\025.mojo.doc" +
+      "ument.Inline\"0\n\tSubscript\022#\n\004vals\030\001 \003(\0132" +
+      "\025.mojo.document.Inline\"0\n\tSmallCaps\022#\n\004v" +
+      "als\030\001 \003(\0132\025.mojo.document.Inline\"\007\n\005Spac" +
+      "e\"\013\n\tLineBreak\"*\n\004Note\022\"\n\004vals\030\001 \003(\0132\024.m" +
+      "ojo.document.Block\"\201\001\n\006Quoted\022(\n\004type\030\001 " +
+      "\001(\0162\032.mojo.document.Quoted.Type\022#\n\004text\030" +
+      "\002 \003(\0132\025.mojo.document.Inline\"(\n\004Type\022\017\n\013" +
+      "TYPE_DOUBLE\020\000\022\017\n\013TYPE_SINGLE\020\001\"Z\n\004Cite\022*" +
+      "\n\tcitations\030\001 \003(\0132\027.mojo.document.Citati" +
+      "on\022&\n\007inlines\030\002 \003(\0132\025.mojo.document.Inli" +
+      "ne\"\376\001\n\010Citation\022\n\n\002id\030\001 \001(\t\022%\n\006prefix\030\002 " +
+      "\003(\0132\025.mojo.document.Inline\022%\n\006suffix\030\003 \003" +
+      "(\0132\025.mojo.document.Inline\022*\n\004mode\030\004 \001(\0162" +
+      "\034.mojo.document.Citation.Mode\022\022\n\nnote_co" +
+      "unt\030\005 \001(\003\022\014\n\004hash\030\006 \001(\003\"J\n\004Mode\022\017\n\013MODE_" +
+      "NORMAL\020\000\022\027\n\023MODE_AUTHOR_IN_TEXT\020\001\022\030\n\024MOD" +
+      "E_SUPPRESS_AUTHOR\020\002\"D\n\004Code\022+\n\tattribute" +
+      "\030\001 \001(\0132\030.mojo.document.Attribute\022\017\n\007cont" +
+      "ent\030\002 \001(\t\"\206\001\n\004Link\022+\n\tattribute\030\001 \001(\0132\030." +
+      "mojo.document.Attribute\022*\n\013description\030\002" +
+      " \003(\0132\025.mojo.document.Inline\022%\n\006target\030\003 " +
+      "\001(\0132\025.mojo.document.Target\"\207\001\n\005Image\022+\n\t" +
+      "attribute\030\001 \001(\0132\030.mojo.document.Attribut" +
+      "e\022*\n\013description\030\002 \003(\0132\025.mojo.document.I" +
+      "nline\022%\n\006target\030\003 \001(\0132\025.mojo.document.Ta" +
+      "rget\"[\n\004Span\022+\n\tattribute\030\001 \001(\0132\030.mojo.d" +
+      "ocument.Attribute\022&\n\007inlines\030\002 \003(\0132\025.moj" +
+      "o.document.Inline\"4\n\006Target\022\r\n\005title\030\001 \001" +
+      "(\t\022\033\n\003url\030\002 \001(\0132\016.mojo.core.Url\".\n\007Inlin" +
+      "es\022#\n\004vals\030\001 \003(\0132\025.mojo.document.Inline\"" +
+      "\202\001\n\010MetaData\022/\n\004vals\030\001 \003(\0132!.mojo.docume" +
+      "nt.MetaData.ValsEntry\032E\n\tValsEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132\030.mojo.document.M" +
+      "etaValue:\0028\001\"\220\001\n\017MetaValueObject\0226\n\004vals" +
+      "\030\001 \003(\0132(.mojo.document.MetaValueObject.V" +
+      "alsEntry\032E\n\tValsEntry\022\013\n\003key\030\001 \001(\t\022\'\n\005va" +
+      "lue\030\002 \001(\0132\030.mojo.document.MetaValue:\0028\001\"" +
+      "4\n\nMetaValues\022&\n\004vals\030\001 \003(\0132\030.mojo.docum" +
+      "ent.MetaValue\"\304\002\n\tMetaValue\022?\n\025meta_valu" +
+      "e_object_val\030\001 \001(\0132\036.mojo.document.MetaV" +
+      "alueObjectH\000\0224\n\017meta_values_val\030\002 \001(\0132\031." +
+      "mojo.document.MetaValuesH\000\022\022\n\010bool_val\030\003" +
+      " \001(\010H\000\022\024\n\nstring_val\030\004 \001(\tH\000\022,\n\rdate_tim" +
+      "e_val\030\n \001(\0132\023.mojo.core.DateTimeH\000\022-\n\013in" +
+      "lines_val\030\016 \001(\0132\026.mojo.document.InlinesH" +
+      "\000\022+\n\nblocks_val\030\017 \001(\0132\025.mojo.document.Bl" +
+      "ocksH\000B\014\n\nmeta_valueBj\n\032org.mojolang.moj" +
+      "o.documentB\rDocumentProtoP\001Z;github.com/" +
+      "mojo-lang/document/go/pkg/mojo/document;" +
+      "documentb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -478,7 +478,7 @@ public final class DocumentProto {
     internal_static_mojo_document_OrderedList_Blocks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_document_OrderedList_Blocks_descriptor,
-        new java.lang.String[] { "Values", });
+        new java.lang.String[] { "Vals", });
     internal_static_mojo_document_BulletList_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_mojo_document_BulletList_fieldAccessorTable = new
@@ -490,7 +490,7 @@ public final class DocumentProto {
     internal_static_mojo_document_BulletList_Blocks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_document_BulletList_Blocks_descriptor,
-        new java.lang.String[] { "Values", });
+        new java.lang.String[] { "Vals", });
     internal_static_mojo_document_DefinitionList_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_mojo_document_DefinitionList_fieldAccessorTable = new
@@ -544,7 +544,7 @@ public final class DocumentProto {
     internal_static_mojo_document_Blocks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_document_Blocks_descriptor,
-        new java.lang.String[] { "Values", });
+        new java.lang.String[] { "Vals", });
     internal_static_mojo_document_Inline_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_mojo_document_Inline_fieldAccessorTable = new
@@ -694,7 +694,7 @@ public final class DocumentProto {
     internal_static_mojo_document_MetaValues_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_document_MetaValues_descriptor,
-        new java.lang.String[] { "Values", });
+        new java.lang.String[] { "Vals", });
     internal_static_mojo_document_MetaValue_descriptor =
       getDescriptor().getMessageTypes().get(39);
     internal_static_mojo_document_MetaValue_fieldAccessorTable = new

@@ -8,26 +8,26 @@ public interface MetaValuesOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .mojo.document.MetaValue values = 1;</code>
+   * <code>repeated .mojo.document.MetaValue vals = 1;</code>
    */
   java.util.List<org.mojolang.mojo.document.MetaValue> 
-      getValuesList();
+      getValsList();
   /**
-   * <code>repeated .mojo.document.MetaValue values = 1;</code>
+   * <code>repeated .mojo.document.MetaValue vals = 1;</code>
    */
-  org.mojolang.mojo.document.MetaValue getValues(int index);
+  org.mojolang.mojo.document.MetaValue getVals(int index);
   /**
-   * <code>repeated .mojo.document.MetaValue values = 1;</code>
+   * <code>repeated .mojo.document.MetaValue vals = 1;</code>
    */
-  int getValuesCount();
+  int getValsCount();
   /**
-   * <code>repeated .mojo.document.MetaValue values = 1;</code>
+   * <code>repeated .mojo.document.MetaValue vals = 1;</code>
    */
   java.util.List<? extends org.mojolang.mojo.document.MetaValueOrBuilder> 
-      getValuesOrBuilderList();
+      getValsOrBuilderList();
   /**
-   * <code>repeated .mojo.document.MetaValue values = 1;</code>
+   * <code>repeated .mojo.document.MetaValue vals = 1;</code>
    */
-  org.mojolang.mojo.document.MetaValueOrBuilder getValuesOrBuilder(
+  org.mojolang.mojo.document.MetaValueOrBuilder getValsOrBuilder(
       int index);
 }

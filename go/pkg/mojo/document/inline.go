@@ -7,7 +7,7 @@ const (
 )
 
 func NewTextInline(text string) *Inline {
-	return &Inline{Inline: &Inline_Text{Text: &Text{Value: text}}}
+	return &Inline{Inline: &Inline_Text{Text: &Text{Val: text}}}
 }
 
 func NewCodeInline(code *Code) *Inline {
@@ -46,11 +46,11 @@ func NewImageInlineFrom(target *core.Url, description ...*Inline) *Inline {
 }
 
 func NewEmphasizedInline(values ...*Inline) *Inline {
-	return &Inline{Inline: &Inline_Emphasized{Emphasized: &Emphasized{Values: values}}}
+	return &Inline{Inline: &Inline_Emphasized{Emphasized: &Emphasized{Vals: values}}}
 }
 
 func NewStrongInline(values ...*Inline) *Inline {
-	return &Inline{Inline: &Inline_Strong{Strong: &Strong{Values: values}}}
+	return &Inline{Inline: &Inline_Strong{Strong: &Strong{Vals: values}}}
 }
 
 func (m *Inline) NewInline() *Inline {

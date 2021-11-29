@@ -122,14 +122,14 @@ func (r *Renderer) orderedList(list *document.OrderedList, out Writer) {
 		}
 
 		out.WriteString("1.")
-		r.blocks(item.Values, NewIndentWriter(out, 1), "\n")
+		r.blocks(item.Vals, NewIndentWriter(out, 1), "\n")
 	}
 }
 
 func (r *Renderer) bulletList(list *document.BulletList, out Writer) {
 	for _, item := range list.Items {
 		out.WriteString("-")
-		r.blocks(item.Values, NewIndentWriter(out, 1), "\n")
+		r.blocks(item.Vals, NewIndentWriter(out, 1), "\n")
 	}
 }
 
@@ -137,11 +137,11 @@ func (r *Renderer) definitionList(list *document.DefinitionList, out Writer) {
 }
 
 func (r *Renderer) table(table *document.Table, out Writer) {
-	for _, cell := range table.Header.Values {
+	for _, cell := range table.Header.Vals {
 		out.WriteByte('|')
 		out.WriteByte(' ')
 
-		r.blocks(cell.Values, out, "<br>")
+		r.blocks(cell.Vals, out, "<br>")
 
 		//for i := r.stringWidth(cell); i < r.columnWidths[column]; i++ {
 		//	out.WriteByte(' ')
@@ -151,7 +151,7 @@ func (r *Renderer) table(table *document.Table, out Writer) {
 	}
 	out.WriteString("|\n")
 
-	for _, _ = range table.Header.Values {
+	for _, _ = range table.Header.Vals {
 		out.WriteByte('|')
 		//out.WriteByte(':')
 		out.WriteByte('-')
@@ -162,10 +162,10 @@ func (r *Renderer) table(table *document.Table, out Writer) {
 	out.WriteString("|\n")
 
 	for _, row := range table.Rows {
-		for _, cell := range row.Values {
+		for _, cell := range row.Vals {
 			out.WriteByte('|')
 			out.WriteByte(' ')
-			r.blocks(cell.Values, out, "<br>")
+			r.blocks(cell.Vals, out, "<br>")
 			out.WriteByte(' ')
 		}
 		out.WriteString("|\n")
@@ -207,7 +207,7 @@ func (r *Renderer) lineBlock(lineBlock *document.LineBlock, out Writer) {
 		if i > 0 {
 			out.WriteString("\n")
 		}
-		r.inlines(line.Values, out)
+		r.inlines(line.Vals, out)
 	}
 }
 
@@ -228,7 +228,7 @@ func (r *Renderer) inlines(inlines []*document.Inline, out Writer) {
 func (r *Renderer) inline(inline *document.Inline, out Writer) {
 	switch inline.Inline.(type) {
 	case *document.Inline_Text:
-		out.WriteString(inline.GetText().Value)
+		out.WriteString(inline.GetText().Val)
 	case *document.Inline_Emphasized:
 		r.emphasized(inline.GetEmphasized(), out)
 	case *document.Inline_Strong:
@@ -280,13 +280,13 @@ func (r *Renderer) code(code *document.Code, out Writer) {
 
 func (r *Renderer) emphasized(emphasized *document.Emphasized, out Writer) {
 	out.WriteByte('*')
-	r.inlines(emphasized.Values, out)
+	r.inlines(emphasized.Vals, out)
 	out.WriteByte('*')
 }
 
 func (r *Renderer) strong(strong *document.Strong, out Writer) {
 	out.WriteString("***")
-	r.inlines(strong.Values, out)
+	r.inlines(strong.Vals, out)
 	out.WriteString("***")
 }
 

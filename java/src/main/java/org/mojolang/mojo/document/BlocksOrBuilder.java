@@ -8,26 +8,26 @@ public interface BlocksOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .mojo.document.Block values = 1;</code>
+   * <code>repeated .mojo.document.Block vals = 1;</code>
    */
   java.util.List<org.mojolang.mojo.document.Block> 
-      getValuesList();
+      getValsList();
   /**
-   * <code>repeated .mojo.document.Block values = 1;</code>
+   * <code>repeated .mojo.document.Block vals = 1;</code>
    */
-  org.mojolang.mojo.document.Block getValues(int index);
+  org.mojolang.mojo.document.Block getVals(int index);
   /**
-   * <code>repeated .mojo.document.Block values = 1;</code>
+   * <code>repeated .mojo.document.Block vals = 1;</code>
    */
-  int getValuesCount();
+  int getValsCount();
   /**
-   * <code>repeated .mojo.document.Block values = 1;</code>
+   * <code>repeated .mojo.document.Block vals = 1;</code>
    */
   java.util.List<? extends org.mojolang.mojo.document.BlockOrBuilder> 
-      getValuesOrBuilderList();
+      getValsOrBuilderList();
   /**
-   * <code>repeated .mojo.document.Block values = 1;</code>
+   * <code>repeated .mojo.document.Block vals = 1;</code>
    */
-  org.mojolang.mojo.document.BlockOrBuilder getValuesOrBuilder(
+  org.mojolang.mojo.document.BlockOrBuilder getValsOrBuilder(
       int index);
 }

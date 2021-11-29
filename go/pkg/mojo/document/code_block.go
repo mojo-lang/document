@@ -11,7 +11,7 @@ func NewCodeBlock(lang string, lines ...string) *CodeBlock {
 		ls := strings.Split(line, "\n")
 		for _, l := range ls {
 			codeBlock.Lines = append(codeBlock.Lines, &Line{
-				Values: []*Inline{NewTextInline(l)},
+				Vals: []*Inline{NewTextInline(l)},
 			})
 		}
 	}
@@ -23,7 +23,7 @@ func (m *CodeBlock) AppendLine(line string) {
 		ls := strings.Split(line, "\n")
 		for _, l := range ls {
 			m.Lines = append(m.Lines, &Line{
-				Values: []*Inline{NewTextInline(l)},
+				Vals: []*Inline{NewTextInline(l)},
 			})
 		}
 	}
@@ -40,9 +40,9 @@ func (m *CodeBlock) GetCode() []byte {
 			buffer.WriteByte('\n')
 		}
 
-		for _, inline := range line.Values {
+		for _, inline := range line.Vals {
 			if text := inline.GetText(); text != nil {
-				buffer.WriteString(text.Value)
+				buffer.WriteString(text.Val)
 			}
 		}
 	}

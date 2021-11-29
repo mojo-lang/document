@@ -42,6 +42,6 @@ func (codec *InlineCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	inline := (*Inline)(ptr)
 	switch x := inline.Inline.(type) {
 	case *Inline_Text:
-		stream.WriteVal(x.Text.Value)
+		stream.WriteVal(x.Text.Val)
 	}
 }

@@ -86,7 +86,7 @@ message ListAttribute {
 message OrderedList {
     
     message Blocks {
-        repeated Block values = 1;
+        repeated Block vals = 1;
     }
     ListAttribute attribute = 1;
     repeated Blocks items = 2;
@@ -95,7 +95,7 @@ message OrderedList {
 message BulletList {
     
     message Blocks {
-        repeated Block values = 1;
+        repeated Block vals = 1;
     }
     repeated Blocks items = 2;
 }
@@ -148,7 +148,7 @@ message Division {
 }
 
 message Blocks {
-    repeated Block values = 1;
+    repeated Block vals = 1;
 }
 
 message Inline {
@@ -280,7 +280,7 @@ message MetaValueObject {
 }
 
 message MetaValues {
-    repeated MetaValue values = 1;
+    repeated MetaValue vals = 1;
 }
 
 message MetaValue {

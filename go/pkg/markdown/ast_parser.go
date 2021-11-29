@@ -125,9 +125,9 @@ func (a *AstParser) parseQuoteBlock(ctx *AstContext, node ast.Node, entering boo
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)
 		case *document.OrderedList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		case *document.BulletList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		}
 
 		ctx.Stack.Push(block.GetQuoteBlock())
@@ -147,9 +147,9 @@ func (a *AstParser) parseCodeBlock(ctx *AstContext, node ast.Node, entering bool
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)
 		case *document.OrderedList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		case *document.BulletList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		}
 
 		ctx.Stack.Push(codeBlock)
@@ -172,9 +172,9 @@ func (a *AstParser) parseFencedCodeBlock(ctx *AstContext, node ast.Node, enterin
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)
 		case *document.OrderedList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		case *document.BulletList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		}
 
 		ctx.Stack.Push(codeBlock)
@@ -200,9 +200,9 @@ func (a *AstParser) parseList(ctx *AstContext, node ast.Node, entering bool) (as
 			case *document.Document:
 				v.Blocks = append(v.Blocks, block)
 			case *document.OrderedList_Blocks:
-				v.Values = append(v.Values, block)
+				v.Vals = append(v.Vals, block)
 			case *document.BulletList_Blocks:
-				v.Values = append(v.Values, block)
+				v.Vals = append(v.Vals, block)
 			}
 			ctx.Stack.Push(list)
 		} else {
@@ -225,9 +225,9 @@ func (a *AstParser) parseList(ctx *AstContext, node ast.Node, entering bool) (as
 			case *document.Document:
 				v.Blocks = append(v.Blocks, block)
 			case *document.OrderedList_Blocks:
-				v.Values = append(v.Values, block)
+				v.Vals = append(v.Vals, block)
 			case *document.BulletList_Blocks:
-				v.Values = append(v.Values, block)
+				v.Vals = append(v.Vals, block)
 			}
 			ctx.Stack.Push(list)
 		}
@@ -265,9 +265,9 @@ func (a *AstParser) parseParagraph(ctx *AstContext, node ast.Node, entering bool
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)
 		case *document.OrderedList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		case *document.BulletList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		}
 
 		ctx.Stack.Push(block.GetParagraph())
@@ -285,9 +285,9 @@ func (a *AstParser) parseTextBlock(ctx *AstContext, node ast.Node, entering bool
 		case *document.Document:
 			v.Blocks = append(v.Blocks, block)
 		case *document.OrderedList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		case *document.BulletList_Blocks:
-			v.Values = append(v.Values, block)
+			v.Vals = append(v.Vals, block)
 		}
 
 		ctx.Stack.Push(block.GetLineBlock())
@@ -340,7 +340,7 @@ func (a *AstParser) parseTableHeader(ctx *AstContext, node ast.Node, entering bo
 	if entering {
 		_ = n
 		header := &document.Table_Header{
-			Values: nil,
+			Vals: nil,
 		}
 		if table, ok := ctx.Stack.Current().(*document.Table); ok {
 			table.Header = header
@@ -358,7 +358,7 @@ func (a *AstParser) parseTableRow(ctx *AstContext, node ast.Node, entering bool)
 	if entering {
 		_ = n
 		row := &document.Table_Row{
-			Values: nil,
+			Vals: nil,
 		}
 
 		if table, ok := ctx.Stack.Current().(*document.Table); ok {
@@ -378,14 +378,14 @@ func (a *AstParser) parseTableCell(ctx *AstContext, node ast.Node, entering bool
 	if entering {
 		_ = n
 		cell := &document.Table_Cell{
-			Values: nil,
+			Vals: nil,
 		}
 
 		switch v := ctx.Stack.Current().(type) {
 		case *document.Table_Header:
-			v.Values = append(v.Values, cell)
+			v.Vals = append(v.Vals, cell)
 		case *document.Table_Row:
-			v.Values = append(v.Values, cell)
+			v.Vals = append(v.Vals, cell)
 		}
 		ctx.Stack.Push(cell)
 	} else {
@@ -402,13 +402,13 @@ func (a *AstParser) addInline(ctx *AstContext, inline *document.Inline) {
 	case *document.Paragraph:
 		value.Inlines = append(value.Inlines, inline)
 	case *document.Table_Cell:
-		value.Values = append(value.Values, document.NewPainBlock(inline))
+		value.Vals = append(value.Vals, document.NewPainBlock(inline))
 	case *document.LineBlock:
 		if len(value.Lines) == 0 {
-			value.Lines = append(value.Lines, &document.Line{Values: []*document.Inline{inline}})
+			value.Lines = append(value.Lines, &document.Line{Vals: []*document.Inline{inline}})
 		} else {
 			last := value.Lines[len(value.Lines)-1]
-			last.Values = append(last.Values, inline)
+			last.Vals = append(last.Vals, inline)
 		}
 	}
 }
@@ -497,25 +497,25 @@ func (a *AstParser) parseText(ctx *AstContext, node ast.Node, entering bool) (as
 			case *document.Header:
 				value.Text = append(value.Text, inline)
 			case *document.Table_Cell:
-				value.Values = append(value.Values, document.NewPainBlock(inline))
+				value.Vals = append(value.Vals, document.NewPainBlock(inline))
 			case *document.Paragraph:
 				value.Inlines = append(value.Inlines, inline)
 			case *document.LineBlock:
 				if len(value.Lines) == 0 {
-					value.Lines = append(value.Lines, &document.Line{Values: []*document.Inline{inline}})
+					value.Lines = append(value.Lines, &document.Line{Vals: []*document.Inline{inline}})
 				} else if isLineBreak() {
 					last := value.Lines[len(value.Lines)-1]
-					last.Values = append(last.Values, inline)
+					last.Vals = append(last.Vals, inline)
 
 					value.Lines = append(value.Lines, &document.Line{})
 				} else {
 					last := value.Lines[len(value.Lines)-1]
-					last.Values = append(last.Values, inline)
+					last.Vals = append(last.Vals, inline)
 				}
 			case *document.Emphasized:
-				value.Values = append(value.Values, inline)
+				value.Vals = append(value.Vals, inline)
 			case *document.Strong:
-				value.Values = append(value.Values, inline)
+				value.Vals = append(value.Vals, inline)
 			case *document.Image:
 				value.Description = append(value.Description, inline)
 			case *document.Link:
@@ -540,18 +540,18 @@ func (a *AstParser) parseString(ctx *AstContext, node ast.Node, entering bool) (
 			case *document.Header:
 				value.Text = append(value.Text, inline)
 			case *document.Table_Cell:
-				value.Values = append(value.Values, document.NewPainBlock(inline))
+				value.Vals = append(value.Vals, document.NewPainBlock(inline))
 			case *document.Paragraph:
 				value.Inlines = append(value.Inlines, inline)
 			case *document.LineBlock:
 				if len(value.Lines) == 0 {
-					value.Lines = append(value.Lines, &document.Line{Values: []*document.Inline{inline}})
+					value.Lines = append(value.Lines, &document.Line{Vals: []*document.Inline{inline}})
 				} else {
 					last := value.Lines[len(value.Lines)-1]
-					last.Values = append(last.Values, inline)
+					last.Vals = append(last.Vals, inline)
 				}
 			case *document.Emphasized:
-				value.Values = append(value.Values, inline)
+				value.Vals = append(value.Vals, inline)
 			case *document.Code:
 				value.Content = content
 			}
@@ -572,7 +572,7 @@ func getLines(ctx *AstContext, lines *text.Segments) []*document.Line {
 		segment := lines.At(i)
 		content := string(segment.Value(ctx.Source))
 		line := &document.Line{
-			Values: []*document.Inline{document.NewTextInline(content)},
+			Vals: []*document.Inline{document.NewTextInline(content)},
 		}
 		ls = append(ls, line)
 	}
