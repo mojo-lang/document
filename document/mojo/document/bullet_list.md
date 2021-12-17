@@ -1,3 +1,3 @@
 | 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
 |---|---|---|---|---|---|
-| `items` | `Array<Array<unspecified>>` | `` | 否 |  |
+| `items` | `Array<Array<mojo.document.Block>>` |  | 否 |  |

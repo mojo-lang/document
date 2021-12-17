@@ -44,7 +44,7 @@ func (x ListAttribute_NumberDelimiter) Format() string {
 	return strconv.Itoa(int(x))
 }
 
-func (x *ListAttribute_NumberDelimiter) Parse(value string) {
+func (x *ListAttribute_NumberDelimiter) Parse(value string) error {
 	if x != nil {
 		s, ok := ListAttributeNumberDelimiterValues[value]
 		if ok {
@@ -55,4 +55,5 @@ func (x *ListAttribute_NumberDelimiter) Parse(value string) {
 	} else {
 		*x = ListAttribute_NUMBER_DELIMITER_PERIOD
 	}
+	return nil
 }

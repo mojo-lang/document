@@ -1,9 +1,9 @@
 | 类型 | 说明 |
 |---|---|
-| `Map<string, unspecified>` |  |
-| `Array<unspecified>` |  |
+| `Map<string, mojo.document.MetaValue>` |  |
+| `Array<mojo.document.MetaValue>` |  |
 | `boolean` |  |
 | `string` |  |
 | `string` |  |
-| `Array<unspecified>` |  |
-| `Array<unspecified>` |  |
+| `Array<mojo.document.Inline>` |  |
+| `Array<mojo.document.Block>` |  |

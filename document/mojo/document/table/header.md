@@ -1,3 +1,3 @@
 | 字段 | 类型 | 说明 |
 |---|---|---|
-|  | `Array<Array<unspecified>>` |
+|  | `Array<Array<mojo.document.Block>>` |

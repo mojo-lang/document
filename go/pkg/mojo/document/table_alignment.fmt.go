@@ -44,7 +44,7 @@ func (x Table_Alignment) Format() string {
 	return strconv.Itoa(int(x))
 }
 
-func (x *Table_Alignment) Parse(value string) {
+func (x *Table_Alignment) Parse(value string) error {
 	if x != nil {
 		s, ok := TableAlignmentValues[value]
 		if ok {
@@ -55,4 +55,5 @@ func (x *Table_Alignment) Parse(value string) {
 	} else {
 		*x = Table_ALIGNMENT_LEFT
 	}
+	return nil
 }

@@ -42,7 +42,7 @@ func (x Quoted_Type) Format() string {
 	return strconv.Itoa(int(x))
 }
 
-func (x *Quoted_Type) Parse(value string) {
+func (x *Quoted_Type) Parse(value string) error {
 	if x != nil {
 		s, ok := QuotedTypeValues[value]
 		if ok {
@@ -53,4 +53,5 @@ func (x *Quoted_Type) Parse(value string) {
 	} else {
 		*x = Quoted_TYPE_DOUBLE
 	}
+	return nil
 }

@@ -50,7 +50,7 @@ func (x ListAttribute_NumberStyle) Format() string {
 	return strconv.Itoa(int(x))
 }
 
-func (x *ListAttribute_NumberStyle) Parse(value string) {
+func (x *ListAttribute_NumberStyle) Parse(value string) error {
 	if x != nil {
 		s, ok := ListAttributeNumberStyleValues[value]
 		if ok {
@@ -61,4 +61,5 @@ func (x *ListAttribute_NumberStyle) Parse(value string) {
 	} else {
 		*x = ListAttribute_NUMBER_STYLE_EXAMPLE
 	}
+	return nil
 }
