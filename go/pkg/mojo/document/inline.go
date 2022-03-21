@@ -3,63 +3,63 @@ package document
 import "github.com/mojo-lang/core/go/pkg/mojo/core"
 
 const (
-	StrongTypeName = "mojo.document.Strong"
+    StrongTypeFullName = "mojo.document.Strong"
 )
 
 func NewTextInline(text string) *Inline {
-	return &Inline{Inline: &Inline_Text{Text: &Text{Val: text}}}
+    return &Inline{Inline: &Inline_Text{Text: &Text{Val: text}}}
 }
 
 func NewCodeInline(code *Code) *Inline {
-	return &Inline{Inline: &Inline_Code{Code: code}}
+    return &Inline{Inline: &Inline_Code{Code: code}}
 }
 
 func NewCodeInlineFrom(code string) *Inline {
-	return NewCodeInline(&Code{
-		Attribute: NewAttribute(),
-		Content:   code,
-	})
+    return NewCodeInline(&Code{
+        Attribute: NewAttribute(),
+        Content:   code,
+    })
 }
 
 func NewLinkInline(link *Link) *Inline {
-	return &Inline{Inline: &Inline_Link{Link: link}}
+    return &Inline{Inline: &Inline_Link{Link: link}}
 }
 
 func NewLinkInlineFrom(target *core.Url, description ...*Inline) *Inline {
-	return NewLinkInline(&Link{
-		Attribute: NewAttribute(),
-		Description: description,
-		Target:      &Target{Url: target},
-	})
+    return NewLinkInline(&Link{
+        Attribute:   NewAttribute(),
+        Description: description,
+        Target:      &Target{Url: target},
+    })
 }
 
 func NewImageInline(image *Image) *Inline {
-	return &Inline{Inline: &Inline_Image{Image: image}}
+    return &Inline{Inline: &Inline_Image{Image: image}}
 }
 
 func NewImageInlineFrom(target *core.Url, description ...*Inline) *Inline {
-	return NewImageInline(&Image{
-		Attribute: NewAttribute(),
-		Description: description,
-		Target:      &Target{Url: target},
-	})
+    return NewImageInline(&Image{
+        Attribute:   NewAttribute(),
+        Description: description,
+        Target:      &Target{Url: target},
+    })
 }
 
 func NewEmphasizedInline(values ...*Inline) *Inline {
-	return &Inline{Inline: &Inline_Emphasized{Emphasized: &Emphasized{Vals: values}}}
+    return &Inline{Inline: &Inline_Emphasized{Emphasized: &Emphasized{Vals: values}}}
 }
 
 func NewStrongInline(values ...*Inline) *Inline {
-	return &Inline{Inline: &Inline_Strong{Strong: &Strong{Vals: values}}}
+    return &Inline{Inline: &Inline_Strong{Strong: &Strong{Vals: values}}}
 }
 
 func (m *Inline) NewInline() *Inline {
-	return &Inline{}
+    return &Inline{}
 }
 
 func (m *Inline) SetText(text string) *Inline {
-	if m != nil {
-		m.Inline = &Inline_Text{NewText(text)}
-	}
-	return m
+    if m != nil {
+        m.Inline = &Inline_Text{NewText(text)}
+    }
+    return m
 }
