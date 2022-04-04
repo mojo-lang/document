@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.Strong", &StrongCodec{})
-	jsoniter.RegisterTypeEncoder("document.Strong", &StrongCodec{})
+	core.RegisterJSONTypeDecoder("document.Strong", &StrongCodec{})
+	core.RegisterJSONTypeEncoder("document.Strong", &StrongCodec{})
 }
 
 type StrongCodec struct {

@@ -1,91 +1,91 @@
 package document
 
-func (m *Document) AppendBlock(block *Block) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, block)
+func (x *Document) AppendBlock(block *Block) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, block)
     }
 }
 
-func (m *Document) AppendBlocks(blocks ...*Block) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, blocks...)
+func (x *Document) AppendBlocks(blocks ...*Block) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, blocks...)
     }
 }
 
-func (m *Document) AppendPain(inlines ...*Inline) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewPainBlock(inlines...))
+func (x *Document) AppendPain(inlines ...*Inline) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewPainBlock(inlines...))
     }
 }
 
-func (m *Document) AppendHeader(header *Header) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewHeaderBlock(header))
+func (x *Document) AppendHeader(header *Header) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewHeaderBlock(header))
     }
 }
 
-func (m *Document) AppendHeaderFrom(level int64, inlines ...*Inline) {
-    m.AppendHeader(&Header{
+func (x *Document) AppendHeaderFrom(level int64, inlines ...*Inline) {
+    x.AppendHeader(&Header{
         Level: level,
         Text:  inlines,
     })
 }
 
-func (m *Document) AppendHeaderFromText(level int64, header string) {
-    m.AppendHeader(&Header{
+func (x *Document) AppendHeaderFromText(level int64, header string) {
+    x.AppendHeader(&Header{
         Level: level,
         Text:  []*Inline{NewTextInline(header)},
     })
 }
 
-func (m *Document) AppendBlockQuote(blocks ...*Block) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewQuoteBlockBlock(blocks...))
+func (x *Document) AppendBlockQuote(blocks ...*Block) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewQuoteBlockBlock(blocks...))
     }
 }
 
-func (m *Document) AppendCodeBlock(codeBlock *CodeBlock) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewCodeBlockBlock(codeBlock))
+func (x *Document) AppendCodeBlock(codeBlock *CodeBlock) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewCodeBlockBlock(codeBlock))
     }
 }
 
-func (m *Document) AppendCodeBlockFrom(lang string, lines ...string) {
-    m.AppendCodeBlock(NewCodeBlock(lang, lines...))
+func (x *Document) AppendCodeBlockFrom(lang string, lines ...string) {
+    x.AppendCodeBlock(NewCodeBlock(lang, lines...))
 }
 
-func (m *Document) AppendOrderedList(list *OrderedList) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewOrderedListBlock(list))
+func (x *Document) AppendOrderedList(list *OrderedList) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewOrderedListBlock(list))
     }
 }
 
-func (m *Document) AppendBulletList(list *BulletList) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewBulletListBlock(list))
+func (x *Document) AppendBulletList(list *BulletList) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewBulletListBlock(list))
     }
 }
 
-func (m *Document) AppendParagraph(inlines ...*Inline) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewParagraphBlock(inlines...))
+func (x *Document) AppendParagraph(inlines ...*Inline) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewParagraphBlock(inlines...))
     }
 }
 
-func (m *Document) AppendLineBlock(lines ...*Line) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewLineBlockBlock(lines...))
+func (x *Document) AppendLineBlock(lines ...*Line) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewLineBlockBlock(lines...))
     }
 }
 
-func (m *Document) AppendDivision(division *Division) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewDivisionBlock(division))
+func (x *Document) AppendDivision(division *Division) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewDivisionBlock(division))
     }
 }
 
-func (m *Document) AppendTable(table *Table) {
-    if m != nil {
-        m.Blocks = append(m.Blocks, NewTableBlock(table))
+func (x *Document) AppendTable(table *Table) {
+    if x != nil {
+        x.Blocks = append(x.Blocks, NewTableBlock(table))
     }
 }

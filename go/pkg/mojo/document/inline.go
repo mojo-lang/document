@@ -53,13 +53,13 @@ func NewStrongInline(values ...*Inline) *Inline {
     return &Inline{Inline: &Inline_Strong{Strong: &Strong{Vals: values}}}
 }
 
-func (m *Inline) NewInline() *Inline {
+func (x *Inline) NewInline() *Inline {
     return &Inline{}
 }
 
-func (m *Inline) SetText(text string) *Inline {
-    if m != nil {
-        m.Inline = &Inline_Text{NewText(text)}
+func (x *Inline) SetText(text string) *Inline {
+    if x != nil {
+        x.Inline = &Inline_Text{NewText(text)}
     }
-    return m
+    return x
 }

@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.ListAttribute_NumberStyle", &ListAttributeNumberStyleCodec{})
-	jsoniter.RegisterTypeEncoder("document.ListAttribute_NumberStyle", &ListAttributeNumberStyleCodec{})
+	core.RegisterJSONTypeDecoder("document.ListAttribute_NumberStyle", &ListAttributeNumberStyleCodec{})
+	core.RegisterJSONTypeEncoder("document.ListAttribute_NumberStyle", &ListAttributeNumberStyleCodec{})
 }
 
 type ListAttributeNumberStyleCodec struct {

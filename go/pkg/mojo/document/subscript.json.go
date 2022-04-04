@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.Subscript", &SubscriptCodec{})
-	jsoniter.RegisterTypeEncoder("document.Subscript", &SubscriptCodec{})
+	core.RegisterJSONTypeDecoder("document.Subscript", &SubscriptCodec{})
+	core.RegisterJSONTypeEncoder("document.Subscript", &SubscriptCodec{})
 }
 
 type SubscriptCodec struct {

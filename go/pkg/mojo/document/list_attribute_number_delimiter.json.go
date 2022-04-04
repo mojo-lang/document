@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.ListAttribute_NumberDelimiter", &ListAttributeNumberDelimiterCodec{})
-	jsoniter.RegisterTypeEncoder("document.ListAttribute_NumberDelimiter", &ListAttributeNumberDelimiterCodec{})
+	core.RegisterJSONTypeDecoder("document.ListAttribute_NumberDelimiter", &ListAttributeNumberDelimiterCodec{})
+	core.RegisterJSONTypeEncoder("document.ListAttribute_NumberDelimiter", &ListAttributeNumberDelimiterCodec{})
 }
 
 type ListAttributeNumberDelimiterCodec struct {

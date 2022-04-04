@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.Strikeout", &StrikeoutCodec{})
-	jsoniter.RegisterTypeEncoder("document.Strikeout", &StrikeoutCodec{})
+	core.RegisterJSONTypeDecoder("document.Strikeout", &StrikeoutCodec{})
+	core.RegisterJSONTypeEncoder("document.Strikeout", &StrikeoutCodec{})
 }
 
 type StrikeoutCodec struct {

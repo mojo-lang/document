@@ -8,63 +8,63 @@ func NewAttribute() *Attribute {
     }
 }
 
-func (m *Attribute) HasProperty(key string) bool {
-    return m != nil && m.Properties != nil && m.Properties[key] != nil
+func (x *Attribute) HasProperty(key string) bool {
+    return x != nil && x.Properties != nil && x.Properties[key] != nil
 }
 
-func (m *Attribute) GetStringProperty(key string) (string, error) {
-    if m != nil && m.Properties != nil {
-        if v, ok := m.Properties[key]; ok {
+func (x *Attribute) GetStringProperty(key string) (string, error) {
+    if x != nil && x.Properties != nil {
+        if v, ok := x.Properties[key]; ok {
             return v.GetString(), nil
         }
     }
     return "", core.NewNotFoundError("get property %s", key)
 }
 
-func (m *Attribute) GetIntProperty(key string) (int64, error) {
-    if m != nil && m.Properties != nil {
-        if v, ok := m.Properties[key]; ok {
+func (x *Attribute) GetIntProperty(key string) (int64, error) {
+    if x != nil && x.Properties != nil {
+        if v, ok := x.Properties[key]; ok {
             return v.GetInt64(), nil
         }
     }
     return 0, core.NewNotFoundError("get property %s", key)
 }
 
-func (m *Attribute) GetBoolProperty(key string) (bool, error) {
-    if m != nil && m.Properties != nil {
-        if v, ok := m.Properties[key]; ok {
+func (x *Attribute) GetBoolProperty(key string) (bool, error) {
+    if x != nil && x.Properties != nil {
+        if v, ok := x.Properties[key]; ok {
             return v.GetBool(), nil
         }
     }
     return false, core.NewNotFoundError("get property %s", key)
 }
 
-func (m *Attribute) SetStringProperty(key string, value string) *Attribute {
-    if m != nil {
-        if m.Properties == nil {
-            m.Properties = make(map[string]*core.Value)
+func (x *Attribute) SetStringProperty(key string, value string) *Attribute {
+    if x != nil {
+        if x.Properties == nil {
+            x.Properties = make(map[string]*core.Value)
         }
-        m.Properties[key] = core.NewStringValue(value)
+        x.Properties[key] = core.NewStringValue(value)
     }
-    return m
+    return x
 }
 
-func (m *Attribute) SetIntProperty(key string, value int64) *Attribute {
-    if m != nil {
-        if m.Properties == nil {
-            m.Properties = make(map[string]*core.Value)
+func (x *Attribute) SetIntProperty(key string, value int64) *Attribute {
+    if x != nil {
+        if x.Properties == nil {
+            x.Properties = make(map[string]*core.Value)
         }
-        m.Properties[key] = core.NewInt64Value(value)
+        x.Properties[key] = core.NewInt64Value(value)
     }
-    return m
+    return x
 }
 
-func (m *Attribute) SetBoolProperty(key string, value bool) *Attribute {
-    if m != nil {
-        if m.Properties == nil {
-            m.Properties = make(map[string]*core.Value)
+func (x *Attribute) SetBoolProperty(key string, value bool) *Attribute {
+    if x != nil {
+        if x.Properties == nil {
+            x.Properties = make(map[string]*core.Value)
         }
-        m.Properties[key] = core.NewBoolValue(value)
+        x.Properties[key] = core.NewBoolValue(value)
     }
-    return m
+    return x
 }

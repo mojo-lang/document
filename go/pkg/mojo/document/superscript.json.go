@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.Superscript", &SuperscriptCodec{})
-	jsoniter.RegisterTypeEncoder("document.Superscript", &SuperscriptCodec{})
+	core.RegisterJSONTypeDecoder("document.Superscript", &SuperscriptCodec{})
+	core.RegisterJSONTypeEncoder("document.Superscript", &SuperscriptCodec{})
 }
 
 type SuperscriptCodec struct {

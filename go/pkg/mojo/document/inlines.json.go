@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.Inlines", &InlinesCodec{})
-	jsoniter.RegisterTypeEncoder("document.Inlines", &InlinesCodec{})
+	core.RegisterJSONTypeDecoder("document.Inlines", &InlinesCodec{})
+	core.RegisterJSONTypeEncoder("document.Inlines", &InlinesCodec{})
 }
 
 type InlinesCodec struct {

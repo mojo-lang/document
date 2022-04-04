@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.Citation_Mode", &CitationModeCodec{})
-	jsoniter.RegisterTypeEncoder("document.Citation_Mode", &CitationModeCodec{})
+	core.RegisterJSONTypeDecoder("document.Citation_Mode", &CitationModeCodec{})
+	core.RegisterJSONTypeEncoder("document.Citation_Mode", &CitationModeCodec{})
 }
 
 type CitationModeCodec struct {

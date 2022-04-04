@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.Table_Cell", &TableCellCodec{})
-	jsoniter.RegisterTypeEncoder("document.Table_Cell", &TableCellCodec{})
+	core.RegisterJSONTypeDecoder("document.Table_Cell", &TableCellCodec{})
+	core.RegisterJSONTypeEncoder("document.Table_Cell", &TableCellCodec{})
 }
 
 type TableCellCodec struct {

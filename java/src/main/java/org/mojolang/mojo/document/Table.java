@@ -2793,7 +2793,7 @@ private static final long serialVersionUID = 0L;
     if (alignment_ != org.mojolang.mojo.document.Table.Alignment.ALIGNMENT_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, alignment_);
     }
-    if (width_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(width_) != 0) {
       output.writeDouble(3, width_);
     }
     if (header_ != null) {
@@ -2819,7 +2819,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, alignment_);
     }
-    if (width_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(width_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(3, width_);
     }

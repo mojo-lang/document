@@ -77,8 +77,8 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 24: {
-            metaValueCase_ = 3;
             metaValue_ = input.readBool();
+            metaValueCase_ = 3;
             break;
           }
           case 34: {

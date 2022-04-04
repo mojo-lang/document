@@ -18,24 +18,24 @@ func NewCodeBlock(lang string, lines ...string) *CodeBlock {
     return codeBlock
 }
 
-func (m *CodeBlock) AppendLine(line string) {
-    if m != nil {
+func (x *CodeBlock) AppendLine(line string) {
+    if x != nil {
         ls := strings.Split(line, "\n")
         for _, l := range ls {
-            m.Lines = append(m.Lines, &Line{
+            x.Lines = append(x.Lines, &Line{
                 Vals: []*Inline{NewTextInline(l)},
             })
         }
     }
 }
 
-func (m *CodeBlock) GetCode() []byte {
-    if m == nil {
+func (x *CodeBlock) GetCode() []byte {
+    if x == nil {
         return []byte{}
     }
 
     buffer := bytes.Buffer{}
-    for i, line := range m.Lines {
+    for i, line := range x.Lines {
         if i > 0 {
             buffer.WriteByte('\n')
         }

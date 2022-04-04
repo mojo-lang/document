@@ -4,6 +4,6 @@
 | `Array<mojo.document.MetaValue>` |  |
 | `boolean` |  |
 | `string` |  |
-| `string` |  |
+| `string` | DateTime |
 | `Array<mojo.document.Inline>` |  |
 | `Array<mojo.document.Block>` |  |

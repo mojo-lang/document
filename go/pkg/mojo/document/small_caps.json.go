@@ -18,13 +18,15 @@
 package document
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("document.SmallCaps", &SmallCapsCodec{})
-	jsoniter.RegisterTypeEncoder("document.SmallCaps", &SmallCapsCodec{})
+	core.RegisterJSONTypeDecoder("document.SmallCaps", &SmallCapsCodec{})
+	core.RegisterJSONTypeEncoder("document.SmallCaps", &SmallCapsCodec{})
 }
 
 type SmallCapsCodec struct {
