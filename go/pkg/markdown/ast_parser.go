@@ -8,7 +8,7 @@ import (
     "github.com/yuin/goldmark/text"
 )
 
-/// a parser for parsing the `ast.Node` to `document.Document`
+// AstParser a parser for parsing the `ast.Node` to `document.Document`
 type AstParser struct {
 }
 
@@ -86,6 +86,7 @@ func (a *AstParser) parse(ctx *AstContext, n ast.Node, entering bool) (ast.WalkS
 
 func (a *AstParser) parseDocument(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
     // nothing to do
+    _ = node
     if entering {
         ctx.Stack.Push(ctx.Document)
     } else {
@@ -185,6 +186,9 @@ func (a *AstParser) parseFencedCodeBlock(ctx *AstContext, node ast.Node, enterin
 
 func (a *AstParser) parseHTMLBlock(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
     // nothing to do
+    _ = ctx
+    _ = node
+    _ = entering
     return ast.WalkContinue, nil
 }
 
@@ -458,10 +462,14 @@ func (a *AstParser) parseEmphasis(ctx *AstContext, node ast.Node, entering bool)
 func (a *AstParser) parseImage(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
     n := node.(*ast.Image)
     if entering {
+        url, err := core.NewUrl(string(n.Destination))
+        if err != nil {
+            return ast.WalkStop, err
+        }
         image := &document.Image{
             Target: &document.Target{
                 Title: string(n.Title),
-                Url:   core.NewUrl(string(n.Destination)),
+                Url:   url,
             },
         }
         a.addInline(ctx, document.NewImageInline(image))
@@ -562,6 +570,9 @@ func (a *AstParser) parseString(ctx *AstContext, node ast.Node, entering bool) (
 
 func (a *AstParser) parseRawHTML(ctx *AstContext, node ast.Node, entering bool) (ast.WalkStatus, error) {
     // nothing to do
+    _ = ctx
+    _ = node
+    _ = entering
     return ast.WalkContinue, nil
 }
 
