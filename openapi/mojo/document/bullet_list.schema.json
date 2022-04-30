@@ -1,1 +1,1 @@
-{"title":"mojo.document.BulletList","description":"Bullet list (list of items, each a list of blocks)","type":"object","properties":{"items":{"type":"array","items":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Block"}}}}}
+{"title":"mojo.document.BulletList","description":"Bullet list (list of items, each a list of blocks)","type":"object","properties":{"items":{"title":"mojo.core.Array","type":"array","items":{"title":"mojo.core.Array","type":"array","items":{"$ref":"#/components/schemas/mojo.document.Block"}}}}}

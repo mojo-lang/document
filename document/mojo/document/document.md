@@ -1,4 +1,4 @@
-| 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
+| field | type | format | required | default | description |
 |---|---|---|---|---|---|
-| `metaData` | `Map<string, mojo.document.MetaValue>` |  | 否 |  |  |
-| `blocks` | `Array<mojo.document.Block>` |  | 否 |  |  |
+| `metaData` | `Map<string, mojo.document.MetaValue>` |  | N |  |  |
+| `blocks` | `Array<mojo.document.Block>` |  | N |  |  |

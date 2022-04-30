@@ -1,5 +1,5 @@
-| 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
+| field | type | format | required | default | description |
 |---|---|---|---|---|---|
-| `beginNumber` | `integer` | `int64` | 否 |  |
-| `numberStyle` | `string` |  | 否 |  |
-| `numberDelimiter` | `string` |  | 否 |  |
+| `beginNumber` | `integer` | `Int64` | N |  |
+| `numberStyle` | `string` |  | N |  |
+| `numberDelimiter` | `string` |  | N |  |

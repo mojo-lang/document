@@ -1,1 +1,1 @@
-{"title":"mojo.document.LineBlock","description":"Multiple non-breaking lines","type":"object","properties":{"lines":{"type":"array","items":{"$ref":"#/components/schemas/mojo.document.Line"}}}}
+{"title":"mojo.document.LineBlock","description":"Multiple non-breaking lines","type":"object","properties":{"lines":{"title":"mojo.core.Array","type":"array","items":{"$ref":"#/components/schemas/mojo.document.Line"}}}}

@@ -1,5 +1,5 @@
-| 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
+| field | type | format | required | default | description |
 |---|---|---|---|---|---|
-| `attribute` | `mojo.document.Attribute` |  | 否 |  |
-| `description` | `Array<mojo.document.Inline>` |  | 否 |  |
-| `target` | `mojo.document.Target` |  | 否 |  |
+| `attribute` | `mojo.document.Attribute` |  | N |  | Attributes: identifier, classes, key-value pairs |
+| `description` | `Array<mojo.document.Inline>` |  | N |  |
+| `target` | `mojo.document.Target` |  | N |  |  |

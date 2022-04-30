@@ -1,8 +1,8 @@
-| 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
+| field | type | format | required | default | description |
 |---|---|---|---|---|---|
-| `id` | `string` |  | 否 |  |
-| `prefix` | `Array<mojo.document.Inline>` |  | 否 |  |
-| `suffix` | `Array<mojo.document.Inline>` |  | 否 |  |
-| `mode` | `string` |  | 否 |  |
-| `noteCount` | `integer` | `int64` | 否 |  |
-| `hash` | `integer` | `int64` | 否 |  |
+| `id` | `string` |  | N |  |
+| `prefix` | `Array<mojo.document.Inline>` |  | N |  |
+| `suffix` | `Array<mojo.document.Inline>` |  | N |  |
+| `mode` | `string` |  | N |  |
+| `noteCount` | `integer` | `Int64` | N |  |
+| `hash` | `integer` | `Int64` | N |  |

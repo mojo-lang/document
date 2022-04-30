@@ -1,4 +1,4 @@
-| 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
+| field | type | format | required | default | description |
 |---|---|---|---|---|---|
-| `attribute` | `mojo.document.ListAttribute` |  | 否 |  |
-| `items` | `Array<Array<mojo.document.Block>>` |  | 否 |  |
+| `attribute` | `mojo.document.ListAttribute` |  | N |  | List attributes. |
+| `items` | `Array<Array<mojo.document.Block>>` |  | N |  |
