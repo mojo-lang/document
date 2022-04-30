@@ -1355,9 +1355,9 @@ func (*Inline) Descriptor() ([]byte, []int) {
 	return file_mojo_document_document_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *Inline) GetInline() isInline_Inline {
-	if x != nil {
-		return x.Inline
+func (m *Inline) GetInline() isInline_Inline {
+	if m != nil {
+		return m.Inline
 	}
 	return nil
 }

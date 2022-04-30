@@ -44,6 +44,10 @@ func (x ListAttribute_NumberDelimiter) Format() string {
 	return strconv.Itoa(int(x))
 }
 
+func (x ListAttribute_NumberDelimiter) ToString() string {
+	return x.Format()
+}
+
 func (x *ListAttribute_NumberDelimiter) Parse(value string) error {
 	if x != nil {
 		s, ok := ListAttributeNumberDelimiterValues[value]

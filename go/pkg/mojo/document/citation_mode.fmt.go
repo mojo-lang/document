@@ -44,6 +44,10 @@ func (x Citation_Mode) Format() string {
 	return strconv.Itoa(int(x))
 }
 
+func (x Citation_Mode) ToString() string {
+	return x.Format()
+}
+
 func (x *Citation_Mode) Parse(value string) error {
 	if x != nil {
 		s, ok := CitationModeValues[value]
