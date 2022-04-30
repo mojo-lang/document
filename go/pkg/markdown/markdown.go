@@ -3,11 +3,22 @@ package markdown
 import (
     "bytes"
     "context"
+    "github.com/mojo-lang/core/go/pkg/logs"
     "github.com/mojo-lang/document/go/pkg/mojo/document"
     "github.com/stephenafamo/goldmark-pdf"
     "io"
     "os"
 )
+
+func RenderToString(doc *document.Document) (string, error) {
+    md := New()
+    str, err := md.RenderToString(doc)
+    if err != nil {
+        logs.Warnw("failed to render markdown to string document", "error", err)
+        return "", err
+    }
+    return str, nil
+}
 
 type Markdown struct {
     *Parser
