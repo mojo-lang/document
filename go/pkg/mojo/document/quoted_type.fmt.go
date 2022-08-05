@@ -18,7 +18,11 @@
 package document
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var QuotedTypeNames = map[int32]string{
@@ -32,14 +36,17 @@ var QuotedTypeValues = map[string]Quoted_Type{
 }
 
 func (x Quoted_Type) Format() string {
-	s, ok := QuotedTypeNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := QuotedTypeNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x Quoted_Type) ToString() string {
@@ -47,15 +54,25 @@ func (x Quoted_Type) ToString() string {
 }
 
 func (x *Quoted_Type) Parse(value string) error {
-	if x != nil {
-		s, ok := QuotedTypeValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := QuotedTypeValues[value]; ok {
 			*x = s
 		} else {
-			*x = Quoted_TYPE_DOUBLE
+			v := core.CaseStyler("snake")(value)
+			if s, ok = QuotedTypeValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid Quoted_Type: %s", value)
+			}
 		}
-	} else {
-		*x = Quoted_TYPE_DOUBLE
 	}
 	return nil
+}
+
+func ParseQuoted_Type(value string) (Quoted_Type, error) {
+	var v Quoted_Type
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
 }

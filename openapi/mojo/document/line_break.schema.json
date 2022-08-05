@@ -1,1 +1,4 @@
-{"title":"mojo.document.LineBreak","type":"object"}
+{
+    "title": "mojo.document.LineBreak",
+    "type": "object"
+}

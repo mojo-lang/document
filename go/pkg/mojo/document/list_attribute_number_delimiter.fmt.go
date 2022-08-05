@@ -18,30 +18,39 @@
 package document
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var ListAttributeNumberDelimiterNames = map[int32]string{
+	0: "unspecified",
 	1: "period",
 	2: "one-parent",
 	3: "two-parents",
 }
 
 var ListAttributeNumberDelimiterValues = map[string]ListAttribute_NumberDelimiter{
+	"unspecified": ListAttribute_NUMBER_DELIMITER_UNSPECIFIED,
 	"period":      ListAttribute_NUMBER_DELIMITER_PERIOD,
 	"one-parent":  ListAttribute_NUMBER_DELIMITER_ONE_PARENT,
 	"two-parents": ListAttribute_NUMBER_DELIMITER_TWO_PARENTS,
 }
 
 func (x ListAttribute_NumberDelimiter) Format() string {
-	s, ok := ListAttributeNumberDelimiterNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := ListAttributeNumberDelimiterNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x ListAttribute_NumberDelimiter) ToString() string {
@@ -49,15 +58,25 @@ func (x ListAttribute_NumberDelimiter) ToString() string {
 }
 
 func (x *ListAttribute_NumberDelimiter) Parse(value string) error {
-	if x != nil {
-		s, ok := ListAttributeNumberDelimiterValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := ListAttributeNumberDelimiterValues[value]; ok {
 			*x = s
 		} else {
-			*x = ListAttribute_NUMBER_DELIMITER_PERIOD
+			v := core.CaseStyler("kebab")(value)
+			if s, ok = ListAttributeNumberDelimiterValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid ListAttribute_NumberDelimiter: %s", value)
+			}
 		}
-	} else {
-		*x = ListAttribute_NUMBER_DELIMITER_PERIOD
 	}
 	return nil
+}
+
+func ParseListAttribute_NumberDelimiter(value string) (ListAttribute_NumberDelimiter, error) {
+	var v ListAttribute_NumberDelimiter
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
 }

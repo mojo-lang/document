@@ -18,6 +18,7 @@
 package document
 
 import (
+	"fmt"
 	"unsafe"
 
 	jsoniter "github.com/json-iterator/go"
@@ -36,11 +37,15 @@ func (codec *CitationModeCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterat
 	any := iter.ReadAny()
 	e := (*Citation_Mode)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
-		e.Parse(any.ToString())
+		if err := e.Parse(any.ToString()); err != nil {
+			iter.ReportError("CitationModeCodec.Decode", err.Error())
+		}
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
 		if _, ok := CitationModeNames[value]; ok {
 			*e = Citation_Mode(value)
+		} else {
+			iter.ReportError("CitationModeCodec.Decode", fmt.Sprintf("invalid enum value %d for Citation_Mode", value))
 		}
 	}
 }

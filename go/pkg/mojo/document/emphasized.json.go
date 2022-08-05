@@ -47,13 +47,5 @@ func (codec *EmphasizedCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *EmphasizedCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	emphasized := (*Emphasized)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range emphasized.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(emphasized.Vals)
 }

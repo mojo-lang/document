@@ -18,6 +18,7 @@
 package document
 
 import (
+	"fmt"
 	"unsafe"
 
 	jsoniter "github.com/json-iterator/go"
@@ -36,11 +37,15 @@ func (codec *ListAttributeNumberStyleCodec) Decode(ptr unsafe.Pointer, iter *jso
 	any := iter.ReadAny()
 	e := (*ListAttribute_NumberStyle)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
-		e.Parse(any.ToString())
+		if err := e.Parse(any.ToString()); err != nil {
+			iter.ReportError("ListAttributeNumberStyleCodec.Decode", err.Error())
+		}
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
 		if _, ok := ListAttributeNumberStyleNames[value]; ok {
 			*e = ListAttribute_NumberStyle(value)
+		} else {
+			iter.ReportError("ListAttributeNumberStyleCodec.Decode", fmt.Sprintf("invalid enum value %d for ListAttribute_NumberStyle", value))
 		}
 	}
 }

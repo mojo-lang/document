@@ -18,30 +18,39 @@
 package document
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var TableAlignmentNames = map[int32]string{
+	0: "unspecified",
 	1: "left",
 	2: "right",
 	3: "center",
 }
 
 var TableAlignmentValues = map[string]Table_Alignment{
-	"left":   Table_ALIGNMENT_LEFT,
-	"right":  Table_ALIGNMENT_RIGHT,
-	"center": Table_ALIGNMENT_CENTER,
+	"unspecified": Table_ALIGNMENT_UNSPECIFIED,
+	"left":        Table_ALIGNMENT_LEFT,
+	"right":       Table_ALIGNMENT_RIGHT,
+	"center":      Table_ALIGNMENT_CENTER,
 }
 
 func (x Table_Alignment) Format() string {
-	s, ok := TableAlignmentNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := TableAlignmentNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x Table_Alignment) ToString() string {
@@ -49,15 +58,25 @@ func (x Table_Alignment) ToString() string {
 }
 
 func (x *Table_Alignment) Parse(value string) error {
-	if x != nil {
-		s, ok := TableAlignmentValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := TableAlignmentValues[value]; ok {
 			*x = s
 		} else {
-			*x = Table_ALIGNMENT_LEFT
+			v := core.CaseStyler("snake")(value)
+			if s, ok = TableAlignmentValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid Table_Alignment: %s", value)
+			}
 		}
-	} else {
-		*x = Table_ALIGNMENT_LEFT
 	}
 	return nil
+}
+
+func ParseTable_Alignment(value string) (Table_Alignment, error) {
+	var v Table_Alignment
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
 }

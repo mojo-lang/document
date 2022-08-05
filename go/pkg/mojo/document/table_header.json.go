@@ -47,13 +47,5 @@ func (codec *TableHeaderCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *TableHeaderCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	header := (*Table_Header)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range header.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(header.Vals)
 }

@@ -47,13 +47,5 @@ func (codec *StrongCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *StrongCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	strong := (*Strong)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range strong.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(strong.Vals)
 }

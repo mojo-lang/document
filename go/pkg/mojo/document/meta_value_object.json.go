@@ -25,27 +25,27 @@ import (
 )
 
 func init() {
-	core.RegisterJSONTypeDecoder("document.Line", &LineCodec{})
-	core.RegisterJSONTypeEncoder("document.Line", &LineCodec{})
+	core.RegisterJSONTypeDecoder("document.MetaValueObject", &MetaValueObjectCodec{})
+	core.RegisterJSONTypeEncoder("document.MetaValueObject", &MetaValueObjectCodec{})
 }
 
-type LineCodec struct {
+type MetaValueObjectCodec struct {
 }
 
-func (codec *LineCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+func (codec *MetaValueObjectCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
 	any := iter.ReadAny()
-	line := (*Line)(ptr)
-	if any.ValueType() == jsoniter.ArrayValue {
-		any.ToVal(&line.Vals)
+	metaValueObject := (*MetaValueObject)(ptr)
+	if any.ValueType() == jsoniter.ObjectValue {
+		any.ToVal(&metaValueObject.Vals)
 	}
 }
 
-func (codec *LineCodec) IsEmpty(ptr unsafe.Pointer) bool {
-	line := (*Line)(ptr)
-	return line == nil || len(line.Vals) == 0
+func (codec *MetaValueObjectCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	metaValueObject := (*MetaValueObject)(ptr)
+	return metaValueObject == nil || len(metaValueObject.Vals) == 0
 }
 
-func (codec *LineCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
-	line := (*Line)(ptr)
-	stream.WriteVal(line.Vals)
+func (codec *MetaValueObjectCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	metaValueObject := (*MetaValueObject)(ptr)
+	stream.WriteVal(metaValueObject.Vals)
 }

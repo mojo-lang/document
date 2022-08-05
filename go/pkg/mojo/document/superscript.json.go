@@ -47,13 +47,5 @@ func (codec *SuperscriptCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *SuperscriptCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	superscript := (*Superscript)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range superscript.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(superscript.Vals)
 }

@@ -47,13 +47,5 @@ func (codec *NoteCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *NoteCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	note := (*Note)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range note.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(note.Vals)
 }

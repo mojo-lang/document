@@ -1,1 +1,4 @@
-{"title":"mojo.document.Space","type":"object"}
+{
+    "title": "mojo.document.Space",
+    "type": "object"
+}

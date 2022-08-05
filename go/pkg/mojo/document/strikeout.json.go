@@ -47,13 +47,5 @@ func (codec *StrikeoutCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *StrikeoutCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	strikeout := (*Strikeout)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range strikeout.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(strikeout.Vals)
 }

@@ -47,13 +47,5 @@ func (codec *TableRowCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *TableRowCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	row := (*Table_Row)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range row.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(row.Vals)
 }

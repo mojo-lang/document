@@ -18,10 +18,15 @@
 package document
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var ListAttributeNumberStyleNames = map[int32]string{
+	0: "unspecified",
 	1: "example",
 	2: "decimal",
 	3: "lower-roman",
@@ -31,6 +36,7 @@ var ListAttributeNumberStyleNames = map[int32]string{
 }
 
 var ListAttributeNumberStyleValues = map[string]ListAttribute_NumberStyle{
+	"unspecified": ListAttribute_NUMBER_STYLE_UNSPECIFIED,
 	"example":     ListAttribute_NUMBER_STYLE_EXAMPLE,
 	"decimal":     ListAttribute_NUMBER_STYLE_DECIMAL,
 	"lower-roman": ListAttribute_NUMBER_STYLE_LOWER_ROMAN,
@@ -40,14 +46,17 @@ var ListAttributeNumberStyleValues = map[string]ListAttribute_NumberStyle{
 }
 
 func (x ListAttribute_NumberStyle) Format() string {
-	s, ok := ListAttributeNumberStyleNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := ListAttributeNumberStyleNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x ListAttribute_NumberStyle) ToString() string {
@@ -55,15 +64,25 @@ func (x ListAttribute_NumberStyle) ToString() string {
 }
 
 func (x *ListAttribute_NumberStyle) Parse(value string) error {
-	if x != nil {
-		s, ok := ListAttributeNumberStyleValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := ListAttributeNumberStyleValues[value]; ok {
 			*x = s
 		} else {
-			*x = ListAttribute_NUMBER_STYLE_EXAMPLE
+			v := core.CaseStyler("kebab")(value)
+			if s, ok = ListAttributeNumberStyleValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid ListAttribute_NumberStyle: %s", value)
+			}
 		}
-	} else {
-		*x = ListAttribute_NUMBER_STYLE_EXAMPLE
 	}
 	return nil
+}
+
+func ParseListAttribute_NumberStyle(value string) (ListAttribute_NumberStyle, error) {
+	var v ListAttribute_NumberStyle
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
 }

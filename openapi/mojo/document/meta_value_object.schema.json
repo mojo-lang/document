@@ -1,1 +1,8 @@
-{"title":"mojo.document.MetaValueObject","description":"","type":"object","additionalProperties":{"$ref":"#/components/schemas/mojo.document.MetaValue"}}
+{
+    "title": "mojo.document.MetaValueObject",
+    "description": "",
+    "type": "object",
+    "additionalProperties": {
+        "$ref": "#/components/schemas/mojo.document.MetaValue"
+    }
+}

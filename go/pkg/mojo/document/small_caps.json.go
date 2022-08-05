@@ -47,13 +47,5 @@ func (codec *SmallCapsCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *SmallCapsCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	smallCaps := (*SmallCaps)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range smallCaps.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(smallCaps.Vals)
 }

@@ -18,6 +18,7 @@
 package document
 
 import (
+	"fmt"
 	"unsafe"
 
 	jsoniter "github.com/json-iterator/go"
@@ -36,11 +37,15 @@ func (codec *TableAlignmentCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iter
 	any := iter.ReadAny()
 	e := (*Table_Alignment)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
-		e.Parse(any.ToString())
+		if err := e.Parse(any.ToString()); err != nil {
+			iter.ReportError("TableAlignmentCodec.Decode", err.Error())
+		}
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
 		if _, ok := TableAlignmentNames[value]; ok {
 			*e = Table_Alignment(value)
+		} else {
+			iter.ReportError("TableAlignmentCodec.Decode", fmt.Sprintf("invalid enum value %d for Table_Alignment", value))
 		}
 	}
 }

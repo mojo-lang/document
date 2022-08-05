@@ -18,7 +18,11 @@
 package document
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var CitationModeNames = map[int32]string{
@@ -34,14 +38,17 @@ var CitationModeValues = map[string]Citation_Mode{
 }
 
 func (x Citation_Mode) Format() string {
-	s, ok := CitationModeNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := CitationModeNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x Citation_Mode) ToString() string {
@@ -49,15 +56,25 @@ func (x Citation_Mode) ToString() string {
 }
 
 func (x *Citation_Mode) Parse(value string) error {
-	if x != nil {
-		s, ok := CitationModeValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := CitationModeValues[value]; ok {
 			*x = s
 		} else {
-			*x = Citation_MODE_NORMAL
+			v := core.CaseStyler("kebab")(value)
+			if s, ok = CitationModeValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid Citation_Mode: %s", value)
+			}
 		}
-	} else {
-		*x = Citation_MODE_NORMAL
 	}
 	return nil
+}
+
+func ParseCitation_Mode(value string) (Citation_Mode, error) {
+	var v Citation_Mode
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
 }

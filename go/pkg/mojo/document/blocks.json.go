@@ -47,13 +47,5 @@ func (codec *BlocksCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *BlocksCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	blocks := (*Blocks)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range blocks.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(blocks.Vals)
 }

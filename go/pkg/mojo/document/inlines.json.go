@@ -47,13 +47,5 @@ func (codec *InlinesCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *InlinesCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	inlines := (*Inlines)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range inlines.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(inlines.Vals)
 }

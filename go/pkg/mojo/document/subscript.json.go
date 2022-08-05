@@ -47,13 +47,5 @@ func (codec *SubscriptCodec) IsEmpty(ptr unsafe.Pointer) bool {
 
 func (codec *SubscriptCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	subscript := (*Subscript)(ptr)
-
-	stream.WriteArrayStart()
-	for i, v := range subscript.Vals {
-		if i > 0 {
-			stream.WriteMore()
-		}
-		stream.WriteVal(v)
-	}
-	stream.WriteArrayEnd()
+	stream.WriteVal(subscript.Vals)
 }
