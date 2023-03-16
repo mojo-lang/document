@@ -67,14 +67,14 @@ public interface AttributeOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.core.Value&gt; properties = 3;</code>
    */
-
-  org.mojolang.mojo.core.Value getPropertiesOrDefault(
+  /* nullable */
+org.mojolang.mojo.core.Value getPropertiesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.core.Value defaultValue);
+      /* nullable */
+org.mojolang.mojo.core.Value defaultValue);
   /**
    * <code>map&lt;string, .mojo.core.Value&gt; properties = 3;</code>
    */
-
   org.mojolang.mojo.core.Value getPropertiesOrThrow(
       java.lang.String key);
 }

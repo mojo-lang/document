@@ -30,267 +30,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Inline(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            org.mojolang.mojo.document.Text.Builder subBuilder = null;
-            if (inlineCase_ == 1) {
-              subBuilder = ((org.mojolang.mojo.document.Text) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Text.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Text) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 1;
-            break;
-          }
-          case 18: {
-            org.mojolang.mojo.document.Emphasized.Builder subBuilder = null;
-            if (inlineCase_ == 2) {
-              subBuilder = ((org.mojolang.mojo.document.Emphasized) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Emphasized.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Emphasized) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 2;
-            break;
-          }
-          case 26: {
-            org.mojolang.mojo.document.Strong.Builder subBuilder = null;
-            if (inlineCase_ == 3) {
-              subBuilder = ((org.mojolang.mojo.document.Strong) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Strong.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Strong) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 3;
-            break;
-          }
-          case 34: {
-            org.mojolang.mojo.document.Strikeout.Builder subBuilder = null;
-            if (inlineCase_ == 4) {
-              subBuilder = ((org.mojolang.mojo.document.Strikeout) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Strikeout.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Strikeout) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 4;
-            break;
-          }
-          case 42: {
-            org.mojolang.mojo.document.Superscript.Builder subBuilder = null;
-            if (inlineCase_ == 5) {
-              subBuilder = ((org.mojolang.mojo.document.Superscript) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Superscript.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Superscript) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 5;
-            break;
-          }
-          case 50: {
-            org.mojolang.mojo.document.Subscript.Builder subBuilder = null;
-            if (inlineCase_ == 6) {
-              subBuilder = ((org.mojolang.mojo.document.Subscript) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Subscript.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Subscript) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 6;
-            break;
-          }
-          case 58: {
-            org.mojolang.mojo.document.SmallCaps.Builder subBuilder = null;
-            if (inlineCase_ == 7) {
-              subBuilder = ((org.mojolang.mojo.document.SmallCaps) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.SmallCaps.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.SmallCaps) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 7;
-            break;
-          }
-          case 66: {
-            org.mojolang.mojo.document.Quoted.Builder subBuilder = null;
-            if (inlineCase_ == 8) {
-              subBuilder = ((org.mojolang.mojo.document.Quoted) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Quoted.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Quoted) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 8;
-            break;
-          }
-          case 74: {
-            org.mojolang.mojo.document.Cite.Builder subBuilder = null;
-            if (inlineCase_ == 9) {
-              subBuilder = ((org.mojolang.mojo.document.Cite) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Cite.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Cite) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 9;
-            break;
-          }
-          case 82: {
-            org.mojolang.mojo.document.Code.Builder subBuilder = null;
-            if (inlineCase_ == 10) {
-              subBuilder = ((org.mojolang.mojo.document.Code) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Code.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Code) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 10;
-            break;
-          }
-          case 90: {
-            org.mojolang.mojo.document.Space.Builder subBuilder = null;
-            if (inlineCase_ == 11) {
-              subBuilder = ((org.mojolang.mojo.document.Space) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Space.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Space) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 11;
-            break;
-          }
-          case 98: {
-            org.mojolang.mojo.document.LineBreak.Builder subBuilder = null;
-            if (inlineCase_ == 12) {
-              subBuilder = ((org.mojolang.mojo.document.LineBreak) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.LineBreak.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.LineBreak) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 12;
-            break;
-          }
-          case 106: {
-            org.mojolang.mojo.document.Link.Builder subBuilder = null;
-            if (inlineCase_ == 13) {
-              subBuilder = ((org.mojolang.mojo.document.Link) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Link.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Link) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 13;
-            break;
-          }
-          case 114: {
-            org.mojolang.mojo.document.Image.Builder subBuilder = null;
-            if (inlineCase_ == 14) {
-              subBuilder = ((org.mojolang.mojo.document.Image) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Image.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Image) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 14;
-            break;
-          }
-          case 122: {
-            org.mojolang.mojo.document.Note.Builder subBuilder = null;
-            if (inlineCase_ == 15) {
-              subBuilder = ((org.mojolang.mojo.document.Note) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Note.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Note) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 15;
-            break;
-          }
-          case 130: {
-            org.mojolang.mojo.document.Span.Builder subBuilder = null;
-            if (inlineCase_ == 16) {
-              subBuilder = ((org.mojolang.mojo.document.Span) inline_).toBuilder();
-            }
-            inline_ =
-                input.readMessage(org.mojolang.mojo.document.Span.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.document.Span) inline_);
-              inline_ = subBuilder.buildPartial();
-            }
-            inlineCase_ = 16;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.document.DocumentProto.internal_static_mojo_document_Inline_descriptor;
@@ -931,7 +670,7 @@ private static final long serialVersionUID = 0L;
     if (inlineCase_ == 16) {
       output.writeMessage(16, (org.mojolang.mojo.document.Span) inline_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1004,7 +743,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, (org.mojolang.mojo.document.Span) inline_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1088,7 +827,7 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1167,7 +906,7 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1284,22 +1023,66 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.document.Inline.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      if (textBuilder_ != null) {
+        textBuilder_.clear();
+      }
+      if (emphasizedBuilder_ != null) {
+        emphasizedBuilder_.clear();
+      }
+      if (strongBuilder_ != null) {
+        strongBuilder_.clear();
+      }
+      if (strikeoutBuilder_ != null) {
+        strikeoutBuilder_.clear();
+      }
+      if (superscriptBuilder_ != null) {
+        superscriptBuilder_.clear();
+      }
+      if (subscriptBuilder_ != null) {
+        subscriptBuilder_.clear();
+      }
+      if (smallCapsBuilder_ != null) {
+        smallCapsBuilder_.clear();
+      }
+      if (quotedBuilder_ != null) {
+        quotedBuilder_.clear();
+      }
+      if (citeBuilder_ != null) {
+        citeBuilder_.clear();
+      }
+      if (codeBuilder_ != null) {
+        codeBuilder_.clear();
+      }
+      if (spaceBuilder_ != null) {
+        spaceBuilder_.clear();
+      }
+      if (lineBreakBuilder_ != null) {
+        lineBreakBuilder_.clear();
+      }
+      if (linkBuilder_ != null) {
+        linkBuilder_.clear();
+      }
+      if (imageBuilder_ != null) {
+        imageBuilder_.clear();
+      }
+      if (noteBuilder_ != null) {
+        noteBuilder_.clear();
+      }
+      if (spanBuilder_ != null) {
+        spanBuilder_.clear();
+      }
       inlineCase_ = 0;
       inline_ = null;
       return this;
@@ -1328,121 +1111,83 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.document.Inline buildPartial() {
       org.mojolang.mojo.document.Inline result = new org.mojolang.mojo.document.Inline(this);
-      if (inlineCase_ == 1) {
-        if (textBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = textBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 2) {
-        if (emphasizedBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = emphasizedBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 3) {
-        if (strongBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = strongBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 4) {
-        if (strikeoutBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = strikeoutBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 5) {
-        if (superscriptBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = superscriptBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 6) {
-        if (subscriptBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = subscriptBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 7) {
-        if (smallCapsBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = smallCapsBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 8) {
-        if (quotedBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = quotedBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 9) {
-        if (citeBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = citeBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 10) {
-        if (codeBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = codeBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 11) {
-        if (spaceBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = spaceBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 12) {
-        if (lineBreakBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = lineBreakBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 13) {
-        if (linkBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = linkBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 14) {
-        if (imageBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = imageBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 15) {
-        if (noteBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = noteBuilder_.build();
-        }
-      }
-      if (inlineCase_ == 16) {
-        if (spanBuilder_ == null) {
-          result.inline_ = inline_;
-        } else {
-          result.inline_ = spanBuilder_.build();
-        }
-      }
-      result.inlineCase_ = inlineCase_;
+      if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.document.Inline result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(org.mojolang.mojo.document.Inline result) {
+      result.inlineCase_ = inlineCase_;
+      result.inline_ = this.inline_;
+      if (inlineCase_ == 1 &&
+          textBuilder_ != null) {
+        result.inline_ = textBuilder_.build();
+      }
+      if (inlineCase_ == 2 &&
+          emphasizedBuilder_ != null) {
+        result.inline_ = emphasizedBuilder_.build();
+      }
+      if (inlineCase_ == 3 &&
+          strongBuilder_ != null) {
+        result.inline_ = strongBuilder_.build();
+      }
+      if (inlineCase_ == 4 &&
+          strikeoutBuilder_ != null) {
+        result.inline_ = strikeoutBuilder_.build();
+      }
+      if (inlineCase_ == 5 &&
+          superscriptBuilder_ != null) {
+        result.inline_ = superscriptBuilder_.build();
+      }
+      if (inlineCase_ == 6 &&
+          subscriptBuilder_ != null) {
+        result.inline_ = subscriptBuilder_.build();
+      }
+      if (inlineCase_ == 7 &&
+          smallCapsBuilder_ != null) {
+        result.inline_ = smallCapsBuilder_.build();
+      }
+      if (inlineCase_ == 8 &&
+          quotedBuilder_ != null) {
+        result.inline_ = quotedBuilder_.build();
+      }
+      if (inlineCase_ == 9 &&
+          citeBuilder_ != null) {
+        result.inline_ = citeBuilder_.build();
+      }
+      if (inlineCase_ == 10 &&
+          codeBuilder_ != null) {
+        result.inline_ = codeBuilder_.build();
+      }
+      if (inlineCase_ == 11 &&
+          spaceBuilder_ != null) {
+        result.inline_ = spaceBuilder_.build();
+      }
+      if (inlineCase_ == 12 &&
+          lineBreakBuilder_ != null) {
+        result.inline_ = lineBreakBuilder_.build();
+      }
+      if (inlineCase_ == 13 &&
+          linkBuilder_ != null) {
+        result.inline_ = linkBuilder_.build();
+      }
+      if (inlineCase_ == 14 &&
+          imageBuilder_ != null) {
+        result.inline_ = imageBuilder_.build();
+      }
+      if (inlineCase_ == 15 &&
+          noteBuilder_ != null) {
+        result.inline_ = noteBuilder_.build();
+      }
+      if (inlineCase_ == 16 &&
+          spanBuilder_ != null) {
+        result.inline_ = spanBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1558,7 +1303,7 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1573,17 +1318,142 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.document.Inline parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getTextFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 1;
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getEmphasizedFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 2;
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getStrongFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 3;
+              break;
+            } // case 26
+            case 34: {
+              input.readMessage(
+                  getStrikeoutFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 4;
+              break;
+            } // case 34
+            case 42: {
+              input.readMessage(
+                  getSuperscriptFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 5;
+              break;
+            } // case 42
+            case 50: {
+              input.readMessage(
+                  getSubscriptFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 6;
+              break;
+            } // case 50
+            case 58: {
+              input.readMessage(
+                  getSmallCapsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 7;
+              break;
+            } // case 58
+            case 66: {
+              input.readMessage(
+                  getQuotedFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 8;
+              break;
+            } // case 66
+            case 74: {
+              input.readMessage(
+                  getCiteFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 9;
+              break;
+            } // case 74
+            case 82: {
+              input.readMessage(
+                  getCodeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 10;
+              break;
+            } // case 82
+            case 90: {
+              input.readMessage(
+                  getSpaceFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 11;
+              break;
+            } // case 90
+            case 98: {
+              input.readMessage(
+                  getLineBreakFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 12;
+              break;
+            } // case 98
+            case 106: {
+              input.readMessage(
+                  getLinkFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 13;
+              break;
+            } // case 106
+            case 114: {
+              input.readMessage(
+                  getImageFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 14;
+              break;
+            } // case 114
+            case 122: {
+              input.readMessage(
+                  getNoteFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 15;
+              break;
+            } // case 122
+            case 130: {
+              input.readMessage(
+                  getSpanFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              inlineCase_ = 16;
+              break;
+            } // case 130
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.document.Inline) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int inlineCase_ = 0;
@@ -1601,6 +1471,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.document.Text, org.mojolang.mojo.document.Text.Builder, org.mojolang.mojo.document.TextOrBuilder> textBuilder_;
@@ -1676,8 +1547,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 1) {
           textBuilder_.mergeFrom(value);
+        } else {
+          textBuilder_.setMessage(value);
         }
-        textBuilder_.setMessage(value);
       }
       inlineCase_ = 1;
       return this;
@@ -1739,7 +1611,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 1;
-      onChanged();;
+      onChanged();
       return textBuilder_;
     }
 
@@ -1817,8 +1689,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 2) {
           emphasizedBuilder_.mergeFrom(value);
+        } else {
+          emphasizedBuilder_.setMessage(value);
         }
-        emphasizedBuilder_.setMessage(value);
       }
       inlineCase_ = 2;
       return this;
@@ -1880,7 +1753,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 2;
-      onChanged();;
+      onChanged();
       return emphasizedBuilder_;
     }
 
@@ -1958,8 +1831,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 3) {
           strongBuilder_.mergeFrom(value);
+        } else {
+          strongBuilder_.setMessage(value);
         }
-        strongBuilder_.setMessage(value);
       }
       inlineCase_ = 3;
       return this;
@@ -2021,7 +1895,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 3;
-      onChanged();;
+      onChanged();
       return strongBuilder_;
     }
 
@@ -2099,8 +1973,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 4) {
           strikeoutBuilder_.mergeFrom(value);
+        } else {
+          strikeoutBuilder_.setMessage(value);
         }
-        strikeoutBuilder_.setMessage(value);
       }
       inlineCase_ = 4;
       return this;
@@ -2162,7 +2037,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 4;
-      onChanged();;
+      onChanged();
       return strikeoutBuilder_;
     }
 
@@ -2240,8 +2115,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 5) {
           superscriptBuilder_.mergeFrom(value);
+        } else {
+          superscriptBuilder_.setMessage(value);
         }
-        superscriptBuilder_.setMessage(value);
       }
       inlineCase_ = 5;
       return this;
@@ -2303,7 +2179,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 5;
-      onChanged();;
+      onChanged();
       return superscriptBuilder_;
     }
 
@@ -2381,8 +2257,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 6) {
           subscriptBuilder_.mergeFrom(value);
+        } else {
+          subscriptBuilder_.setMessage(value);
         }
-        subscriptBuilder_.setMessage(value);
       }
       inlineCase_ = 6;
       return this;
@@ -2444,7 +2321,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 6;
-      onChanged();;
+      onChanged();
       return subscriptBuilder_;
     }
 
@@ -2522,8 +2399,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 7) {
           smallCapsBuilder_.mergeFrom(value);
+        } else {
+          smallCapsBuilder_.setMessage(value);
         }
-        smallCapsBuilder_.setMessage(value);
       }
       inlineCase_ = 7;
       return this;
@@ -2585,7 +2463,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 7;
-      onChanged();;
+      onChanged();
       return smallCapsBuilder_;
     }
 
@@ -2663,8 +2541,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 8) {
           quotedBuilder_.mergeFrom(value);
+        } else {
+          quotedBuilder_.setMessage(value);
         }
-        quotedBuilder_.setMessage(value);
       }
       inlineCase_ = 8;
       return this;
@@ -2726,7 +2605,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 8;
-      onChanged();;
+      onChanged();
       return quotedBuilder_;
     }
 
@@ -2804,8 +2683,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 9) {
           citeBuilder_.mergeFrom(value);
+        } else {
+          citeBuilder_.setMessage(value);
         }
-        citeBuilder_.setMessage(value);
       }
       inlineCase_ = 9;
       return this;
@@ -2867,7 +2747,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 9;
-      onChanged();;
+      onChanged();
       return citeBuilder_;
     }
 
@@ -2945,8 +2825,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 10) {
           codeBuilder_.mergeFrom(value);
+        } else {
+          codeBuilder_.setMessage(value);
         }
-        codeBuilder_.setMessage(value);
       }
       inlineCase_ = 10;
       return this;
@@ -3008,7 +2889,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 10;
-      onChanged();;
+      onChanged();
       return codeBuilder_;
     }
 
@@ -3086,8 +2967,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 11) {
           spaceBuilder_.mergeFrom(value);
+        } else {
+          spaceBuilder_.setMessage(value);
         }
-        spaceBuilder_.setMessage(value);
       }
       inlineCase_ = 11;
       return this;
@@ -3149,7 +3031,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 11;
-      onChanged();;
+      onChanged();
       return spaceBuilder_;
     }
 
@@ -3227,8 +3109,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 12) {
           lineBreakBuilder_.mergeFrom(value);
+        } else {
+          lineBreakBuilder_.setMessage(value);
         }
-        lineBreakBuilder_.setMessage(value);
       }
       inlineCase_ = 12;
       return this;
@@ -3290,7 +3173,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 12;
-      onChanged();;
+      onChanged();
       return lineBreakBuilder_;
     }
 
@@ -3368,8 +3251,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 13) {
           linkBuilder_.mergeFrom(value);
+        } else {
+          linkBuilder_.setMessage(value);
         }
-        linkBuilder_.setMessage(value);
       }
       inlineCase_ = 13;
       return this;
@@ -3431,7 +3315,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 13;
-      onChanged();;
+      onChanged();
       return linkBuilder_;
     }
 
@@ -3509,8 +3393,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 14) {
           imageBuilder_.mergeFrom(value);
+        } else {
+          imageBuilder_.setMessage(value);
         }
-        imageBuilder_.setMessage(value);
       }
       inlineCase_ = 14;
       return this;
@@ -3572,7 +3457,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 14;
-      onChanged();;
+      onChanged();
       return imageBuilder_;
     }
 
@@ -3650,8 +3535,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 15) {
           noteBuilder_.mergeFrom(value);
+        } else {
+          noteBuilder_.setMessage(value);
         }
-        noteBuilder_.setMessage(value);
       }
       inlineCase_ = 15;
       return this;
@@ -3713,7 +3599,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 15;
-      onChanged();;
+      onChanged();
       return noteBuilder_;
     }
 
@@ -3791,8 +3677,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (inlineCase_ == 16) {
           spanBuilder_.mergeFrom(value);
+        } else {
+          spanBuilder_.setMessage(value);
         }
-        spanBuilder_.setMessage(value);
       }
       inlineCase_ = 16;
       return this;
@@ -3854,7 +3741,7 @@ private static final long serialVersionUID = 0L;
         inline_ = null;
       }
       inlineCase_ = 16;
-      onChanged();;
+      onChanged();
       return spanBuilder_;
     }
     @java.lang.Override
@@ -3890,7 +3777,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Inline(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

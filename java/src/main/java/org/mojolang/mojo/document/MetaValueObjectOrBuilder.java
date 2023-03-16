@@ -30,14 +30,14 @@ public interface MetaValueObjectOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.document.MetaValue&gt; vals = 1;</code>
    */
-
-  org.mojolang.mojo.document.MetaValue getValsOrDefault(
+  /* nullable */
+org.mojolang.mojo.document.MetaValue getValsOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.document.MetaValue defaultValue);
+      /* nullable */
+org.mojolang.mojo.document.MetaValue defaultValue);
   /**
    * <code>map&lt;string, .mojo.document.MetaValue&gt; vals = 1;</code>
    */
-
   org.mojolang.mojo.document.MetaValue getValsOrThrow(
       java.lang.String key);
 }

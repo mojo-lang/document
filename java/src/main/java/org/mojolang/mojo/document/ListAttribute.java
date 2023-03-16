@@ -32,60 +32,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListAttribute(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8: {
-
-            beginNumber_ = input.readInt64();
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            numberStyle_ = rawValue;
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            numberDelimiter_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.document.DocumentProto.internal_static_mojo_document_ListAttribute_descriptor;
@@ -379,7 +325,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BEGIN_NUMBER_FIELD_NUMBER = 1;
-  private long beginNumber_;
+  private long beginNumber_ = 0L;
   /**
    * <code>int64 begin_number = 1;</code>
    * @return The beginNumber.
@@ -390,7 +336,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NUMBER_STYLE_FIELD_NUMBER = 2;
-  private int numberStyle_;
+  private int numberStyle_ = 0;
   /**
    * <code>.mojo.document.ListAttribute.NumberStyle number_style = 2;</code>
    * @return The enum numeric value on the wire for numberStyle.
@@ -403,13 +349,12 @@ private static final long serialVersionUID = 0L;
    * @return The numberStyle.
    */
   @java.lang.Override public org.mojolang.mojo.document.ListAttribute.NumberStyle getNumberStyle() {
-    @SuppressWarnings("deprecation")
-    org.mojolang.mojo.document.ListAttribute.NumberStyle result = org.mojolang.mojo.document.ListAttribute.NumberStyle.valueOf(numberStyle_);
+    org.mojolang.mojo.document.ListAttribute.NumberStyle result = org.mojolang.mojo.document.ListAttribute.NumberStyle.forNumber(numberStyle_);
     return result == null ? org.mojolang.mojo.document.ListAttribute.NumberStyle.UNRECOGNIZED : result;
   }
 
   public static final int NUMBER_DELIMITER_FIELD_NUMBER = 3;
-  private int numberDelimiter_;
+  private int numberDelimiter_ = 0;
   /**
    * <code>.mojo.document.ListAttribute.NumberDelimiter number_delimiter = 3;</code>
    * @return The enum numeric value on the wire for numberDelimiter.
@@ -422,8 +367,7 @@ private static final long serialVersionUID = 0L;
    * @return The numberDelimiter.
    */
   @java.lang.Override public org.mojolang.mojo.document.ListAttribute.NumberDelimiter getNumberDelimiter() {
-    @SuppressWarnings("deprecation")
-    org.mojolang.mojo.document.ListAttribute.NumberDelimiter result = org.mojolang.mojo.document.ListAttribute.NumberDelimiter.valueOf(numberDelimiter_);
+    org.mojolang.mojo.document.ListAttribute.NumberDelimiter result = org.mojolang.mojo.document.ListAttribute.NumberDelimiter.forNumber(numberDelimiter_);
     return result == null ? org.mojolang.mojo.document.ListAttribute.NumberDelimiter.UNRECOGNIZED : result;
   }
 
@@ -450,7 +394,7 @@ private static final long serialVersionUID = 0L;
     if (numberDelimiter_ != org.mojolang.mojo.document.ListAttribute.NumberDelimiter.NUMBER_DELIMITER_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, numberDelimiter_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -471,7 +415,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, numberDelimiter_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -490,7 +434,7 @@ private static final long serialVersionUID = 0L;
         != other.getBeginNumber()) return false;
     if (numberStyle_ != other.numberStyle_) return false;
     if (numberDelimiter_ != other.numberDelimiter_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -508,7 +452,7 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + numberStyle_;
     hash = (37 * hash) + NUMBER_DELIMITER_FIELD_NUMBER;
     hash = (53 * hash) + numberDelimiter_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -625,28 +569,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.document.ListAttribute.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       beginNumber_ = 0L;
-
       numberStyle_ = 0;
-
       numberDelimiter_ = 0;
-
       return this;
     }
 
@@ -673,11 +610,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.document.ListAttribute buildPartial() {
       org.mojolang.mojo.document.ListAttribute result = new org.mojolang.mojo.document.ListAttribute(this);
-      result.beginNumber_ = beginNumber_;
-      result.numberStyle_ = numberStyle_;
-      result.numberDelimiter_ = numberDelimiter_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.document.ListAttribute result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.beginNumber_ = beginNumber_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.numberStyle_ = numberStyle_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.numberDelimiter_ = numberDelimiter_;
+      }
     }
 
     @java.lang.Override
@@ -733,7 +681,7 @@ private static final long serialVersionUID = 0L;
       if (other.numberDelimiter_ != 0) {
         setNumberDelimiterValue(other.getNumberDelimiterValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -748,19 +696,48 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.document.ListAttribute parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              beginNumber_ = input.readInt64();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 8
+            case 16: {
+              numberStyle_ = input.readEnum();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
+            case 24: {
+              numberDelimiter_ = input.readEnum();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.document.ListAttribute) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+    private int bitField0_;
 
     private long beginNumber_ ;
     /**
@@ -779,6 +756,7 @@ private static final long serialVersionUID = 0L;
     public Builder setBeginNumber(long value) {
       
       beginNumber_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -787,7 +765,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearBeginNumber() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       beginNumber_ = 0L;
       onChanged();
       return this;
@@ -807,8 +785,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setNumberStyleValue(int value) {
-      
       numberStyle_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -818,8 +796,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public org.mojolang.mojo.document.ListAttribute.NumberStyle getNumberStyle() {
-      @SuppressWarnings("deprecation")
-      org.mojolang.mojo.document.ListAttribute.NumberStyle result = org.mojolang.mojo.document.ListAttribute.NumberStyle.valueOf(numberStyle_);
+      org.mojolang.mojo.document.ListAttribute.NumberStyle result = org.mojolang.mojo.document.ListAttribute.NumberStyle.forNumber(numberStyle_);
       return result == null ? org.mojolang.mojo.document.ListAttribute.NumberStyle.UNRECOGNIZED : result;
     }
     /**
@@ -831,7 +808,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000002;
       numberStyle_ = value.getNumber();
       onChanged();
       return this;
@@ -841,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearNumberStyle() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       numberStyle_ = 0;
       onChanged();
       return this;
@@ -861,8 +838,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setNumberDelimiterValue(int value) {
-      
       numberDelimiter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -872,8 +849,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public org.mojolang.mojo.document.ListAttribute.NumberDelimiter getNumberDelimiter() {
-      @SuppressWarnings("deprecation")
-      org.mojolang.mojo.document.ListAttribute.NumberDelimiter result = org.mojolang.mojo.document.ListAttribute.NumberDelimiter.valueOf(numberDelimiter_);
+      org.mojolang.mojo.document.ListAttribute.NumberDelimiter result = org.mojolang.mojo.document.ListAttribute.NumberDelimiter.forNumber(numberDelimiter_);
       return result == null ? org.mojolang.mojo.document.ListAttribute.NumberDelimiter.UNRECOGNIZED : result;
     }
     /**
@@ -885,7 +861,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000004;
       numberDelimiter_ = value.getNumber();
       onChanged();
       return this;
@@ -895,7 +871,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearNumberDelimiter() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       numberDelimiter_ = 0;
       onChanged();
       return this;
@@ -933,7 +909,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListAttribute(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 
