@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	"io"
-	"os"
 
 	"github.com/mojo-lang/core/go/pkg/logs"
 	"github.com/stephenafamo/goldmark-pdf"
@@ -43,7 +42,7 @@ func (m *Markdown) ConvertToPdf(source []byte, w io.Writer) error {
 	m.MdEngine.SetRenderer(pdf.New(
 		// pdf.WithTraceWriter(os.Stdout),
 		pdf.WithContext(context.Background()),
-		pdf.WithImageFS(os.DirFS(".")),
+		// pdf.WithImageFS(os.DirFS(".")),
 		// pdf.WithLinkColor("cc4578"),
 		pdf.WithHeadingFont(pdf.GetTextFont("IBM Plex Serif", pdf.FontLora)),
 		pdf.WithBodyFont(pdf.GetTextFont("Open Sans", pdf.FontRoboto)),
