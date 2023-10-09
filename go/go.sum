@@ -172,8 +172,8 @@ github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd h1:TRLaZ9cD/w
 github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
 github.com/modern-go/reflect2 v1.0.2 h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M=
 github.com/modern-go/reflect2 v1.0.2/go.mod h1:yWuevngMOJpCy52FWWMvUC8ws7m/LJsjYzDa0/r8luk=
-github.com/mojo-lang/core/go v0.0.0-20230926065453-7ad245584474 h1:CgF41pYJZF/NROPfQJvv6jUDiNYsHuTFAIq5cG1FOOk=
-github.com/mojo-lang/core/go v0.0.0-20230926065453-7ad245584474/go.mod h1:PaledJacuIpTwi1/xJuvbNQYfoNDIdrZRpceG+zU8b0=
+github.com/mojo-lang/core/go v0.0.0-20231009061615-f75fad8ff39f h1:JxNrAHzYQxVo9nLSXwrwdsglO6WOFY+xJX6IXFNg0yI=
+github.com/mojo-lang/core/go v0.0.0-20231009061615-f75fad8ff39f/go.mod h1:2M6i+RgL+qBMsCPWNDTk6GIqqCuT2Q80u0LeGhuaAuo=
 github.com/pascaldekloe/name v0.0.0-20180628100202-0fd16699aae1/go.mod h1:eD5JxqMiuNYyFNmyY9rkJ/slN8y59oEu4Ei7F8OoKWQ=
 github.com/phpdave11/gofpdf v1.4.2 h1:KPKiIbfwbvC/wOncwhrpRdXVj2CZTCFlw4wnoyjtHfQ=
 github.com/phpdave11/gofpdf v1.4.2/go.mod h1:zpO6xFn9yxo3YLyMvW8HcKWVdbNqgIfOOp2dXMnm1mY=

@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/json-iterator/go v1.1.12
-	github.com/mojo-lang/core/go v0.0.0-20230926065453-7ad245584474
+	github.com/mojo-lang/core/go v0.0.0-20231009061615-f75fad8ff39f
 	github.com/stephenafamo/goldmark-pdf v0.2.0
 	github.com/stretchr/testify v1.8.4
 	github.com/yuin/goldmark v1.5.6

@@ -63,7 +63,7 @@ func (x ListAttribute_NumberStyle) Enum() *ListAttribute_NumberStyle {
 	return p
 }
 
-func (x ListAttribute_NumberStyle) ToText() string {
+func (x ListAttribute_NumberStyle) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -115,7 +115,7 @@ func (x ListAttribute_NumberDelimiter) Enum() *ListAttribute_NumberDelimiter {
 	return p
 }
 
-func (x ListAttribute_NumberDelimiter) ToText() string {
+func (x ListAttribute_NumberDelimiter) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -167,7 +167,7 @@ func (x Table_Alignment) Enum() *Table_Alignment {
 	return p
 }
 
-func (x Table_Alignment) ToText() string {
+func (x Table_Alignment) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -213,7 +213,7 @@ func (x Quoted_Type) Enum() *Quoted_Type {
 	return p
 }
 
-func (x Quoted_Type) ToText() string {
+func (x Quoted_Type) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -262,7 +262,7 @@ func (x Citation_Mode) Enum() *Citation_Mode {
 	return p
 }
 
-func (x Citation_Mode) ToText() string {
+func (x Citation_Mode) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -301,7 +301,7 @@ func (x *Document) Reset() {
 	}
 }
 
-func (x *Document) ToText() string {
+func (x *Document) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -367,7 +367,7 @@ func (x *Block) Reset() {
 	}
 }
 
-func (x *Block) ToText() string {
+func (x *Block) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -561,7 +561,7 @@ func (x *Line) Reset() {
 	}
 }
 
-func (x *Line) ToText() string {
+func (x *Line) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -608,7 +608,7 @@ func (x *Plain) Reset() {
 	}
 }
 
-func (x *Plain) ToText() string {
+func (x *Plain) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -655,7 +655,7 @@ func (x *Paragraph) Reset() {
 	}
 }
 
-func (x *Paragraph) ToText() string {
+func (x *Paragraph) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -702,7 +702,7 @@ func (x *LineBlock) Reset() {
 	}
 }
 
-func (x *LineBlock) ToText() string {
+func (x *LineBlock) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -751,7 +751,7 @@ func (x *CodeBlock) Reset() {
 	}
 }
 
-func (x *CodeBlock) ToText() string {
+func (x *CodeBlock) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -812,7 +812,7 @@ func (x *QuoteBlock) Reset() {
 	}
 }
 
-func (x *QuoteBlock) ToText() string {
+func (x *QuoteBlock) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -861,7 +861,7 @@ func (x *ListAttribute) Reset() {
 	}
 }
 
-func (x *ListAttribute) ToText() string {
+func (x *ListAttribute) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -923,7 +923,7 @@ func (x *OrderedList) Reset() {
 	}
 }
 
-func (x *OrderedList) ToText() string {
+func (x *OrderedList) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -977,7 +977,7 @@ func (x *BulletList) Reset() {
 	}
 }
 
-func (x *BulletList) ToText() string {
+func (x *BulletList) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1024,7 +1024,7 @@ func (x *DefinitionList) Reset() {
 	}
 }
 
-func (x *DefinitionList) ToText() string {
+func (x *DefinitionList) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1073,7 +1073,7 @@ func (x *Header) Reset() {
 	}
 }
 
-func (x *Header) ToText() string {
+func (x *Header) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1138,7 +1138,7 @@ func (x *Table) Reset() {
 	}
 }
 
-func (x *Table) ToText() string {
+func (x *Table) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1214,7 +1214,7 @@ func (x *Division) Reset() {
 	}
 }
 
-func (x *Division) ToText() string {
+func (x *Division) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1268,7 +1268,7 @@ func (x *Blocks) Reset() {
 	}
 }
 
-func (x *Blocks) ToText() string {
+func (x *Blocks) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1332,7 +1332,7 @@ func (x *Inline) Reset() {
 	}
 }
 
-func (x *Inline) ToText() string {
+func (x *Inline) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1591,7 +1591,7 @@ func (x *Text) Reset() {
 	}
 }
 
-func (x *Text) ToText() string {
+func (x *Text) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1638,7 +1638,7 @@ func (x *Emphasized) Reset() {
 	}
 }
 
-func (x *Emphasized) ToText() string {
+func (x *Emphasized) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1685,7 +1685,7 @@ func (x *Strong) Reset() {
 	}
 }
 
-func (x *Strong) ToText() string {
+func (x *Strong) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1732,7 +1732,7 @@ func (x *Strikeout) Reset() {
 	}
 }
 
-func (x *Strikeout) ToText() string {
+func (x *Strikeout) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1779,7 +1779,7 @@ func (x *Superscript) Reset() {
 	}
 }
 
-func (x *Superscript) ToText() string {
+func (x *Superscript) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1826,7 +1826,7 @@ func (x *Subscript) Reset() {
 	}
 }
 
-func (x *Subscript) ToText() string {
+func (x *Subscript) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1873,7 +1873,7 @@ func (x *SmallCaps) Reset() {
 	}
 }
 
-func (x *SmallCaps) ToText() string {
+func (x *SmallCaps) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1918,7 +1918,7 @@ func (x *Space) Reset() {
 	}
 }
 
-func (x *Space) ToText() string {
+func (x *Space) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1956,7 +1956,7 @@ func (x *LineBreak) Reset() {
 	}
 }
 
-func (x *LineBreak) ToText() string {
+func (x *LineBreak) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1996,7 +1996,7 @@ func (x *Note) Reset() {
 	}
 }
 
-func (x *Note) ToText() string {
+func (x *Note) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2044,7 +2044,7 @@ func (x *Quoted) Reset() {
 	}
 }
 
-func (x *Quoted) ToText() string {
+func (x *Quoted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2099,7 +2099,7 @@ func (x *Cite) Reset() {
 	}
 }
 
-func (x *Cite) ToText() string {
+func (x *Cite) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2158,7 +2158,7 @@ func (x *Citation) Reset() {
 	}
 }
 
-func (x *Citation) ToText() string {
+func (x *Citation) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2241,7 +2241,7 @@ func (x *Code) Reset() {
 	}
 }
 
-func (x *Code) ToText() string {
+func (x *Code) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2297,7 +2297,7 @@ func (x *Link) Reset() {
 	}
 }
 
-func (x *Link) ToText() string {
+func (x *Link) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2360,7 +2360,7 @@ func (x *Image) Reset() {
 	}
 }
 
-func (x *Image) ToText() string {
+func (x *Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2422,7 +2422,7 @@ func (x *Span) Reset() {
 	}
 }
 
-func (x *Span) ToText() string {
+func (x *Span) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2477,7 +2477,7 @@ func (x *Target) Reset() {
 	}
 }
 
-func (x *Target) ToText() string {
+func (x *Target) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2531,7 +2531,7 @@ func (x *Inlines) Reset() {
 	}
 }
 
-func (x *Inlines) ToText() string {
+func (x *Inlines) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2578,7 +2578,7 @@ func (x *MetaData) Reset() {
 	}
 }
 
-func (x *MetaData) ToText() string {
+func (x *MetaData) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2625,7 +2625,7 @@ func (x *MetaValueObject) Reset() {
 	}
 }
 
-func (x *MetaValueObject) ToText() string {
+func (x *MetaValueObject) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2672,7 +2672,7 @@ func (x *MetaValues) Reset() {
 	}
 }
 
-func (x *MetaValues) ToText() string {
+func (x *MetaValues) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2727,7 +2727,7 @@ func (x *MetaValue) Reset() {
 	}
 }
 
-func (x *MetaValue) ToText() string {
+func (x *MetaValue) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2869,7 +2869,7 @@ func (x *OrderedList_Blocks) Reset() {
 	}
 }
 
-func (x *OrderedList_Blocks) ToText() string {
+func (x *OrderedList_Blocks) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2916,7 +2916,7 @@ func (x *BulletList_Blocks) Reset() {
 	}
 }
 
-func (x *BulletList_Blocks) ToText() string {
+func (x *BulletList_Blocks) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2964,7 +2964,7 @@ func (x *DefinitionList_Item) Reset() {
 	}
 }
 
-func (x *DefinitionList_Item) ToText() string {
+func (x *DefinitionList_Item) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3018,7 +3018,7 @@ func (x *Table_Cell) Reset() {
 	}
 }
 
-func (x *Table_Cell) ToText() string {
+func (x *Table_Cell) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3065,7 +3065,7 @@ func (x *Table_Row) Reset() {
 	}
 }
 
-func (x *Table_Row) ToText() string {
+func (x *Table_Row) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3112,7 +3112,7 @@ func (x *Table_Header) Reset() {
 	}
 }
 
-func (x *Table_Header) ToText() string {
+func (x *Table_Header) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
